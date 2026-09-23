@@ -21,21 +21,21 @@ const steps = [
 function Home() {
   return (
     <>
-      <section className="relative min-h-[82vh] overflow-hidden bg-vow-ink text-vow-bg">
+      <section className="relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
         <div className="absolute inset-0 vow-hero-art" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-r from-vow-ink via-vow-ink/90 to-vow-ink/35" aria-hidden />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-vow-ink to-transparent" aria-hidden />
         <div className="container-site relative flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <p className="vow-label !text-vow-blue">Goal planning · Accountability · Progress</p>
+              <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
               <h1 className="mt-6 max-w-5xl text-[clamp(4rem,9vw,8.5rem)] leading-[.82] tracking-[-.045em]">
                 Make your VOW.<br />
                 <span className="text-vow-blue">Keep your VOW.</span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
-              <p className="max-w-[38ch] text-base leading-[1.8] text-vow-bg/75 sm:text-lg">
+              <p className="max-w-[38ch] text-base leading-[1.8] text-vow-ink/75 sm:text-lg">
                 {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -95,15 +95,15 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-vow-ink text-vow-bg">
+      <section className="bg-vow-bg text-vow-ink">
         <div className="container-site py-20 sm:py-28">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <p className="vow-label !text-vow-blue">Built for follow-through</p>
+              <p className="vow-label !text-vow-ink">Built for follow-through</p>
               <h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,6.5rem)] leading-[.86]">Less inspiration.<br />More evidence.</h2>
             </div>
             <div className="lg:col-span-4">
-              <p className="leading-[1.8] text-vow-bg/70">VOW is about the part after the goal is written down: the work, the review and the decision to keep going.</p>
+              <p className="leading-[1.8] text-vow-ink/70">VOW is about the part after the goal is written down: the work, the review and the decision to keep going.</p>
               <div className="mt-8"><Link to="/work" className="vow-arrow-light">Explore VOW <span aria-hidden>→</span></Link></div>
             </div>
           </div>
