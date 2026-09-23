@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VOW — Make your VOW. Keep your VOW." },
+      { title: "VOW" },
       { name: "description", content: "VOW turns goals into structured plans, sessions and visible progress." },
     ],
     links: [{ rel: "canonical", href: "/" }],
