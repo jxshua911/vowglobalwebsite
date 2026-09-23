@@ -23,15 +23,16 @@ export function SiteFooter() {
           <nav aria-label="Legal">
             <p className="vow-label !text-vow-muted">Legal</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link to="/privacy-policy" className="text-vow-muted hover:text-vow-bg">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-vow-muted hover:text-vow-bg">Terms / EULA</Link></li>
-              <li><Link to="/copyright" className="text-vow-muted hover:text-vow-bg">Copyright / DMCA</Link></li>
-              <li><Link to="/delete-account" className="text-vow-muted hover:text-vow-bg">Delete account</Link></li>
+              <li><Link to="/legal#privacy" className="text-vow-muted hover:text-vow-bg">Privacy Policy</Link></li>
+              <li><Link to="/legal#terms" className="text-vow-muted hover:text-vow-bg">Terms / EULA</Link></li>
+              <li><Link to="/legal#copyright" className="text-vow-muted hover:text-vow-bg">Copyright / DMCA</Link></li>
+              <li><Link to="/legal#account-deletion" className="text-vow-muted hover:text-vow-bg">Account deletion</Link></li>
             </ul>
           </nav>
         </div>
         <div className="mt-14 border-t border-vow-muted/20 pt-6 text-xs text-vow-muted">
-          © {new Date().getFullYear()} {site.operator}. All rights reserved.
+          <p>© 2026 VOW. All rights reserved.</p>
+          <p className="mt-2">Designed and Developed by Joshua Nathan Kasanga</p>
         </div>
       </div>
     </footer>
