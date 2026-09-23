@@ -18,7 +18,8 @@ function SupportPage(){
     const data=new FormData(e.currentTarget);
     const reason=String(data.get("reason")||"General enquiry");
     const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Reason: ${reason}`,"",String(data.get("message")||"")].join("\n");
-    window.location.href=`mailto:${site.supportEmail}?subject=${encodeURIComponent("VOW — "+reason)}&body=${encodeURIComponent(body)}`;
+    const params=new URLSearchParams({subject:"VOW — "+reason,body,cc:site.contactCc});
+    window.location.href=`mailto:${site.supportEmail}?${params.toString()}`;
     setSent(true);
   }
   return <>
@@ -36,26 +37,20 @@ function SupportPage(){
         </div>
       </div>
     </section>
-
     <section className="container-site relative -mt-8 pb-20 sm:-mt-12 sm:pb-28">
       <div className="grid border border-vow-border bg-vow-bg shadow-[0_25px_70px_rgba(0,0,0,.08)] lg:grid-cols-12">
         <aside className="border-b border-vow-border p-7 sm:p-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:p-12">
           <p className="vow-label text-vow-blue">Get in touch</p>
           <h2 className="mt-5 text-[clamp(2.4rem,4vw,4rem)] leading-[.9]">A direct line to VOW.</h2>
-          <p className="mt-6 leading-[1.8] text-vow-muted">Use the form and your email app will open with the message addressed to the VOW team.</p>
+          <p className="mt-6 leading-[1.8] text-vow-muted">Use the form and your email app will open with the message addressed to VOW and your CC copy included automatically.</p>
           <div className="mt-10 border-t border-vow-border pt-6">
-            <p className="vow-label">Support</p>
+            <p className="vow-label">Email</p>
             <a className="mt-2 block break-all text-sm font-semibold underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
+            <p className="mt-2 text-xs leading-5 text-vow-muted">CC: {site.contactCc}</p>
           </div>
-          <div className="mt-7 border-t border-vow-border pt-6">
-            <p className="vow-label">Privacy</p>
-            <a className="mt-2 block break-all text-sm font-semibold underline underline-offset-4" href={`mailto:${site.privacyEmail}`}>{site.privacyEmail}</a>
-          </div>
-          <p className="mt-10 text-xs leading-5 text-vow-muted">We do not publish a private home address.</p>
         </aside>
-
         <div className="p-7 sm:p-10 lg:col-span-8 lg:p-12">
-          {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared. If it did not open, send your message to <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</div>}
+          {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW, with {site.contactCc} included in CC.</div>}
           <div className="mb-10 flex items-end justify-between gap-6 border-b border-vow-border pb-6">
             <div><p className="vow-label">Enquiry form</p><h2 className="mt-2 text-3xl sm:text-4xl">What can we help with?</h2></div>
             <span className="hidden font-mono text-xs text-vow-muted sm:block">VOW / 01</span>
@@ -67,12 +62,11 @@ function SupportPage(){
             </div>
             <label className="block"><span className="vow-label">03 · Reason</span><select name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
             <label className="block"><span className="vow-label">04 · Message</span><textarea required name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
-            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">Prepare message <span aria-hidden>→</span></button><Link to="/privacy-policy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
+            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">Prepare message <span aria-hidden>→</span></button><Link to="/legal#privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
           </form>
         </div>
       </div>
     </section>
-
     <section className="border-t border-vow-border bg-vow-ink text-vow-bg">
       <div className="container-site py-20 sm:py-28">
         <div className="flex flex-col gap-8 border-b border-vow-bg/15 pb-10 md:flex-row md:items-end md:justify-between">
@@ -80,7 +74,7 @@ function SupportPage(){
           <p className="max-w-sm leading-7 text-vow-bg/60">A few things people commonly ask before getting in touch.</p>
         </div>
         <div className="mt-10 divide-y divide-vow-bg/15 border-y border-vow-bg/15">
-          {faqs.map(([q,a],i)=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-blue transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-bg/60">{a}</p></details>)}
+          {faqs.map(([q,a])=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-blue transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-bg/60">{a}</p></details>)}
         </div>
       </div>
     </section>
