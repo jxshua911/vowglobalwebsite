@@ -23,16 +23,16 @@ function SupportPage(){
     setSent(true);
   }
   return <>
-    <section className="relative overflow-hidden bg-vow-blue text-white">
+    <section className="relative overflow-hidden bg-vow-bg text-vow-ink">
       <div className="absolute inset-0 opacity-20" aria-hidden><div className="vow-contact-grid h-full w-full" /></div>
       <div className="container-site relative py-20 sm:py-28 lg:py-36">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="vow-label !text-white/70">Contact VOW</p>
-            <h1 className="mt-6 max-w-5xl text-[clamp(4rem,10vw,9rem)] leading-[.78] tracking-[-.05em]">Let's<br /><span className="text-white/60">talk.</span></h1>
+            <p className="vow-label !text-vow-muted">Contact VOW</p>
+            <h1 className="mt-6 max-w-5xl text-[clamp(4rem,10vw,9rem)] leading-[.78] tracking-[-.05em]">Let's<br /><span className="text-vow-muted">talk.</span></h1>
           </div>
           <div className="lg:col-span-4 lg:pb-2">
-            <p className="max-w-[34ch] text-lg leading-[1.7] text-white/80">Questions, feedback, partnerships or privacy requests. Tell us what you need.</p>
+            <p className="max-w-[34ch] text-lg leading-[1.7] text-vow-muted">Questions, feedback, partnerships or privacy requests. Tell us what you need.</p>
           </div>
         </div>
       </div>
@@ -67,14 +67,14 @@ function SupportPage(){
         </div>
       </div>
     </section>
-    <section className="border-t border-vow-border bg-vow-ink text-vow-bg">
+    <section className="border-t border-vow-border bg-vow-bg text-vow-ink">
       <div className="container-site py-20 sm:py-28">
-        <div className="flex flex-col gap-8 border-b border-vow-bg/15 pb-10 md:flex-row md:items-end md:justify-between">
-          <div><p className="vow-label !text-vow-blue">FAQ</p><h2 className="mt-4 text-[clamp(2.8rem,5vw,5rem)] leading-[.88]">Quick answers.</h2></div>
-          <p className="max-w-sm leading-7 text-vow-bg/60">A few things people commonly ask before getting in touch.</p>
+        <div className="flex flex-col gap-8 border-b border-vow-border pb-10 md:flex-row md:items-end md:justify-between">
+          <div><p className="vow-label !text-vow-ink">FAQ</p><h2 className="mt-4 text-[clamp(2.8rem,5vw,5rem)] leading-[.88]">Quick answers.</h2></div>
+          <p className="max-w-sm leading-7 text-vow-ink/60">A few things people commonly ask before getting in touch.</p>
         </div>
-        <div className="mt-10 divide-y divide-vow-bg/15 border-y border-vow-bg/15">
-          {faqs.map(([q,a])=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-blue transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-bg/60">{a}</p></details>)}
+        <div className="mt-10 divide-y divide-vow-bg/15 border-y border-vow-border">
+          {faqs.map(([q,a])=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-blue transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-ink/60">{a}</p></details>)}
         </div>
       </div>
     </section>
