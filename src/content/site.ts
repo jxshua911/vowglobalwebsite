@@ -1,7 +1,7 @@
 // Central, editable brand and contact facts for the VOW website.
 export const site = {
   name: "VOW",
-  tagline: "Plan with structure. Commit with intent. Track real progress.",
+  tagline: "Turn goals into plans, sessions and follow-through.",
   operator: "Joshua Nathan Kasanga",
   launchDate: "29 October 2026",
   privacyEmail: "vowglobalapp@gmail.com",
@@ -16,8 +16,8 @@ export const site = {
 } as const;
 
 export const navLinks = [
+  { to: "/", hash: "how-it-works", label: "How it works" },
   { to: "/privacy-policy", label: "Privacy" },
   { to: "/terms", label: "Terms" },
-  { to: "/copyright", label: "Copyright" },
   { to: "/support", label: "Support" },
 ] as const;
