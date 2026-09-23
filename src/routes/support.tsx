@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { site } from "@/content/site";
 
-export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"Contact VOW — Make your VOW. Keep your VOW."},{name:"description",content:"Contact VOW for support, feedback, partnerships or privacy requests."}],links:[{rel:"canonical",href:"/support"}]}),component:SupportPage});
+export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"VOW - Get in touch"},{name:"description",content:"Contact VOW for support, feedback, partnerships or privacy requests."}],links:[{rel:"canonical",href:"/support"}]}),component:SupportPage});
 
 const faqs=[
   ["How do I delete my VOW account?","Use the account deletion option in VOW where available, or contact support and we will help with the request."],
