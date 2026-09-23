@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export function Analytics(){
  useEffect(()=>{
-  if(localStorage.getItem("vow-cookie-consent")!=="accepted") return;
+  if(!document.cookie.split("; ").some(v=>v.startsWith("vow_cookie_consent=accepted"))) return;
   const id=import.meta.env.VITE_ANALYTICS_ID as string|undefined;
   if(!id||document.querySelector('script[data-vow-analytics]')) return;
   const s=document.createElement("script");s.async=true;s.src=`https://www.googletagmanager.com/gtag/js?id=${id}`;s.dataset.vowAnalytics="true";document.head.appendChild(s);
