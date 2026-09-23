@@ -1,126 +1,40 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
 import { site } from "@/content/site";
 
-const title = "Support & Contact — VOW";
-const description =
-  "Contact VOW support, reach the privacy contact, and find answers about account deletion, subscriptions and connected services.";
+export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"Get in Touch — VOW"},{name:"description",content:"Contact VOW through a clean, direct enquiry form."}],links:[{rel:"canonical",href:"/support"}]}),component:SupportPage});
 
-export const Route = createFileRoute("/support")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/support" },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [{ rel: "canonical", href: "/support" }],
-  }),
-  component: SupportPage,
-});
+const faqs=[
+  ["How do I delete my VOW account?","Use the account deletion option in VOW where available, or contact support and we will help with the request."],
+  ["How do I manage a subscription?","Subscriptions are managed through the platform where you purchased them, such as Google Play."],
+  ["How do I disconnect an integration?","Disconnect Google Calendar, Strava or another connected service from VOW or the connected service's own account settings."],
+  ["How do I turn off reminders?","Change notification preferences in VOW or in your device settings."]
+] as const;
 
-const faqs = [
-  {
-    q: "How do I delete my VOW account?",
-    a: "Where available, use the account deletion option inside the VOW app. You can also email support and we will help you with the request. See the Privacy Policy for what deletion covers.",
-  },
-  {
-    q: "How do I manage or cancel a subscription?",
-    a: "Subscriptions are billed through the distribution platform you purchased from, such as Google Play. Manage or cancel them through that platform's subscription settings.",
-  },
-  {
-    q: "How do I disconnect Google Calendar or Strava?",
-    a: "You can disconnect integrations from within the VOW app, or revoke VOW's access from your Google or Strava account settings.",
-  },
-  {
-    q: "How do I turn off reminders?",
-    a: "Notification preferences can be changed in the VOW app, and notifications can also be disabled in your device settings.",
-  },
-];
-
-function SupportPage() {
-  return (
-    <>
-      <header className="hero-gradient border-b border-border">
-        <div className="container-site py-16 sm:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Support</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-bold sm:text-5xl">We're here to help.</h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Questions about VOW, your account or your data? Reach us by email and we'll respond as soon as
-            reasonably possible.
-          </p>
-        </div>
-      </header>
-
-      <section aria-labelledby="contact-heading" className="container-site py-14 sm:py-16">
-        <h2 id="contact-heading" className="sr-only">Contact details</h2>
-        <div className="grid gap-5 md:grid-cols-3">
-          <ContactCard
-            label="Support"
-            heading="Help with the app"
-            body="Account questions, bugs, feature feedback and general enquiries."
-            href={`mailto:${site.supportEmail}?subject=VOW%20support`}
-            display={site.supportEmail}
-          />
-          <ContactCard
-            label="Privacy"
-            heading="Data & privacy requests"
-            body="Access, correction, deletion requests and questions about the Privacy Policy."
-            href={`mailto:${site.privacyEmail}?subject=VOW%20privacy%20request`}
-            display={site.privacyEmail}
-          />
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Postal</p>
-            <h3 className="mt-3 text-lg font-semibold">Operator address</h3>
-            <address className="mt-2 text-sm not-italic leading-relaxed text-muted-foreground">
-              VOW / {site.operator}
-              <br />
-              {site.address.map((line) => (
-                <span key={line} className="block">{line}</span>
-              ))}
-            </address>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="faq-heading" className="border-t border-border bg-surface">
-        <div className="container-site grid gap-10 py-16 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Common questions</p>
-            <h2 id="faq-heading" className="mt-3 text-3xl font-bold">Quick answers</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              For full details, read the <Link to="/privacy-policy" className="text-primary underline underline-offset-4">Privacy Policy</Link> and{" "}
-              <Link to="/terms" className="text-primary underline underline-offset-4">Terms</Link>.
-            </p>
-          </div>
-          <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-soft">
-            {faqs.map((f) => (
-              <details key={f.q} className="group px-6 py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">
-                  {f.q}
-                  <span aria-hidden className="text-primary transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function ContactCard({ label, heading, body, href, display }: { label: string; heading: string; body: string; href: string; display: string }) {
-  return (
-    <div className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{label}</p>
-      <h3 className="mt-3 text-lg font-semibold">{heading}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
-      <a href={href} className="mt-5 inline-flex items-center gap-2 break-all text-sm font-semibold text-primary underline-offset-4 hover:underline">
-        {display} <span aria-hidden>→</span>
-      </a>
-    </div>
-  );
+function SupportPage(){
+  const [sent,setSent]=useState(false);
+  function submit(e:FormEvent<HTMLFormElement>){
+    e.preventDefault();
+    const data=new FormData(e.currentTarget);
+    const reason=String(data.get("reason")||"General enquiry");
+    const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Reason: ${reason}`,"",String(data.get("message")||"")].join("\n");
+    window.location.href=`mailto:${site.supportEmail}?subject=${encodeURIComponent("VOW — "+reason)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+  }
+  return <>
+    <header className="border-b border-vow-border"><div className="container-site py-20 sm:py-24"><p className="vow-label">Get in touch</p><h1 className="mt-4 max-w-4xl text-5xl leading-none sm:text-7xl">Let's talk.</h1><p className="mt-7 max-w-2xl text-lg leading-7 text-vow-muted">Questions, feedback, partnerships or privacy requests — send the team a message through the form.</p></div></header>
+    <section className="container-site grid gap-12 py-16 lg:grid-cols-[.8fr_1.2fr] lg:py-20">
+      <div><p className="vow-label">Contact</p><h2 className="mt-3 text-4xl">A direct line to VOW.</h2><p className="mt-5 max-w-md leading-7 text-vow-muted">Fill in the form and your email app will open with a complete, addressed message. We do not publish a private home address.</p><div className="mt-8 space-y-3 text-sm"><a className="block underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a><a className="block underline underline-offset-4" href={`mailto:${site.privacyEmail}`}>{site.privacyEmail}</a></div></div>
+      <div className="border border-vow-border bg-vow-surface/35 p-6 sm:p-8">
+        {sent&&<div className="mb-6 border border-vow-border bg-vow-bg p-4 text-sm leading-6">Your email draft has been prepared. If it did not open, send your message to <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</div>}
+        <form onSubmit={submit} className="space-y-5">
+          <div className="grid gap-5 sm:grid-cols-2"><label><span className="vow-label">Name</span><input required name="name" className="mt-2 w-full border border-vow-border bg-vow-bg px-3.5 py-3 text-sm outline-none focus:border-vow-ink" placeholder="Your name"/></label><label><span className="vow-label">Email</span><input required type="email" name="email" className="mt-2 w-full border border-vow-border bg-vow-bg px-3.5 py-3 text-sm outline-none focus:border-vow-ink" placeholder="you@example.com"/></label></div>
+          <label className="block"><span className="vow-label">Reason</span><select name="reason" className="mt-2 w-full border border-vow-border bg-vow-bg px-3.5 py-3 text-sm outline-none focus:border-vow-ink"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
+          <label className="block"><span className="vow-label">Message</span><textarea required name="message" rows={7} className="mt-2 w-full resize-y border border-vow-border bg-vow-bg px-3.5 py-3 text-sm leading-6 outline-none focus:border-vow-ink" placeholder="Tell us what you need..."/></label>
+          <div className="flex flex-wrap gap-4"><button type="submit" className="vow-btn-primary">Prepare message →</button><Link to="/privacy-policy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
+        </form>
+      </div>
+    </section>
+    <section className="border-t border-vow-border bg-vow-surface"><div className="container-site py-16"><p className="vow-label">Common questions</p><h2 className="mt-3 text-4xl">Quick answers.</h2><div className="mt-10 grid gap-px border border-vow-border bg-vow-border md:grid-cols-2">{faqs.map(([q,a])=><details key={q} className="bg-vow-surface p-6"><summary className="cursor-pointer list-none font-semibold">{q}</summary><p className="mt-3 text-sm leading-6 text-vow-muted">{a}</p></details>)}</div></div></section>
+  </>;
 }
