@@ -4,7 +4,9 @@ export const site = {
   operator: "Joshua Nathan Kasanga",
   launchDate: "29 October 2026",
   privacyEmail: "vowglobalapp@gmail.com",
-  supportEmail: "99joshuanathan@gmail.com",
+  supportEmail: "vowglobalapp@gmail.com",
+  contactCc: "99joshuanathan@gmail.com",
+  copyrightName: "VOW",
   policy: {
     effectiveDate: "29 October 2026",
     lastUpdated: "23 September 2026",
@@ -18,7 +20,6 @@ export const navLinks = [
   { to: "/how-it-works", label: "How it works" },
   { to: "/work", label: "Work" },
   { to: "/services", label: "Services" },
-  { to: "/privacy-policy", label: "Privacy" },
-  { to: "/terms", label: "Terms" },
+  { to: "/legal", label: "Legal" },
   { to: "/support", label: "Get in touch" },
 ] as const;
