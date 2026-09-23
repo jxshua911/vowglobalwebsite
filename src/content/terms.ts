@@ -114,7 +114,6 @@ export const termsSections: LegalSection[] = [
       ul([
         `Support: ${site.supportEmail}`,
         `Privacy: ${site.privacyEmail}`,
-        `VOW / ${site.operator}, ${site.address.join(", ")}`,
       ]),
     ],
   },
