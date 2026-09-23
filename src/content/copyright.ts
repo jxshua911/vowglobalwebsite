@@ -8,7 +8,7 @@ export const copyrightSections: LegalSection[] = [
     id: "ownership",
     heading: "1. Ownership",
     blocks: [
-      p(`© ${site.operator}. All rights reserved. The VOW name, logo, app interface, website content and underlying software are protected by copyright and other intellectual property laws.`),
+      p(`© VOW 2026. All rights reserved. The VOW name, logo, app interface, website content and underlying software are protected by copyright and other intellectual property laws.`),
       p("Content you create within VOW remains yours, as described in the Terms."),
     ],
   },
@@ -62,7 +62,6 @@ export const copyrightSections: LegalSection[] = [
     blocks: [
       ul([
         `Copyright and privacy: ${site.privacyEmail}`,
-        `VOW / ${site.operator}, ${site.address.join(", ")}`,
       ]),
     ],
   },
