@@ -42,15 +42,15 @@ function SupportPage(){
         <aside className="border-b border-vow-border p-7 sm:p-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:p-12">
           <p className="vow-label text-vow-blue">Get in touch</p>
           <h2 className="mt-5 text-[clamp(2.4rem,4vw,4rem)] leading-[.9]">A direct line to VOW.</h2>
-          <p className="mt-6 leading-[1.8] text-vow-muted">Use the form and your email app will open with the message addressed to VOW and your CC copy included automatically.</p>
+          <p className="mt-6 leading-[1.8] text-vow-muted">Use the form and your email app will open with the message addressed to VOW automatically.</p>
           <div className="mt-10 border-t border-vow-border pt-6">
             <p className="vow-label">Email</p>
             <a className="mt-2 block break-all text-sm font-semibold underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
-            <p className="mt-2 text-xs leading-5 text-vow-muted">CC: {site.contactCc}</p>
+            
           </div>
         </aside>
         <div className="p-7 sm:p-10 lg:col-span-8 lg:p-12">
-          {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW, with {site.contactCc} included in CC.</div>}
+          {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW.</div>}
           <div className="mb-10 flex items-end justify-between gap-6 border-b border-vow-border pb-6">
             <div><p className="vow-label">Enquiry form</p><h2 className="mt-2 text-3xl sm:text-4xl">What can we help with?</h2></div>
             <span className="hidden font-mono text-xs text-vow-muted sm:block">VOW / 01</span>
