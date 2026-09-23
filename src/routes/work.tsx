@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-export const Route=createFileRoute("/work")({head:()=>({meta:[{title:"Work — VOW"},{name:"description",content:"Selected work and product projects from the VOW studio."}],links:[{rel:"canonical",href:"/work"}]}),component:Work});
+export const Route=createFileRoute("/work")({head:()=>({meta:[{title:"VOW - Work"},{name:"description",content:"Selected work and product projects from the VOW studio."}],links:[{rel:"canonical",href:"/work"}]}),component:Work});
 
 const projects=[
 {title:"VOW",type:"Product · Mobile app",image:"/Screenshot_2026-08-14_at_12.45.04.png",body:"The core VOW product: a structured goal-planning and accountability system built around planning, commitment and honest review."},
