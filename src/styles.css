@@ -26,20 +26,30 @@
 @layer base {
   * { border-color: rgb(var(--vow-border)); }
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background: rgb(var(--vow-bg)); }
-  body { margin: 0; background: rgb(var(--vow-bg)); color: rgb(var(--vow-ink)); font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+  body { margin: 0; min-width: 320px; background: rgb(var(--vow-bg)); color: rgb(var(--vow-ink)); font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
   button,input,textarea,select { font: inherit; }
-  ::selection { background: rgb(var(--vow-ink)); color: rgb(var(--vow-bg)); }
-  :focus-visible { outline: 2px solid rgb(var(--vow-ink)); outline-offset: 3px; }
-  h1,h2,h3,h4 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; letter-spacing: -.025em; }
+  ::selection { background: rgb(var(--vow-blue)); color: rgb(var(--vow-bg)); }
+  :focus-visible { outline: 2px solid rgb(var(--vow-blue)); outline-offset: 3px; }
+  h1,h2,h3,h4 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; letter-spacing: -.025em; line-height: 1.02; }
 }
 
-@utility container-site { margin-inline:auto; width:100%; max-width:78rem; padding-inline:1.25rem; @media (min-width:640px){padding-inline:2rem} @media (min-width:1024px){padding-inline:3rem} }
-@utility vow-label { font-size:.6875rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgb(var(--vow-muted)); }
-@utility vow-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:rgb(var(--vow-ink)); color:rgb(var(--vow-bg)); border:1px solid rgb(var(--vow-ink)); padding:.72rem 1.15rem; font-size:.8125rem; font-weight:500; transition:opacity .15s ease,transform .15s ease; }
-@utility vow-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:transparent; color:rgb(var(--vow-ink)); border:1px solid rgb(var(--vow-border)); padding:.72rem 1.15rem; font-size:.8125rem; font-weight:500; }
-.vow-btn-primary:hover{opacity:.84}.vow-btn-primary:active,.vow-btn-ghost:active{transform:translateY(1px)}
+@utility container-site { margin-inline:auto; width:100%; max-width:87.5rem; padding-inline:1.25rem; @media (min-width:640px){padding-inline:2rem} @media (min-width:1024px){padding-inline:3rem} }
+@utility vow-label { font-size:.7rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgb(var(--vow-muted)); line-height:1.35; }
+@utility vow-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:rgb(var(--vow-ink)); color:rgb(var(--vow-bg)); border:1px solid rgb(var(--vow-ink)); padding:.8rem 1.25rem; font-size:.82rem; font-weight:600; transition:transform .2s ease,opacity .2s ease; }
+@utility vow-btn-blue { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:rgb(var(--vow-blue)); color:white; border:1px solid rgb(var(--vow-blue)); padding:.8rem 1.3rem; font-size:.82rem; font-weight:600; transition:transform .2s ease,background .2s ease; }
+@utility vow-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:transparent; color:rgb(var(--vow-ink)); border:1px solid rgb(var(--vow-border)); padding:.8rem 1.25rem; font-size:.82rem; font-weight:500; }
+@utility vow-arrow-light { display:inline-flex; align-items:center; gap:.65rem; color:rgb(var(--vow-bg)); font-size:.84rem; font-weight:600; }
+.vow-btn-primary:hover,.vow-btn-blue:hover{transform:translateY(-2px);opacity:.9}.vow-btn-primary:active,.vow-btn-blue:active,.vow-btn-ghost:active{transform:translateY(1px)}
 @utility vow-card { background:rgb(var(--vow-bg)); border:1px solid rgb(var(--vow-border)); }
 @utility vow-grid { background-image:linear-gradient(to right,rgb(var(--vow-border)/.55) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--vow-border)/.55) 1px,transparent 1px); background-size:72px 72px; }
 @utility legal-prose { font-size:1rem; line-height:1.8; color:rgb(var(--vow-ink)); }
+
+.vow-hero-art {
+  background:
+    radial-gradient(circle at 78% 28%, rgb(var(--vow-blue) / .55), transparent 24%),
+    radial-gradient(circle at 70% 70%, rgb(var(--vow-blue) / .2), transparent 34%),
+    linear-gradient(135deg, transparent 0 48%, rgb(var(--vow-blue) / .18) 48.2% 48.8%, transparent 49%),
+    linear-gradient(155deg, transparent 0 64%, rgb(var(--vow-blue) / .14) 64.2% 64.7%, transparent 65%);
+}
 .legal-prose h2{margin-top:2.5rem;margin-bottom:1rem;padding-top:1.5rem;border-top:1px solid rgb(var(--vow-border));font-family:"Inter",sans-serif;font-size:1.05rem;font-weight:600;letter-spacing:0;scroll-margin-top:6rem}.legal-prose section:first-child h2{margin-top:0;padding-top:0;border-top:0}.legal-prose p{margin-bottom:1rem;color:rgb(var(--vow-muted))}.legal-prose ul{margin:0 0 1rem;padding:0;list-style:none;color:rgb(var(--vow-muted))}.legal-prose li{position:relative;margin-bottom:.55rem;padding-left:1.2rem}.legal-prose li::before{content:"";position:absolute;left:0;top:.8em;width:.35rem;height:1px;background:rgb(var(--vow-ink))}.legal-prose a{color:rgb(var(--vow-ink));text-decoration:underline;text-underline-offset:3px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}}
