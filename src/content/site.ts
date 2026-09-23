@@ -1,4 +1,3 @@
-// Central, editable brand and contact facts for the VOW website.
 export const site = {
   name: "VOW",
   tagline: "Turn goals into plans, sessions and follow-through.",
@@ -6,18 +5,20 @@ export const site = {
   launchDate: "29 October 2026",
   privacyEmail: "vowglobalapp@gmail.com",
   supportEmail: "99joshuanathan@gmail.com",
-  address: ["29 Upendo Street", "United Republic of Tanzania"],
   policy: {
     effectiveDate: "29 October 2026",
     lastUpdated: "23 September 2026",
   },
   legalNotice:
-    "This document is intended as product documentation and should receive qualified legal review before public launch. It is not legal advice.",
+    "This document is product documentation and should receive qualified legal review before public launch. It is not legal advice.",
 } as const;
 
 export const navLinks = [
-  { to: "/", hash: "how-it-works", label: "How it works" },
+  { to: "/", label: "Home" },
+  { to: "/how-it-works", label: "How it works" },
+  { to: "/work", label: "Work" },
+  { to: "/services", label: "Services" },
   { to: "/privacy-policy", label: "Privacy" },
   { to: "/terms", label: "Terms" },
-  { to: "/support", label: "Support" },
+  { to: "/support", label: "Get in touch" },
 ] as const;
