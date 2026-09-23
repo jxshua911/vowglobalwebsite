@@ -7,7 +7,7 @@ export const site = {
   supportEmail: "vowglobalapp@gmail.com",
   contactCc: "99joshuanathan@gmail.com",
   copyrightName: "VOW",
-  policy: { effectiveDate: "29 October 2026", lastUpdated: "23 September 2026" },
+  policy: { effectiveDate: "29 October 2026", lastUpdated: "24 September 2026" },
   legalNotice: "This document is product documentation and should receive qualified legal review before public launch. It is not legal advice.",
 } as const;
 
