@@ -7,35 +7,23 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as CopyrightRouteImport } from './routes/copyright'
-import { Route as DeleteAccountRouteImport } from './routes/delete-account'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as LegalRouteImport } from './routes/legal'
 import { Route as SupportRouteImport } from './routes/support'
-import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({ id: '/', path: '/', getParentRoute: () => rootRouteImport } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({ id: '/how-it-works', path: '/how-it-works', getParentRoute: () => rootRouteImport } as any)
 const WorkRoute = WorkRouteImport.update({ id: '/work', path: '/work', getParentRoute: () => rootRouteImport } as any)
 const ServicesRoute = ServicesRouteImport.update({ id: '/services', path: '/services', getParentRoute: () => rootRouteImport } as any)
-const CopyrightRoute = CopyrightRouteImport.update({ id: '/copyright', path: '/copyright', getParentRoute: () => rootRouteImport } as any)
-const DeleteAccountRoute = DeleteAccountRouteImport.update({ id: '/delete-account', path: '/delete-account', getParentRoute: () => rootRouteImport } as any)
-const PrivacyRoute = PrivacyRouteImport.update({ id: '/privacy', path: '/privacy', getParentRoute: () => rootRouteImport } as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({ id: '/privacy-policy', path: '/privacy-policy', getParentRoute: () => rootRouteImport } as any)
+const LegalRoute = LegalRouteImport.update({ id: '/legal', path: '/legal', getParentRoute: () => rootRouteImport } as any)
 const SupportRoute = SupportRouteImport.update({ id: '/support', path: '/support', getParentRoute: () => rootRouteImport } as any)
-const TermsRoute = TermsRouteImport.update({ id: '/terms', path: '/terms', getParentRoute: () => rootRouteImport } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/how-it-works': typeof HowItWorksRoute
   '/work': typeof WorkRoute
   '/services': typeof ServicesRoute
-  '/copyright': typeof CopyrightRoute
-  '/delete-account': typeof DeleteAccountRoute
-  '/privacy': typeof PrivacyRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/legal': typeof LegalRoute
   '/support': typeof SupportRoute
-  '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo extends FileRoutesByFullPath {}
 export interface FileRoutesById {
@@ -44,12 +32,8 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/work': typeof WorkRoute
   '/services': typeof ServicesRoute
-  '/copyright': typeof CopyrightRoute
-  '/delete-account': typeof DeleteAccountRoute
-  '/privacy': typeof PrivacyRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/legal': typeof LegalRoute
   '/support': typeof SupportRoute
-  '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -64,12 +48,8 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   WorkRoute: typeof WorkRoute
   ServicesRoute: typeof ServicesRoute
-  CopyrightRoute: typeof CopyrightRoute
-  DeleteAccountRoute: typeof DeleteAccountRoute
-  PrivacyRoute: typeof PrivacyRoute
-  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  LegalRoute: typeof LegalRoute
   SupportRoute: typeof SupportRoute
-  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,12 +58,8 @@ declare module '@tanstack/react-router' {
     '/how-it-works': { id: '/how-it-works'; path: '/how-it-works'; fullPath: '/how-it-works'; preLoaderRoute: typeof HowItWorksRouteImport; parentRoute: typeof rootRouteImport }
     '/work': { id: '/work'; path: '/work'; fullPath: '/work'; preLoaderRoute: typeof WorkRouteImport; parentRoute: typeof rootRouteImport }
     '/services': { id: '/services'; path: '/services'; fullPath: '/services'; preLoaderRoute: typeof ServicesRouteImport; parentRoute: typeof rootRouteImport }
-    '/copyright': { id: '/copyright'; path: '/copyright'; fullPath: '/copyright'; preLoaderRoute: typeof CopyrightRouteImport; parentRoute: typeof rootRouteImport }
-    '/delete-account': { id: '/delete-account'; path: '/delete-account'; fullPath: '/delete-account'; preLoaderRoute: typeof DeleteAccountRouteImport; parentRoute: typeof rootRouteImport }
-    '/privacy': { id: '/privacy'; path: '/privacy'; fullPath: '/privacy'; preLoaderRoute: typeof PrivacyRouteImport; parentRoute: typeof rootRouteImport }
-    '/privacy-policy': { id: '/privacy-policy'; path: '/privacy-policy'; fullPath: '/privacy-policy'; preLoaderRoute: typeof PrivacyPolicyRouteImport; parentRoute: typeof rootRouteImport }
+    '/legal': { id: '/legal'; path: '/legal'; fullPath: '/legal'; preLoaderRoute: typeof LegalRouteImport; parentRoute: typeof rootRouteImport }
     '/support': { id: '/support'; path: '/support'; fullPath: '/support'; preLoaderRoute: typeof SupportRouteImport; parentRoute: typeof rootRouteImport }
-    '/terms': { id: '/terms'; path: '/terms'; fullPath: '/terms'; preLoaderRoute: typeof TermsRouteImport; parentRoute: typeof rootRouteImport }
   }
 }
 
@@ -92,12 +68,8 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute,
   WorkRoute,
   ServicesRoute,
-  CopyrightRoute,
-  DeleteAccountRoute,
-  PrivacyRoute,
-  PrivacyPolicyRoute,
+  LegalRoute,
   SupportRoute,
-  TermsRoute,
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
 
