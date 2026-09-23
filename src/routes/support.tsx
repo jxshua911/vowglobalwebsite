@@ -17,7 +17,7 @@ function SupportPage(){
     e.preventDefault();
     const data=new FormData(e.currentTarget);
     const reason=String(data.get("reason")||"General enquiry");
-    const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Reason: ${reason}`,"",String(data.get("message")||"")].join("\n");
+    const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Phone: ${data.get("phone")||"Not provided"}`,`State / Region: ${data.get("state")||""}`,`Enquiry type: ${reason}`,"",String(data.get("message")||"")].join("\n");
     const params=new URLSearchParams({subject:"VOW — "+reason,body,cc:site.contactCc});
     window.location.href=`mailto:${site.supportEmail}?${params.toString()}`;
     setSent(true);
@@ -60,8 +60,8 @@ function SupportPage(){
               <label><span className="vow-label">01 · Name</span><input required name="name" className="vow-field" placeholder="Your name"/></label>
               <label><span className="vow-label">02 · Email</span><input required type="email" name="email" className="vow-field" placeholder="you@example.com"/></label>
             </div>
-            <label className="block"><span className="vow-label">03 · Reason</span><select name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
-            <label className="block"><span className="vow-label">04 · Message</span><textarea required name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
+            <label className="block"><span className="vow-label">05 · Enquiry type</span><select required name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
+            <label className="block"><span className="vow-label">06 · Message</span><textarea required minLength={10} required name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
             <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">Prepare message <span aria-hidden>→</span></button><Link to="/legal#privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
           </form>
         </div>
