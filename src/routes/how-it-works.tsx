@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-export const Route=createFileRoute("/how-it-works")({head:()=>({meta:[{title:"How VOW Works — VOW"},{name:"description",content:"How VOW turns goals into plans, sessions and review."}],links:[{rel:"canonical",href:"/how-it-works"}]}),component:HowItWorks});
+export const Route=createFileRoute("/how-it-works")({head:()=>({meta:[{title:"VOW - How it works"},{name:"description",content:"How VOW turns goals into plans, sessions and review."}],links:[{rel:"canonical",href:"/how-it-works"}]}),component:HowItWorks});
 
 const steps=[
 ["01","Define the outcome","Start with what you actually want to accomplish. Keep the outcome visible while VOW turns it into practical work."],
