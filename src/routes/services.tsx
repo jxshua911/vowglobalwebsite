@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-export const Route=createFileRoute("/services")({head:()=>({meta:[{title:"Services — VOW"},{name:"description",content:"Digital product design, web development and 3D visualisation."}],links:[{rel:"canonical",href:"/services"}]}),component:Services});
+export const Route=createFileRoute("/services")({head:()=>({meta:[{title:"VOW - Services"},{name:"description",content:"Digital product design, web development and 3D visualisation."}],links:[{rel:"canonical",href:"/services"}]}),component:Services});
 
 const services=[
 ["01","Digital product design","Product thinking, UX structure and polished interfaces for apps and digital products."],
