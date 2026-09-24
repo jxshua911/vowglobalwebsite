@@ -1,9 +1,10 @@
+import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { site } from "@/content/site";
 import { useLocale } from "@/lib/i18n";
 
-export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"VOW - Get in touch"},{name:"description",content:"Contact VOW for support, feedback, partnerships or privacy requests."}],links:[{rel:"canonical",href:"/support"}]}),component:SupportPage});
+export const Route=createFileRoute("/support")({head:()=>pageHead({path:'/support',title:'Contact & support | VOW goal-planning app',description:'Contact VOW for app support, feedback, partnerships, privacy requests or account deletion.'})),component:SupportPage});
 
 const faqs=[
   ["How do I delete my VOW account?","Use the account deletion option in VOW where available, or contact support and we will help with the request."],
