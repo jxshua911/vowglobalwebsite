@@ -10,6 +10,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as FoundersRouteImport } from './routes/founders'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as SupportRouteImport } from './routes/support'
+import { Route as AssistantRouteImport } from './routes/assistant'
 
 const IndexRoute = IndexRouteImport.update({ id: '/', path: '/', getParentRoute: () => rootRouteImport } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({ id: '/how-it-works', path: '/how-it-works', getParentRoute: () => rootRouteImport } as any)
@@ -18,6 +19,7 @@ const ServicesRoute = ServicesRouteImport.update({ id: '/services', path: '/serv
 const FoundersRoute = FoundersRouteImport.update({ id: '/founders', path: '/founders', getParentRoute: () => rootRouteImport } as any)
 const LegalRoute = LegalRouteImport.update({ id: '/legal', path: '/legal', getParentRoute: () => rootRouteImport } as any)
 const SupportRoute = SupportRouteImport.update({ id: '/support', path: '/support', getParentRoute: () => rootRouteImport } as any)
+const AssistantRoute = AssistantRouteImport.update({ id: '/assistant', path: '/assistant', getParentRoute: () => rootRouteImport } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -27,6 +29,7 @@ export interface FileRoutesByFullPath {
   '/founders': typeof FoundersRoute
   '/legal': typeof LegalRoute
   '/support': typeof SupportRoute
+  '/assistant': typeof AssistantRoute
 }
 export interface FileRoutesByTo extends FileRoutesByFullPath {}
 export interface FileRoutesById {
@@ -38,6 +41,7 @@ export interface FileRoutesById {
   '/founders': typeof FoundersRoute
   '/legal': typeof LegalRoute
   '/support': typeof SupportRoute
+  '/assistant': typeof AssistantRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -67,6 +71,7 @@ const rootRouteChildren: RootRouteChildren = {
   FoundersRoute,
   LegalRoute,
   SupportRoute,
+  AssistantRoute,
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
 
