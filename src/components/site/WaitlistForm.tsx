@@ -54,7 +54,12 @@ export function WaitlistForm() {
 
   return (
     <div>
-      <form onSubmit={submit} className="flex flex-col gap-3 sm:flex-row">
+      <form onSubmit={submit} className="space-y-4">
+        <label className="flex items-start gap-3 text-sm leading-6 text-vow-muted">
+          <input required type="checkbox" name="consent" className="mt-1 size-4 accent-current" />
+          <span>I agree to receive VOW launch updates by email. I can unsubscribe at any time.</span>
+        </label>
+        <div className="flex flex-col gap-3 sm:flex-row">
         <label className="sr-only" htmlFor="waitlist-email">Email address</label>
         <input
           id="waitlist-email"
@@ -79,6 +84,7 @@ export function WaitlistForm() {
           {status === "loading" ? "Joining..." : "Get early access"}
           <span aria-hidden>→</span>
         </button>
+        </div>
       </form>
 
       <p className="mt-4 text-xs leading-6 text-vow-muted">
