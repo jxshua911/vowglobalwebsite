@@ -5,7 +5,7 @@ import { privacyIntro, privacySections } from "@/content/privacy";
 import { site } from "@/content/site";
 
 export const Route=createFileRoute("/privacy-policy")({
-  head:()=>pageHead({path:"/privacy-policy",title:"Privacy Policy | VOW",description:"VOW Privacy Policy covering account information, goals, AI-assisted features, integrations, payments, security, deletion and user rights."}),
+  head:()=>pageHead({path:"/privacy-policy",title:"VOW - Privacy Policy",description:"VOW Privacy Policy covering account information, goals, AI-assisted features, integrations, payments, security, deletion and user rights."}),
   component:PrivacyPolicy,
 });
 
