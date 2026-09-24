@@ -2,7 +2,16 @@ import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useLocale } from "@/lib/i18n";
 
-export const Route=createFileRoute("/work")({head:()=>pageHead({path:'/work',title:'Work — VOW product, brand and interface design',description:'Selected work behind VOW, the goal-planning and accountability app: product screens, brand system, interface design and visualisation.'})),component:Work});
+export const Route = createFileRoute("/work")({
+  head: () =>
+    pageHead({
+      path: "/work",
+      title: "Work — VOW product, brand and interface design",
+      description:
+        "Selected work behind VOW, the goal-planning and accountability app: product screens, brand system, interface design and visualisation.",
+    }),
+  component: Work,
+});
 
 const imageBase="https://raw.githubusercontent.com/jxshua911/Vow/capacitor-mobile/public/";
 const projects=[
