@@ -279,11 +279,11 @@ function Home() {
 
         <ul className="mt-14 grid gap-5 md:grid-cols-3">
           {steps.map(([n, title, body]) => (
-            <li key={n} className="group border border-vow-border bg-vow-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-vow-blue md:p-9">
-              <span className="vow-label text-vow-blue">{n}</span>
+            <li key={n} className="group border border-vow-border bg-vow-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-vow-ink md:p-9">
+              <span className="vow-label text-vow-ink">{n}</span>
               <h3 className="mt-14 text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{title}</h3>
               <p className="mt-6 leading-[1.75] text-vow-muted">{body}</p>
-              <span className="mt-10 block text-xl text-vow-blue transition-transform duration-300 group-hover:translate-x-2">→</span>
+              <span className="mt-10 block text-xl text-vow-ink transition-transform duration-300 group-hover:translate-x-2">→</span>
             </li>
           ))}
         </ul>
