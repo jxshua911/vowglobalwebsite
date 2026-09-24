@@ -78,6 +78,15 @@ export const privacySections: LegalSection[] = [
     ],
   },
   {
+    id: "cookies-and-analytics",
+    heading: "9. Cookies and Analytics",
+    blocks: [
+      p("VOW uses essential cookies and similar storage mechanisms to keep the website working and to remember your cookie preference. These are necessary for core site functionality."),
+      p("VOW may also use optional analytics cookies when you choose to accept them. Analytics is used to understand aggregate site usage and improve the website. Optional analytics is not loaded before consent is provided."),
+      p("You can decline optional analytics or change your preference through the cookie controls presented on the website."),
+    ],
+  },
+  {
     id: "sharing-and-service-providers",
     heading: "8. Sharing and Service Providers",
     blocks: [
@@ -87,7 +96,7 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "security",
-    heading: "9. Security",
+    heading: "10. Security",
     blocks: [
       p("VOW uses reasonable technical and organisational safeguards, including encrypted connections, access controls, row-level data access controls where applicable, server-side entitlement checks, and controls intended to limit abuse and excessive AI usage."),
       p("No service can guarantee absolute security."),
@@ -95,14 +104,14 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "retention-and-deletion",
-    heading: "10. Retention and Deletion",
+    heading: "11. Retention and Deletion",
     blocks: [
       p("Information is retained for as long as reasonably necessary to provide the service, maintain security, resolve disputes, meet legal obligations and enforce agreements. When information is no longer required, it may be deleted or anonymised, subject to legitimate retention needs."),
     ],
   },
   {
     id: "account-deletion",
-    heading: "11. Account Deletion",
+    heading: "12. Account Deletion",
     blocks: [
       p("You can request account deletion through the VOW app where the feature is available, or by contacting us using the details in the Contact section below."),
       p("Deletion is intended to remove your VOW account and associated user-owned app data, subject to limited retention required for security, fraud prevention, legal compliance or other legitimate purposes."),
@@ -110,7 +119,7 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "user-choices-and-rights",
-    heading: "12. User Choices and Rights",
+    heading: "13. User Choices and Rights",
     blocks: [
       p("Depending on applicable law, you may have rights to access, correct, delete or request a copy of your personal information. You can also withdraw optional integration permissions, disconnect connected services, and control notification preferences at any time."),
       p(`To exercise these rights, contact ${site.privacyEmail}.`),
@@ -118,35 +127,35 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "international-processing",
-    heading: "13. International Processing",
+    heading: "14. International Processing",
     blocks: [
       p("VOW and its service providers may process information in countries other than your country of residence. Appropriate safeguards will be used where required by applicable law."),
     ],
   },
   {
     id: "children-and-young-users",
-    heading: "14. Children and Young Users",
+    heading: "15. Children and Young Users",
     blocks: [
       p("VOW is not specifically designed for children. VOW does not intentionally bypass applicable age restrictions or parental-consent requirements. Where the service is used by a young person, applicable platform and legal requirements remain relevant."),
     ],
   },
   {
     id: "third-party-services",
-    heading: "15. Third-Party Services",
+    heading: "16. Third-Party Services",
     blocks: [
       p("Third-party services such as Google, Strava, Google Play and AI or infrastructure providers have their own terms and privacy policies. VOW does not control those services, and you should review their policies for information about how they handle your data."),
     ],
   },
   {
     id: "changes",
-    heading: "16. Changes to This Policy",
+    heading: "17. Changes to This Policy",
     blocks: [
       p("This policy may be updated as VOW changes. The last-updated date at the top of this page will be revised when material changes are made."),
     ],
   },
   {
     id: "contact",
-    heading: "17. Contact",
+    heading: "18. Contact",
     blocks: [
       ul([
         `Privacy: ${site.privacyEmail}`,
