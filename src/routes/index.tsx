@@ -24,14 +24,22 @@ function Home() {
       <section className="relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
         <div className="absolute inset-0 vow-hero-art" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-r from-vow-ink via-vow-ink/90 to-vow-ink/35" aria-hidden />
+        <div className="vow-paint-splash" aria-hidden>
+          <svg viewBox="0 0 320 220" role="presentation">
+            <path d="M35 122C53 80 91 60 130 74c31 11 42 43 72 47 31 4 47-30 72-13 22 15 4 43-24 54-38 15-70 3-104 17-35 14-91 2-111-24-9-12-9-22 0-33Z" />
+            <path d="M79 58c8-13 25-19 36-11 8 6 5 19-7 25-14 7-37 2-29-14Z" />
+            <path d="M243 72c5-9 17-12 24-7 7 6 3 15-7 18-11 3-21-3-17-11Z" />
+            <circle cx="51" cy="69" r="5" /><circle cx="279" cy="119" r="4" /><circle cx="105" cy="181" r="4" />
+          </svg>
+        </div>
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-vow-ink to-transparent" aria-hidden />
         <div className="container-site relative flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
-              <h1 className="mt-6 max-w-5xl text-[clamp(4rem,9vw,8.5rem)] leading-[.82] tracking-[-.045em]">
-                Make your VOW.<br />
-                <span className="text-vow-blue">Keep your VOW.</span>
+              <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
+                <span className="block">Make your VOW.</span>
+                <span className="block">Keep your VOW.</span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
