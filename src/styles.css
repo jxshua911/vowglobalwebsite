@@ -3,19 +3,19 @@
 @import "tw-animate-css";
 @theme inline {
  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;--font-display:"Cormorant Garamond",Georgia,serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
- --color-vow-bg:rgb(var(--vow-bg)/<alpha-value>);--color-vow-ink:rgb(var(--vow-ink)/<alpha-value>);--color-vow-muted:rgb(var(--vow-muted)/<alpha-value>);--color-vow-border:rgb(var(--vow-border)/<alpha-value>);--color-vow-surface:rgb(var(--vow-surface)/<alpha-value>);--color-vow-blue:rgb(var(--vow-blue)/<alpha-value>);
+ --color-vow-bg:rgb(var(--vow-bg)/<alpha-value>);--color-vow-ink:rgb(var(--vow-ink)/<alpha-value>);--color-vow-muted:rgb(var(--vow-muted)/<alpha-value>);--color-vow-border:rgb(var(--vow-border)/<alpha-value>);--color-vow-surface:rgb(var(--vow-surface)/<alpha-value>);
 }
-:root{--vow-bg:250 250 248;--vow-ink:17 17 17;--vow-muted:105 105 105;--vow-border:225 225 222;--vow-surface:239 239 236;--vow-blue:17 17 17}
+:root{--vow-bg:250 250 248;--vow-ink:17 17 17;--vow-muted:105 105 105;--vow-border:225 225 222;--vow-surface:239 239 236}
 @layer base{
  *{border-color:rgb(var(--vow-border));}html{scroll-behavior:smooth;background:rgb(var(--vow-bg));-webkit-font-smoothing:antialiased}body{margin:0;min-width:320px;overflow-x:hidden;background:rgb(var(--vow-bg));color:rgb(var(--vow-ink));font-family:"Inter",ui-sans-serif,system-ui,sans-serif}button,input,textarea,select{font:inherit}::selection{background:rgb(var(--vow-ink));color:rgb(var(--vow-bg))}:focus-visible{outline:2px solid rgb(var(--vow-ink));outline-offset:3px}h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:-.025em;line-height:1.02}
 }
 @utility container-site{margin-inline:auto;width:100%;max-width:87.5rem;padding-inline:1.25rem;@media (min-width:640px){padding-inline:2rem}@media (min-width:1024px){padding-inline:3rem}}
 @utility vow-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--vow-muted));line-height:1.35}
 @utility vow-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:rgb(var(--vow-ink));color:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-ink));padding:.8rem 1.25rem;font-size:.82rem;font-weight:600;transition:transform .2s ease,opacity .2s ease}
-@utility vow-btn-blue{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:rgb(var(--vow-ink));color:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-ink));padding:.8rem 1.3rem;font-size:.82rem;font-weight:600}
+
 @utility vow-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:transparent;color:rgb(var(--vow-ink));border:1px solid rgb(var(--vow-border));padding:.8rem 1.25rem;font-size:.82rem;font-weight:500}
 @utility vow-arrow-light{display:inline-flex;align-items:center;gap:.65rem;color:rgb(var(--vow-ink));font-size:.84rem;font-weight:600}
-.vow-btn-primary:hover,.vow-btn-blue:hover{transform:translateY(-2px);opacity:.72}.vow-btn-primary:active,.vow-btn-blue:active,.vow-btn-ghost:active{transform:translateY(1px)}
+.vow-btn-primary:hover{transform:translateY(-2px);opacity:.72}.vow-btn-primary:active,.vow-btn-ghost:active{transform:translateY(1px)}
 @utility vow-card{background:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-border))}
 @utility vow-grid{background-image:linear-gradient(to right,rgb(var(--vow-border)/.55) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--vow-border)/.55) 1px,transparent 1px);background-size:72px 72px}
 @utility legal-prose{font-size:1rem;line-height:1.8;color:rgb(var(--vow-ink))}
@@ -41,7 +41,6 @@
 .vow-cookie-manager{width:min(100%,38rem);max-height:min(90vh,42rem);overflow:auto;border:1px solid rgb(var(--vow-border));background:rgb(var(--vow-bg));padding:1.25rem;box-shadow:0 24px 80px rgb(17 17 17/.2)}
 .vow-cookie-manager h2{line-height:1.05}
 .vow-cookie-manager button{touch-action:manipulation}
-#lovable-badge,.lovable-badge,[data-lovable-badge]{display:none!important;visibility:hidden!important;pointer-events:none!important}
 @media (max-width:767px){
   .vow-paint-splash{right:-7%;top:9%;width:13rem;opacity:.14}
   .vow-hero-title{letter-spacing:-.012em;line-height:.91}
