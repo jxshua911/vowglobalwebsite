@@ -5,8 +5,8 @@ import { setLocale, useLocale } from "@/lib/i18n";
 import { navLinks } from "@/content/site";
 
 const copy = {
-  en: { home:"Home", how:"How it works", work:"Work", services:"Services", founders:"Founders", legal:"Legal", contact:"Get in touch" },
-  sw: { home:"Nyumbani", how:"Jinsi inavyofanya kazi", work:"Kazi", services:"Huduma", founders:"Waanzilishi", legal:"Sheria", contact:"Wasiliana" },
+  en: { home:"Home", how:"How it works", work:"Work", services:"Services", founders:"Founders", legal:"Legal", contact:"Get in touch", assistant:"Assistant" },
+  sw: { home:"Nyumbani", how:"Jinsi inavyofanya kazi", work:"Kazi", services:"Huduma", founders:"Waanzilishi", legal:"Sheria", contact:"Wasiliana", assistant:"Msaidizi" },
 } as const;
 
 function getInitialLocale() {
@@ -23,7 +23,7 @@ export function SiteHeader() {
   useEffect(()=>{ document.documentElement.lang=locale; },[locale]);
   const changeLocale=(value:"en"|"sw")=>{ setLocalLocale(value); setLocale(value); };
   const labels=copy[locale];
-  const links=navLinks.map((l,i)=>({ ...l, label:[labels.home,labels.how,labels.work,labels.services,labels.founders,labels.legal,labels.contact][i] }));
+  const links=navLinks.map((l,i)=>({ ...l, label:[labels.home,labels.how,labels.work,labels.services,labels.founders,labels.legal,labels.contact,labels.assistant][i] }));
   return <>
     <header className="sticky top-0 z-50 border-b border-vow-border/80 bg-vow-bg/95 backdrop-blur">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:bg-vow-ink focus:px-4 focus:py-2 focus:text-sm focus:text-vow-bg">Skip to content</a>
