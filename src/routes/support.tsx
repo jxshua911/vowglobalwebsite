@@ -63,8 +63,8 @@ function SupportPage(){
               <label><span className="vow-label">02 · Email</span><input required type="email" name="email" className="vow-field" placeholder="you@example.com"/></label>
             </div>
             <label className="block"><span className="vow-label">05 · Enquiry type</span><select required name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
-            <label className="block"><span className="vow-label">06 · Message</span><textarea required minLength={10} required name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
-            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">{sw?"Andaa ujumbe":"Prepare message"} <span aria-hidden>→</span></button><Link to="/legal#privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
+            <label className="block"><span className="vow-label">06 · Message</span><textarea required minLength={10} name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
+            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">{sw?"Andaa ujumbe":"Prepare message"} <span aria-hidden>→</span></button><Link to="/legal" hash="privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
           </form>
         </div>
       </div>
