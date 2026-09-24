@@ -43,7 +43,7 @@ function SupportPage(){
     <section className="container-site relative -mt-8 pb-20 sm:-mt-12 sm:pb-28">
       <div className="grid border border-vow-border bg-vow-bg shadow-[0_25px_70px_rgba(0,0,0,.08)] lg:grid-cols-12">
         <aside className="border-b border-vow-border p-7 sm:p-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:p-12">
-          <p className="vow-label text-vow-blue">{sw?"Wasiliana nasi":"Get in touch"}</p>
+          <p className="vow-label text-vow-muted">{sw?"Wasiliana nasi":"Get in touch"}</p>
           <h2 className="mt-5 text-[clamp(2.4rem,4vw,4rem)] leading-[.9]">A direct line to VOW.</h2>
           <p className="mt-6 leading-[1.8] text-vow-muted">{sw?"Tumia fomu na programu yako ya barua pepe itafunguka ikiwa na ujumbe ulioelekezwa kwa VOW moja kwa moja.":"Use the form and your email app will open with the message addressed to VOW automatically."}</p>
           <div className="mt-10 border-t border-vow-border pt-6">
@@ -53,7 +53,7 @@ function SupportPage(){
           </div>
         </aside>
         <div className="p-7 sm:p-10 lg:col-span-8 lg:p-12">
-          {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW.</div>}
+          {sent&&<div className="mb-7 border-l-2 border-vow-ink bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW.</div>}
           <div className="mb-10 flex items-end justify-between gap-6 border-b border-vow-border pb-6">
             <div><p className="vow-label">{sw?"Fomu ya mawasiliano":"Enquiry form"}</p><h2 className="mt-2 text-3xl sm:text-4xl">{sw?"Tunaweza kusaidia na nini?":"What can we help with?"}</h2></div>
             <span className="hidden font-mono text-xs text-vow-muted sm:block">VOW / 01</span>
@@ -65,7 +65,7 @@ function SupportPage(){
             </div>
             <label className="block"><span className="vow-label">05 · Enquiry type</span><select required name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
             <label className="block"><span className="vow-label">06 · Message</span><textarea required minLength={10} name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
-            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">{sw?"Andaa ujumbe":"Prepare message"} <span aria-hidden>→</span></button><Link to="/legal" hash="privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
+            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-primary">{sw?"Andaa ujumbe":"Prepare message"} <span aria-hidden>→</span></button><Link to="/legal" hash="privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
           </form>
         </div>
       </div>
@@ -77,7 +77,7 @@ function SupportPage(){
           <p className="max-w-sm leading-7 text-vow-ink/60">A few things people commonly ask before getting in touch.</p>
         </div>
         <div className="mt-10 divide-y divide-vow-bg/15 border-y border-vow-border">
-          {faqs.map(([q,a])=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-blue transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-ink/60">{a}</p></details>)}
+          {faqs.map(([q,a])=><details key={q} className="group py-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-8 text-xl sm:text-2xl"><span>{q}</span><span className="font-sans text-2xl font-light text-vow-muted transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl leading-7 text-vow-ink/60">{a}</p></details>)}
         </div>
       </div>
     </section>
