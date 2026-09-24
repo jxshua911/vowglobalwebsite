@@ -14,6 +14,8 @@ import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as FoundersRouteImport } from './routes/founders'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
@@ -44,6 +46,16 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -71,6 +83,8 @@ export interface FileRoutesByFullPath {
   '/founders': typeof FoundersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -82,6 +96,8 @@ export interface FileRoutesByTo {
   '/founders': typeof FoundersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -94,6 +110,8 @@ export interface FileRoutesById {
   '/founders': typeof FoundersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -107,6 +125,8 @@ export interface FileRouteTypes {
     | '/founders'
     | '/how-it-works'
     | '/legal'
+    | '/privacy'
+    | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/support'
@@ -118,6 +138,8 @@ export interface FileRouteTypes {
     | '/founders'
     | '/how-it-works'
     | '/legal'
+    | '/privacy'
+    | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/support'
@@ -129,6 +151,8 @@ export interface FileRouteTypes {
     | '/founders'
     | '/how-it-works'
     | '/legal'
+    | '/privacy'
+    | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/support'
@@ -184,6 +208,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -221,6 +259,8 @@ const rootRouteChildren: RootRouteChildren = {
   FoundersRoute: FoundersRoute,
   HowItWorksRoute: HowItWorksRoute,
   LegalRoute: LegalRoute,
+  PrivacyRoute: PrivacyRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
