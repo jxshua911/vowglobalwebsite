@@ -23,31 +23,31 @@ function Home() {
     <>
       <section className="relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
         <div className="absolute inset-0 vow-hero-art" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-r from-vow-ink via-vow-ink/90 to-vow-ink/35" aria-hidden />
-        <div className="vow-paint-splash" aria-hidden>
-          <svg viewBox="0 0 320 220" role="presentation">
-            <path d="M35 122C53 80 91 60 130 74c31 11 42 43 72 47 31 4 47-30 72-13 22 15 4 43-24 54-38 15-70 3-104 17-35 14-91 2-111-24-9-12-9-22 0-33Z" />
-            <path d="M79 58c8-13 25-19 36-11 8 6 5 19-7 25-14 7-37 2-29-14Z" />
-            <path d="M243 72c5-9 17-12 24-7 7 6 3 15-7 18-11 3-21-3-17-11Z" />
-            <circle cx="51" cy="69" r="5" /><circle cx="279" cy="119" r="4" /><circle cx="105" cy="181" r="4" />
+                <div className="vow-paint-splash" aria-hidden>
+          <svg viewBox="0 0 520 340" role="presentation">
+            <path d="M50 196c-7-35 21-65 61-79 42-15 74-5 110 12 28 13 50 28 78 22 31-7 39-44 72-47 38-4 63 34 55 69-7 31-37 48-72 51-37 3-65-11-98 3-45 19-91 53-148 36-33-10-54-34-58-67Z"/>
+            <path d="M121 101c8-23 36-40 57-29 17 9 14 31-5 44-19 13-59 12-52-15Z"/>
+            <path d="M361 71c7-17 29-24 43-14 12 9 8 25-8 32-18 8-42 2-35-18Z"/>
+            <path d="M438 184c7-12 23-16 33-8 9 8 5 20-8 25-15 5-31-3-25-17Z"/>
+            <circle cx="67" cy="104" r="7"/><circle cx="83" cy="75" r="3"/><circle cx="92" cy="259" r="5"/><circle cx="182" cy="291" r="4"/><circle cx="322" cy="274" r="6"/><circle cx="476" cy="122" r="4"/><circle cx="404" cy="287" r="3"/>
+            <path d="M222 62c4-9 15-13 23-8 7 5 5 14-4 18-10 5-22-1-19-10Z"/>
           </svg>
         </div>
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-vow-ink to-transparent" aria-hidden />
-        <div className="container-site relative flex min-h-[82vh] items-end py-14 sm:py-20">
+                <div className="container-site relative flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
+              <p className="vow-label">Goal planning · Accountability · Progress</p>
               <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
                 <span className="block">Make your VOW.</span>
                 <span className="block">Keep your VOW.</span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
-              <p className="max-w-[38ch] text-base leading-[1.8] text-vow-ink/75 sm:text-lg">
+              <p className="max-w-[38ch] text-base leading-[1.8] text-vow-muted sm:text-lg">
                 {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <Link to="/how-it-works" className="vow-btn-blue">See how it works</Link>
+                <Link to="/how-it-works" className="vow-btn-primary">See how it works</Link>
                 <Link to="/support" className="vow-arrow-light">Start a conversation <span aria-hidden>→</span></Link>
               </div>
             </div>
@@ -122,7 +122,7 @@ function Home() {
         <div className="flex flex-col gap-8 border-t border-vow-border pt-8 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="vow-label">Have a question?</p>
-            <h2 className="mt-4 text-[clamp(2.6rem,5vw,4.5rem)] leading-[.9]">Talk to VOW.</h2>
+            <h2 className="mt-4 text-[clamp(2.6rem,5vw,4.5rem)] leading-[.9]">Contact us or talk to us.</h2>
           </div>
           <Link to="/support" className="vow-btn-primary">Get in touch</Link>
         </div>
