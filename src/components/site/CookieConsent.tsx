@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 type Choice = "accepted" | "necessary";
 
-const KEY = "vow-cookie-consent";
+const KEY = "vow-cookie-consent-v2";
 
 function setConsent(value: Choice) {
   localStorage.setItem(KEY, value);
-  document.cookie = `vow_cookie_consent=${value}; Max-Age=31536000; Path=/; SameSite=Lax`;
+  document.cookie = `vow_cookie_consent_v2=${value}; Max-Age=31536000; Path=/; SameSite=Lax`;
 }
 
 export function CookieConsent() {
