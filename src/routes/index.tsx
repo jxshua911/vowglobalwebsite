@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 import { WaitlistForm } from "@/components/site/WaitlistForm";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead({path:'/',title:'VOW — Goal planning & accountability app',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
+  head: () => pageHead({path:'/',title:'VOW - Goal planning & accountability app',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
   component: Home,
 });
 
@@ -258,9 +258,10 @@ function Home() {
                 {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <Link to="/how-it-works" className="vow-btn-primary">See how it works</Link>
-                <Link to="/support" className="vow-arrow-light">Start a conversation <span aria-hidden>→</span></Link>
+                <a href="#waitlist" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
+                <Link to="/how-it-works" className="vow-arrow-light">See how it works <span aria-hidden>→</span></Link>
               </div>
+              <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Launching 29 October 2026</p>
             </div>
           </div>
         </div>
@@ -338,7 +339,7 @@ function Home() {
             </div>
             <div className="lg:col-span-5 lg:pb-2">
               <p className="max-w-[44ch] leading-[1.8] text-vow-muted">
-                Join the early-access list and get notified when VOW opens. No noise — just the launch and important updates.
+                VOW launches on 29 October 2026. Join the early-access list now and be among the people who hear first when VOW is ready.
               </p>
               <div className="mt-8">
                 <WaitlistForm />
