@@ -6,7 +6,7 @@ export const Route = createFileRoute("/work")({
   head: () =>
     pageHead({
       path: "/work",
-      title: "Work — VOW product, brand and interface design",
+      title: "VOW - Work | Product, brand and interface design",
       description:
         "Selected work behind VOW, the goal-planning and accountability app: product screens, brand system, interface design and visualisation.",
     }),
