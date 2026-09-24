@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { site } from "@/content/site";
+import { useLocale } from "@/lib/i18n";
 
 export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"VOW - Get in touch"},{name:"description",content:"Contact VOW for support, feedback, partnerships or privacy requests."}],links:[{rel:"canonical",href:"/support"}]}),component:SupportPage});
 
@@ -12,6 +13,7 @@ const faqs=[
 ] as const;
 
 function SupportPage(){
+  const sw=useLocale();
   const [sent,setSent]=useState(false);
   function submit(e:FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -28,11 +30,11 @@ function SupportPage(){
       <div className="container-site relative py-20 sm:py-28 lg:py-36">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="vow-label !text-vow-muted">Contact VOW</p>
+            <p className="vow-label !text-vow-muted">{sw?"Wasiliana na VOW":"Contact VOW"}</p>
             <h1 className="mt-6 max-w-5xl text-[clamp(4rem,10vw,9rem)] leading-[.78] tracking-[-.05em]">Let's<br /><span className="text-vow-muted">talk.</span></h1>
           </div>
           <div className="lg:col-span-4 lg:pb-2">
-            <p className="max-w-[34ch] text-lg leading-[1.7] text-vow-muted">Questions, feedback, partnerships or privacy requests. Tell us what you need.</p>
+            <p className="max-w-[34ch] text-lg leading-[1.7] text-vow-muted">{sw?"Maswali, maoni, ushirikiano au maombi ya faragha. Tuambie unachohitaji.":"Questions, feedback, partnerships or privacy requests. Tell us what you need."}</p>
           </div>
         </div>
       </div>
@@ -40,9 +42,9 @@ function SupportPage(){
     <section className="container-site relative -mt-8 pb-20 sm:-mt-12 sm:pb-28">
       <div className="grid border border-vow-border bg-vow-bg shadow-[0_25px_70px_rgba(0,0,0,.08)] lg:grid-cols-12">
         <aside className="border-b border-vow-border p-7 sm:p-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:p-12">
-          <p className="vow-label text-vow-blue">Get in touch</p>
+          <p className="vow-label text-vow-blue">{sw?"Wasiliana nasi":"Get in touch"}</p>
           <h2 className="mt-5 text-[clamp(2.4rem,4vw,4rem)] leading-[.9]">A direct line to VOW.</h2>
-          <p className="mt-6 leading-[1.8] text-vow-muted">Use the form and your email app will open with the message addressed to VOW automatically.</p>
+          <p className="mt-6 leading-[1.8] text-vow-muted">{sw?"Tumia fomu na programu yako ya barua pepe itafunguka ikiwa na ujumbe ulioelekezwa kwa VOW moja kwa moja.":"Use the form and your email app will open with the message addressed to VOW automatically."}</p>
           <div className="mt-10 border-t border-vow-border pt-6">
             <p className="vow-label">Email</p>
             <a className="mt-2 block break-all text-sm font-semibold underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
@@ -52,7 +54,7 @@ function SupportPage(){
         <div className="p-7 sm:p-10 lg:col-span-8 lg:p-12">
           {sent&&<div className="mb-7 border-l-2 border-vow-blue bg-vow-surface px-5 py-4 text-sm leading-6">Your email draft has been prepared for VOW.</div>}
           <div className="mb-10 flex items-end justify-between gap-6 border-b border-vow-border pb-6">
-            <div><p className="vow-label">Enquiry form</p><h2 className="mt-2 text-3xl sm:text-4xl">What can we help with?</h2></div>
+            <div><p className="vow-label">{sw?"Fomu ya mawasiliano":"Enquiry form"}</p><h2 className="mt-2 text-3xl sm:text-4xl">{sw?"Tunaweza kusaidia na nini?":"What can we help with?"}</h2></div>
             <span className="hidden font-mono text-xs text-vow-muted sm:block">VOW / 01</span>
           </div>
           <form onSubmit={submit} className="space-y-7">
@@ -62,7 +64,7 @@ function SupportPage(){
             </div>
             <label className="block"><span className="vow-label">05 · Enquiry type</span><select required name="reason" className="vow-field"><option>General support</option><option>Bug or technical issue</option><option>Feedback</option><option>Partnership / business enquiry</option><option>Privacy request</option><option>Account deletion</option></select></label>
             <label className="block"><span className="vow-label">06 · Message</span><textarea required minLength={10} required name="message" rows={8} className="vow-field resize-y leading-7" placeholder="Tell us what you need..."/></label>
-            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">Prepare message <span aria-hidden>→</span></button><Link to="/legal#privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
+            <div className="flex flex-wrap items-center gap-6 pt-2"><button type="submit" className="vow-btn-blue">{sw?"Andaa ujumbe":"Prepare message"} <span aria-hidden>→</span></button><Link to="/legal#privacy" className="text-sm text-vow-muted underline underline-offset-4">Privacy Policy</Link></div>
           </form>
         </div>
       </div>
@@ -70,7 +72,7 @@ function SupportPage(){
     <section className="border-t border-vow-border bg-vow-bg text-vow-ink">
       <div className="container-site py-20 sm:py-28">
         <div className="flex flex-col gap-8 border-b border-vow-border pb-10 md:flex-row md:items-end md:justify-between">
-          <div><p className="vow-label !text-vow-ink">FAQ</p><h2 className="mt-4 text-[clamp(2.8rem,5vw,5rem)] leading-[.88]">Quick answers.</h2></div>
+          <div><p className="vow-label !text-vow-ink">FAQ</p><h2 className="mt-4 text-[clamp(2.8rem,5vw,5rem)] leading-[.88]">{sw?"Majibu ya haraka.":"Quick answers."}</h2></div>
           <p className="max-w-sm leading-7 text-vow-ink/60">A few things people commonly ask before getting in touch.</p>
         </div>
         <div className="mt-10 divide-y divide-vow-bg/15 border-y border-vow-border">
