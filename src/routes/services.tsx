@@ -2,7 +2,7 @@ import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useLocale } from "@/lib/i18n";
 
-export const Route=createFileRoute("/services")({head: () => pageHead({path:'/services',title:'Services — Product design, web development & 3D | VOW',description:'Digital product design, web development and 3D visualisation from the team behind VOW, the goal-planning and accountability app.'}),component:Services});
+export const Route=createFileRoute("/services")({head: () => pageHead({path:'/services',title:'VOW - Services | Product design, web development & 3D',description:'Digital product design, web development and 3D visualisation from the team behind VOW, the goal-planning and accountability app.'}),component:Services});
 
 const services=[
 ["01","Digital product design","Product thinking, UX structure and polished interfaces for apps and digital products.","Mawazo ya bidhaa, muundo wa UX na miingiliano iliyopangiliwa kwa programu na bidhaa za kidijitali."],
