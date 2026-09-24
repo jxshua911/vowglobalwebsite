@@ -15,6 +15,7 @@ import { Route as FoundersRouteImport } from './routes/founders'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as WorkRouteImport } from './routes/work'
 
@@ -48,6 +49,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/work': typeof WorkRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/work': typeof WorkRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/work': typeof WorkRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/services'
+    | '/sitemap.xml'
     | '/support'
     | '/work'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/services'
+    | '/sitemap.xml'
     | '/support'
     | '/work'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/services'
+    | '/sitemap.xml'
     | '/support'
     | '/work'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   LegalRoute: typeof LegalRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
   WorkRoute: typeof WorkRoute
 }
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/support': {
       id: '/support'
       path: '/support'
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   LegalRoute: LegalRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
   WorkRoute: WorkRoute,
 }

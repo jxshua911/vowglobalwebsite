@@ -1,10 +1,11 @@
+import { pageHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState, type FormEvent } from "react";
 import { site } from "@/content/site";
 import { useLocale } from "@/lib/i18n";
 
 export const Route=createFileRoute("/assistant")({
-  head:()=>({meta:[{title:"VOW - Assistant"},{name:"description",content:"Ask the VOW virtual assistant about the product, support, privacy and how VOW works."}],links:[{rel:"canonical",href:"/assistant"}]}),
+  head:()=>pageHead({path:'/assistant',title:'Ask VOW — Assistant for the VOW goal-planning app',description:'Ask the VOW assistant about the goal-planning app, support, privacy and how VOW works, or hand the conversation to a person.'})),
   component:Assistant,
 });
 
@@ -37,7 +38,7 @@ function Assistant(){
  const [email,setEmail]=useState("");
  const [sent,setSent]=useState(false);
  const greeting=sw?"Uliza swali kuhusu VOW.":"Ask a question about VOW.";
- const submit=(e:FormEvent)=>{e.preventDefault();const q=input.trim();if(!q)return;setMessages(m=>[...m,{role:"user",text:q},{role:"assistant",text:answer(q,sw)}]);setInput("");};
+ const submit=(e:FormEvent)=>{e.preventDefault();const q=input.trim();if(!q)return;setMessages(m=>[...m,{role:"user",text:q},{role:"assistant",text:answer(q,Boolean(sw))}]);setInput("");};
  const transcript=useMemo(()=>messages.map(m=>(m.role==="user"?"User":"VOW Assistant")+": "+m.text).join("\n\n"),[messages]);
  const sendHuman=(e:FormEvent)=>{e.preventDefault();const body=["Name: "+name,"Email: "+email,"",transcript].join("\n");window.location.href="mailto:"+site.supportEmail+"?subject=VOW%20Assistant%20%E2%80%94%20Human%20response&body="+encodeURIComponent(body)+"&cc="+encodeURIComponent(site.contactCc);setSent(true);};
  return <>

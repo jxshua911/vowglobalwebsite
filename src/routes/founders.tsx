@@ -1,14 +1,9 @@
+import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useLocale } from "@/lib/i18n";
 
 export const Route = createFileRoute("/founders")({
-  head: () => ({
-    meta: [
-      { title: "VOW - Founders" },
-      { name: "description", content: "Meet Joshua Nathan Kasanga, founder of VOW, and the person behind the product." },
-    ],
-    links: [{ rel: "canonical", href: "/founders" }],
-  }),
+  head:()=>pageHead({path:'/founders',title:'Founder — Joshua Nathan Kasanga | VOW',description:'Meet Joshua Nathan Kasanga, founder of VOW, the goal-planning and accountability app, and the thinking behind the product.'})),
   component: Founders,
 });
 

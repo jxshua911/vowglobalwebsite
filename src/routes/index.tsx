@@ -1,14 +1,9 @@
+import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { site } from "@/content/site";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "VOW" },
-      { name: "description", content: "VOW turns goals into structured plans, sessions and visible progress." },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
+  head:()=>pageHead({path:'/',title:'VOW — Goal planning & accountability app',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'})),
   component: Home,
 });
 
