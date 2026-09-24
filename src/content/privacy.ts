@@ -79,7 +79,7 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "cookies-and-analytics",
-    heading: "9. Cookies and Analytics",
+    heading: "8. Cookies and Analytics",
     blocks: [
       p("VOW uses essential cookies and similar storage mechanisms to keep the website working and to remember your cookie preference. These are necessary for core site functionality."),
       p("VOW may also use optional analytics cookies when you choose to accept them. Analytics is used to understand aggregate site usage and improve the website. Optional analytics is not loaded before consent is provided."),
@@ -88,7 +88,7 @@ export const privacySections: LegalSection[] = [
   },
   {
     id: "sharing-and-service-providers",
-    heading: "8. Sharing and Service Providers",
+    heading: "9. Sharing and Service Providers",
     blocks: [
       p("VOW may share or process data with infrastructure and service providers needed to operate the product, such as database and authentication infrastructure, AI providers, user-authorised integrations, and payment or distribution providers. These providers process information on VOW's behalf or as required to deliver the feature you have chosen to use."),
       p("VOW does not sell personal information."),
