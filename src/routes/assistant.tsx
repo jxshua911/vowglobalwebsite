@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 import { useLocale } from "@/lib/i18n";
 
 export const Route=createFileRoute("/assistant")({
-  head:()=>pageHead({path:'/assistant',title:'Ask VOW — Assistant for the VOW goal-planning app',description:'Ask the VOW assistant about the goal-planning app, support, privacy and how VOW works, or hand the conversation to a person.'})),
+  head: () => pageHead({path:'/assistant',title:'Ask VOW — Assistant for the VOW goal-planning app',description:'Ask the VOW assistant about the goal-planning app, support, privacy and how VOW works, or hand the conversation to a person.'}),
   component:Assistant,
 });
 
