@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://vowglobal.lovable.app/sitemap.xml
