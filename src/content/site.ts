@@ -19,4 +19,5 @@ export const navLinks = [
   { to: "/founders", label: "Founders" },
   { to: "/legal", label: "Legal" },
   { to: "/support", label: "Get in touch" },
+  { to: "/assistant", label: "Assistant" },
 ] as const;
