@@ -13,6 +13,7 @@ export const Route = createFileRoute("/founders")({
 });
 
 function Founders() {
+  const sw=useLocale();
   return (
     <>
       <section className="border-b border-vow-border bg-vow-bg">
