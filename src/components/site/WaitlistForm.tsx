@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 
 const SUPABASE_URL = "https://vqsrdausvmfjayffxiuh.supabase.co";
 const SUPABASE_KEY = "sb_publishable_M6qmsILtc2ORJ_3tSe5OQg_Fv6RaTib";
+const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/vow-website-chat`;
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
@@ -20,18 +21,17 @@ export function WaitlistForm() {
     setStatus("loading");
 
     try {
-      const response = await fetch(`${SUPABASE_URL}/rest/v1/vow_waitlist`, {
+      const response = await fetch(FUNCTION_URL, {
         method: "POST",
         headers: {
           apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
           "Content-Type": "application/json",
-          Prefer: "return=minimal",
         },
         body: JSON.stringify({
+          action: "waitlist",
           email: email.trim().toLowerCase(),
           source: "website-home",
-          launch_date: "2026-10-29",
+          website: String(formData.get("website") || ""),
         }),
       });
 
