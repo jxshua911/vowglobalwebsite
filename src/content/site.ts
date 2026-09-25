@@ -13,7 +13,6 @@ export const site = {
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/how-it-works", label: "How it works" },
-  { to: "/work", label: "Work" },
-  { to: "/founders", label: "Founders" },
+  { to: "/founder", label: "Founder" },
   { to: "/support", label: "Get in touch" },
 ] as const;
