@@ -1,7 +1,7 @@
 import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { site } from "@/content/site";
-import { WaitlistForm } from "@/components/site/WaitlistForm";
+import { Waitlist } from "@/components/site/Waitlist";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({path:'/',title:'VOW - Home',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
@@ -324,30 +324,13 @@ function Home() {
             </div>
             <div className="lg:col-span-4">
               <p className="leading-[1.8] text-vow-ink/70">VOW is about the part after the goal is written down: the work, the review and the decision to keep going.</p>
-              <div className="mt-8"><Link to="/work" className="vow-arrow-light">Explore VOW <span aria-hidden>→</span></Link></div>
+              <div className="mt-8"><Link to="/how-it-works" className="vow-arrow-light">Explore VOW <span aria-hidden>→</span></Link></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="waitlist" className="border-y border-vow-border bg-vow-surface/35 scroll-mt-24">
-        <div className="container-site py-20 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <p className="vow-label">VOW launches 29 October 2026</p>
-              <h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,6.5rem)] leading-[.86]">Be there from day one.</h2>
-            </div>
-            <div className="lg:col-span-5 lg:pb-2">
-              <p className="max-w-[44ch] leading-[1.8] text-vow-muted">
-                VOW launches on 29 October 2026. Join the early-access list now and be among the people who hear first when VOW is ready.
-              </p>
-              <div className="mt-8">
-                <WaitlistForm />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Waitlist />
 
       <section className="container-site py-20 sm:py-28">
         <div className="flex flex-col gap-8 border-t border-vow-border pt-8 md:flex-row md:items-end md:justify-between">
