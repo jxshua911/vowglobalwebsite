@@ -59,7 +59,9 @@ export function FloatingAssistant() {
           setUnread(incoming.filter((message) => message.created_at > seenAt).length);
         }
       }
-    } catch {}
+    } catch {
+      // Ignore transient polling failures; the next interval retries automatically.
+    }
   }
 
   useEffect(() => {
