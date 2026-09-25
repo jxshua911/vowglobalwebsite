@@ -67,5 +67,6 @@ grant execute on function website.consume_chat_rate_limit(text, integer, integer
 
 -- Legacy public waitlist is no longer used by the website.
 revoke all on table public.vow_waitlist from public, anon, authenticated;
+revoke insert on table public.vow_waitlist from public, anon, authenticated;
 
 commit;
