@@ -13,6 +13,8 @@ type Conversation = {
   last_message_at: string;
 };
 
+type Contact = { id: string; name?: string | null; email?: string | null; subject?: string | null; message: string; created_at: string; };
+
 type Message = {
   id: string;
   sender_type: "visitor" | "ai" | "admin" | "system";
@@ -35,6 +37,8 @@ function AdminChat() {
   const [password, setPassword] = useState("");
   const [session, setSession] = useState<any>(null);
   const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [inbox, setInbox] = useState<"chat" | "inquiries">("chat");
   const [selected, setSelected] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [reply, setReply] = useState("");
@@ -75,6 +79,15 @@ function AdminChat() {
     setBusy(false);
   }
 
+  async function loadContacts() {
+    try {
+      const data = await call("admin_contacts");
+      setContacts(data.contacts || []);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not load enquiries.");
+    }
+  }
+
   async function loadConversations() {
     try {
       const data = await call("admin_list");
@@ -97,7 +110,8 @@ function AdminChat() {
   useEffect(() => {
     if (!session) return;
     loadConversations();
-    const timer = window.setInterval(loadConversations, 4000);
+    loadContacts();
+    const timer = window.setInterval(() => { loadConversations(); loadContacts(); }, 4000);
     return () => window.clearInterval(timer);
   }, [session]);
 
@@ -179,7 +193,33 @@ function AdminChat() {
 
       {error && <div className="mt-5 border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</div>}
 
-      <div className="mt-8 grid min-h-[620px] gap-5 lg:grid-cols-[330px_1fr]">
+      <div className="mt-8 flex gap-2 border-b border-vow-border">
+        <button onClick={() => setInbox("chat")} className={`px-1 pb-3 text-sm font-semibold ${inbox === "chat" ? "border-b-2 border-vow-ink" : "text-vow-muted"}`}>Chat inbox</button>
+        <button onClick={() => setInbox("inquiries")} className={`px-1 pb-3 text-sm font-semibold ${inbox === "inquiries" ? "border-b-2 border-vow-ink" : "text-vow-muted"}`}>Website enquiries ({contacts.length})</button>
+      </div>
+
+      {inbox === "inquiries" ? (
+        <section className="mt-5 border border-vow-border">
+          <div className="border-b border-vow-border px-4 py-3 text-sm font-semibold">Website enquiries</div>
+          <div className="divide-y divide-vow-border">
+            {contacts.length === 0 && <p className="p-5 text-sm text-vow-muted">No enquiries yet.</p>}
+            {contacts.map((contact) => (
+              <article key={contact.id} className="p-5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="font-semibold">{contact.name || "Website visitor"}</p>
+                    <p className="text-xs text-vow-muted">{contact.email || "No email provided"}</p>
+                  </div>
+                  <p className="text-xs text-vow-muted">{new Date(contact.created_at).toLocaleString()}</p>
+                </div>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-vow-muted">{contact.subject || "General enquiry"}</p>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-7">{contact.message}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : (
+      <div className="mt-5 grid min-h-[620px] gap-5 lg:grid-cols-[330px_1fr]">
         <aside className="border border-vow-border">
           <div className="border-b border-vow-border px-4 py-3 text-sm font-semibold">Conversations</div>
           <div className="max-h-[620px] overflow-y-auto">
@@ -242,6 +282,7 @@ function AdminChat() {
           )}
         </section>
       </div>
+      )}
     </main>
   );
 }
