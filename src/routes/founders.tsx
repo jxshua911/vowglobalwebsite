@@ -3,7 +3,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useLocale } from "@/lib/i18n";
 
 export const Route = createFileRoute("/founders")({
-  head: () => pageHead({path:'/founders',title:'VOW - Founder | Joshua Nathan Kasanga',description:'Meet Joshua Nathan Kasanga, founder of VOW, the goal-planning and accountability app, and the thinking behind the product.'}),
+  head: () => pageHead({path:'/founders',title:'VOW - Founders',description:'Meet Joshua Nathan Kasanga, founder of VOW, the goal-planning and accountability app, and the thinking behind the product.'}),
   component: Founders,
 });
 
