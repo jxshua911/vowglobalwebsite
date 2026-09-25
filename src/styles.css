@@ -73,3 +73,37 @@
 .vow-paint-splash svg{width:100%;height:100%;stroke:rgb(var(--vow-ink))}
 @media(max-width:767px){.vow-paint-splash{right:auto;top:auto;width:100%;opacity:.6}}
 .vow-paint-splash svg{filter:none}
+
+
+/* VOW AI visibility guard: keep the assistant solid even if utility generation changes. */
+.vow-assistant-trigger {
+  background: #111111 !important;
+  color: #fafaf8 !important;
+  border-color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  isolation: isolate;
+}
+.vow-assistant-trigger:hover,
+.vow-assistant-trigger:focus-visible {
+  background: #111111 !important;
+  color: #fafaf8 !important;
+}
+.vow-assistant-trigger > * { opacity: 1 !important; }
+.vow-assistant-avatar {
+  background: #fafaf8 !important;
+  color: #111111 !important;
+  opacity: 1 !important;
+}
+.vow-assistant-panel {
+  background: #fafaf8 !important;
+  color: #111111 !important;
+  border-color: #e1e1de !important;
+  opacity: 1 !important;
+}
+.vow-assistant-panel textarea {
+  background: #f0f0ec !important;
+  color: #111111 !important;
+  border-color: #e1e1de !important;
+}
+.vow-assistant-panel textarea::placeholder { color: #696969 !important; opacity: 1 !important; }
