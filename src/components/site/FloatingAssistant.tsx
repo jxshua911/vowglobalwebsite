@@ -127,7 +127,7 @@ export function FloatingAssistant() {
       {open && (
         <section
           aria-label="VOW AI chat"
-          className="mb-3 flex h-[min(620px,calc(100vh-7rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-vow-border bg-vow-bg shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
+          className="vow-assistant-panel mb-3 flex h-[min(620px,calc(100vh-7rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-vow-border bg-vow-bg shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
         >
           <div className="flex items-center justify-between border-b border-vow-border px-5 py-4">
             <div className="flex items-center gap-3">
@@ -209,9 +209,9 @@ export function FloatingAssistant() {
         onClick={toggleOpen}
         aria-expanded={open}
         aria-label={open ? "Close VOW AI" : "Open VOW AI"}
-        className="group relative ml-auto flex items-center gap-3 rounded-full border border-vow-ink bg-vow-ink px-3 py-2.5 text-sm font-semibold text-vow-bg shadow-[0_12px_40px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_45px_rgba(0,0,0,0.24)]"
+        className="vow-assistant-trigger group relative ml-auto flex items-center gap-3 rounded-full border border-vow-ink bg-vow-ink px-3 py-2.5 text-sm font-semibold text-vow-bg shadow-[0_12px_40px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_45px_rgba(0,0,0,0.24)]"
       >
-        <span className="relative grid size-10 place-items-center rounded-full bg-vow-bg text-sm font-bold text-vow-ink" aria-hidden>
+        <span className="vow-assistant-avatar relative grid size-10 place-items-center rounded-full bg-vow-bg text-sm font-bold text-vow-ink" aria-hidden>
           V
           <span className="absolute -right-0.5 -top-0.5 size-3 rounded-full border-2 border-vow-ink bg-emerald-500" />
         </span>
