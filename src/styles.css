@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss" layer(base, components, utilities);
 @source "../src";
+@import "tw-animate-css";
 @theme inline {
  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;--font-display:"Cormorant Garamond",Georgia,serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
  --color-vow-bg:rgb(var(--vow-bg)/<alpha-value>);--color-vow-ink:rgb(var(--vow-ink)/<alpha-value>);--color-vow-muted:rgb(var(--vow-muted)/<alpha-value>);--color-vow-border:rgb(var(--vow-border)/<alpha-value>);--color-vow-surface:rgb(var(--vow-surface)/<alpha-value>);
