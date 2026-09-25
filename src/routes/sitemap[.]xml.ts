@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SITE_URL } from "@/lib/seo";
 
-const paths = ["/", "/how-it-works", "/work", "/services", "/founders", "/privacy-policy", "/privacy", "/legal", "/support", "/assistant"];
+const paths = ["/", "/how-it-works", "/founder", "/support", "/terms-and-services", "/copyright"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -9,9 +9,14 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: ({ request }) => {
         const origin = SITE_URL || new URL(request.url).origin;
         const body = `<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n${paths
-          .map((p) => `  <url><loc>${origin}${p}</loc></url>`)
+          .map((path) => `  <url><loc>${origin}${path}</loc></url>`)
           .join("\\n")}\\n</urlset>\\n`;
-        return new Response(body, { headers: { "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
+        return new Response(body, {
+          headers: {
+            "Content-Type": "application/xml; charset=utf-8",
+            "Cache-Control": "public, max-age=3600",
+          },
+        });
       },
     },
   },
