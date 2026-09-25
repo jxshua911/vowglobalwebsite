@@ -13,7 +13,7 @@ export function SiteFooter() {
           <li><Link to="/how-it-works">{sw?"Jinsi inavyofanya kazi":"How it works"}</Link></li><li><Link to="/work">{sw?"Kazi":"Work"}</Link></li><li><Link to="/services">{sw?"Huduma":"Services"}</Link></li><li><Link to="/support">{sw?"Wasiliana nasi":"Get in touch"}</Link></li>
         </ul></nav>
         <nav><p className="vow-label">{sw?"Sheria":"Legal"}</p><ul className="mt-5 space-y-3 text-sm">
-          <li><Link to="/privacy-policy">{sw?"Faragha":"Privacy"} Policy</Link></li><li><Link to="/terms">{sw?"Masharti":"Terms"} / EULA</Link></li><li><Link to="/copyright">{sw?"Hakimiliki":"Copyright"} / DMCA</Link></li><li><Link to="/support">{sw?"Kufuta akaunti":"Account deletion"}</Link></li>
+          <li><Link to="/privacy-policy">{sw?"Faragha":"Privacy"} Policy</Link></li><li><a href="/terms">{sw?"Masharti":"Terms"} / EULA</a></li><li><a href="/copyright">{sw?"Hakimiliki":"Copyright"} / DMCA</a></li><li><Link to="/support">{sw?"Kufuta akaunti":"Account deletion"}</Link></li>
         </ul></nav>
       </div>
       <div className="mt-12 border-t border-vow-border pt-6 text-xs text-vow-muted">
