@@ -1,19 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import { useLocale } from "@/lib/i18n";
 import { Logo } from "./Logo";
 import { site } from "@/content/site";
 
 export function SiteFooter() {
-  const sw=useLocale();
   return <footer className="bg-vow-bg text-vow-ink border-t border-vow-border">
     <div className="container-site py-14">
       <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
         <div><Logo /><p className="mt-5 max-w-sm text-sm leading-7 text-vow-muted">{site.tagline}</p></div>
-        <nav><p className="vow-label">{sw?"Gundua":"Explore"}</p><ul className="mt-5 space-y-3 text-sm">
-          <li><Link to="/how-it-works">{sw?"Jinsi inavyofanya kazi":"How it works"}</Link></li><li><Link to="/work">{sw?"Kazi":"Work"}</Link></li><li><Link to="/services">{sw?"Huduma":"Services"}</Link></li><li><Link to="/support">{sw?"Wasiliana nasi":"Get in touch"}</Link></li>
+        <nav><p className="vow-label">Explore</p><ul className="mt-5 space-y-3 text-sm">
+          <li><Link to="/how-it-works">How it works</Link></li><li><Link to="/work">Work</Link></li><li><Link to="/services">Services</Link></li><li><Link to="/support">Get in touch</Link></li>
         </ul></nav>
-        <nav><p className="vow-label">{sw?"Sheria":"Legal"}</p><ul className="mt-5 space-y-3 text-sm">
-          <li><Link to="/privacy-policy">{sw?"Faragha":"Privacy"} Policy</Link></li><li><a href="/terms">{sw?"Masharti":"Terms"} / EULA</a></li><li><a href="/copyright">{sw?"Hakimiliki":"Copyright"} / DMCA</a></li><li><Link to="/support">{sw?"Kufuta akaunti":"Account deletion"}</Link></li>
+        <nav><p className="vow-label">Legal</p><ul className="mt-5 space-y-3 text-sm">
+          <li><Link to="/privacy-policy">Privacy Policy</Link></li><li><a href="/terms">Terms / EULA</a></li><li><a href="/copyright">Copyright / DMCA</a></li><li><Link to="/support">Account deletion</Link></li>
         </ul></nav>
       </div>
       <div className="mt-12 border-t border-vow-border pt-6 text-xs text-vow-muted">
