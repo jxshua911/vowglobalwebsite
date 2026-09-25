@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
+import type { Session } from "@supabase/supabase-js";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -35,7 +36,7 @@ export const Route = createFileRoute("/admin/chat")({
 function AdminChat() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [inbox, setInbox] = useState<"chat" | "inquiries">("chat");
@@ -69,7 +70,7 @@ function AdminChat() {
     return data;
   }
 
-  async function signIn(event: React.FormEvent) {
+  async function signIn(event: FormEvent) {
     event.preventDefault();
     setError("");
     setBusy(true);
