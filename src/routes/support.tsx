@@ -20,7 +20,7 @@ function SupportPage(){
     e.preventDefault();
     const data=new FormData(e.currentTarget);
     const reason=String(data.get("reason")||"General enquiry");
-    const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Phone: ${data.get("phone")||"Not provided"}`,`State / Region: ${data.get("state")||""}`,`Enquiry type: ${reason}`,"",String(data.get("message")||"")].join("\n");
+    const body=[`Name: ${data.get("name")||""}`,`Email: ${data.get("email")||""}`,`Enquiry type: ${reason}`,"",String(data.get("message")||"")].join("\n");
     const params=new URLSearchParams({subject:"VOW — "+reason,body,cc:site.contactCc});
     window.location.href=`mailto:${site.supportEmail}?${params.toString()}`;
     setSent(true);
