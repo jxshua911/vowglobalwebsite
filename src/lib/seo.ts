@@ -1,5 +1,5 @@
-export const SITE_URL = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-export const OG_IMAGE = import.meta.env.VITE_OG_IMAGE || "/og-image.png";
+export const SITE_URL = import.meta.env['VITE_SITE_URL']?.replace(/\/$/, "") || "";
+export const OG_IMAGE = import.meta.env['VITE_OG_IMAGE'] || "/og-image.png";
 
 type PageSeo = { path: string; title: string; description: string; type?: string };
 
