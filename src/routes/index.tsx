@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 import { WaitlistForm } from "@/components/site/WaitlistForm";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead({path:'/',title:'VOW - Goal planning & accountability app',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
+  head: () => pageHead({path:'/',title:'VOW - Home',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
   component: Home,
 });
 
