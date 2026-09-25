@@ -8,13 +8,13 @@ export const privacySections: LegalSection[] = [
     id: "information-we-collect",
     heading: "1. Information We Collect",
     blocks: [
-      p("VOW collects the following categories of information, depending on how you use the app:"),
+      p("VOW collects the following categories of information, depending on how you use the app and the features you choose:"),
       ul([
-        "Account information, such as your email address, authentication identifiers, display name and any profile information you supply.",
+        "Account information, including your email address, authentication identifiers, display name and profile information you supply. VOW may support Google sign-in and email-based authentication; the authentication provider may process the information required to authenticate your account.",
         "Goal and planning information, including goals, plans, milestones, sessions, reviews, journal and progress content, and related inputs you enter.",
         "Preferences and settings, including notification and app preferences.",
         "Usage and technical information reasonably needed to operate, secure and improve the service, such as device and platform information, app events and diagnostics where enabled.",
-        "Information you voluntarily provide to connected features, such as calendar or fitness integrations.",
+        "Information you voluntarily provide to connected features, such as Google Calendar or fitness integrations, including the permissions and calendar information required for the feature you enable.",
       ]),
     ],
   },
@@ -22,7 +22,7 @@ export const privacySections: LegalSection[] = [
     id: "ai-assisted-features",
     heading: "2. AI-Assisted Features",
     blocks: [
-      p("VOW may process goal, planning, progress and related user inputs through VOW's AI infrastructure and relevant third-party AI service providers in order to provide AI-assisted functionality, such as generating suggested plans."),
+      p("VOW may process goal, planning, progress and related user inputs through VOW's AI infrastructure and relevant third-party AI service providers in order to provide AI-assisted functionality, such as generating personalised plans and suggestions. VOW is intended to personalise planning around the user, their goal, constraints, timeline and progress rather than provide a single generic plan to everyone."),
       p("AI outputs are generated for planning and productivity support only. They are not professional medical, financial, legal or other regulated advice, and should not be relied on as such."),
     ],
   },
@@ -39,7 +39,7 @@ export const privacySections: LegalSection[] = [
     heading: "4. Connected Services",
     blocks: [
       p("Where enabled by you, VOW can connect to services such as Google Calendar and Strava. These integrations are user-authorised and can be disconnected through the app or through the relevant service's own account controls."),
-      p("VOW only accesses the information needed for the connected feature you have chosen to use."),
+      p("VOW only accesses the information needed for the connected feature you have chosen to use. For Google Calendar, this can include calendar access needed to create, read or manage VOW-related events, subject to the permissions you grant. OAuth authorisation is handled through Google and VOW does not ask for your Google password."),
     ],
   },
   {
@@ -91,14 +91,14 @@ export const privacySections: LegalSection[] = [
     heading: "9. Sharing and Service Providers",
     blocks: [
       p("VOW may share or process data with infrastructure and service providers needed to operate the product, such as database and authentication infrastructure, AI providers, user-authorised integrations, and payment or distribution providers. These providers process information on VOW's behalf or as required to deliver the feature you have chosen to use."),
-      p("VOW does not sell personal information."),
+      p("VOW does not sell personal information and does not use personal information for targeted advertising."),
     ],
   },
   {
     id: "security",
     heading: "10. Security",
     blocks: [
-      p("VOW uses reasonable technical and organisational safeguards, including encrypted connections, access controls, row-level data access controls where applicable, server-side entitlement checks, and controls intended to limit abuse and excessive AI usage."),
+      p("VOW uses reasonable technical and organisational safeguards, including encrypted connections, access controls, row-level data access controls where applicable, server-side entitlement checks, authentication controls and controls intended to limit abuse and excessive AI usage."),
       p("No service can guarantee absolute security."),
     ],
   },
@@ -136,7 +136,7 @@ export const privacySections: LegalSection[] = [
     id: "children-and-young-users",
     heading: "15. Children and Young Users",
     blocks: [
-      p("VOW is not specifically designed for children. VOW does not intentionally bypass applicable age restrictions or parental-consent requirements. Where the service is used by a young person, applicable platform and legal requirements remain relevant."),
+      p("VOW is not specifically designed for children. VOW does not intentionally bypass applicable age restrictions or parental-consent requirements. Where the service is used by a young person, applicable platform and legal requirements remain relevant. Platform rules and any legally required parent or guardian involvement continue to apply."),
     ],
   },
   {
@@ -154,8 +154,16 @@ export const privacySections: LegalSection[] = [
     ],
   },
   {
+    id: "location-and-timezone",
+    heading: "18. Location and Timezone",
+    blocks: [
+      p("VOW may use your device timezone to keep plans, sessions, reminders and reviews aligned with your local time. Where a location feature is enabled and you grant location permission, VOW may use device location to determine a user-facing city and country and to support location-aware features. Precise location permission is optional unless a feature specifically requires it."),
+      p("VOW does not present raw technical timezone identifiers such as IANA timezone strings as your user-facing location. If location permission is unavailable or denied, VOW may provide a manual location or timezone fallback."),
+    ],
+  },
+  {
     id: "contact",
-    heading: "18. Contact",
+    heading: "19. Contact",
     blocks: [
       ul([
         `Privacy: ${site.privacyEmail}`,
