@@ -16,7 +16,7 @@ export const termsSections: LegalSection[] = [
     id: "eligibility-and-accounts",
     heading: "2. Eligibility and Accounts",
     blocks: [
-      p("You must meet the minimum age required by applicable law and by the platform you download VOW from. You are responsible for maintaining the security of your account credentials and for activity that occurs under your account."),
+      p("You must meet the minimum age required by applicable law and by the platform you download VOW from. Where a parent or guardian authorisation is legally required, that requirement applies. You are responsible for maintaining the security of your account credentials and for activity that occurs under your account."),
       p("Please provide accurate information and keep it up to date. VOW may suspend or close accounts that violate these Terms."),
     ],
   },
@@ -104,12 +104,17 @@ export const termsSections: LegalSection[] = [
     id: "changes-to-terms",
     heading: "13. Changes to These Terms",
     blocks: [
-      p("VOW may update these Terms from time to time. The last-updated date will be revised when material changes are made. Continued use of VOW after changes take effect constitutes acceptance of the updated Terms."),
+      p("VOW may update these Terms from time to time. The last-updated date will be revised when material changes are made. Where appropriate, VOW may ask you to review and accept a new version before continuing to use the service."),
     ],
   },
   {
+    id: "location-and-timezone",
+    heading: "14. Location and Timezone",
+    blocks: [p("VOW may use your device timezone to keep schedules and reminders aligned with local time. If you enable a location feature and grant permission, VOW may use device location to determine a user-facing city and country. You can deny location permission where the feature is optional, in which case an appropriate manual or timezone-based fallback may be used.")],
+  },
+  {
     id: "contact",
-    heading: "14. Contact",
+    heading: "15. Contact",
     blocks: [
       ul([
         `Support: ${site.supportEmail}`,
