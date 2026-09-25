@@ -12,11 +12,10 @@ BRAND / PRODUCT:
 - Planned public launch: 29 October 2026
 - Contact/privacy email: vowglobalapp@gmail.com
 - Support email: 99joshuanathan@gmail.com
-- Address: 29 Upendo Street, United Republic of Tanzania
 
 PAGES:
 1. Home — concise, premium, modern VOW introduction with clear links to Privacy, Terms/EULA, Copyright/DMCA and Support.
-2. Privacy Policy — full, readable privacy policy suitable for Google Play. Effective date: 29 October 2026; last updated: 23 September 2026. Cover account information, goals/plans/milestones/sessions/reviews/journal content, preferences/settings, usage/technical data, AI-assisted features, voluntarily provided fitness/exercise information, Google Calendar connection, Strava connection where enabled, local notifications, Google Play/subscription information, service providers, security, retention/deletion, account deletion, user choices/rights, international processing, children/young users, third-party services, changes, and contact. Do not claim data practices that are not necessary; phrase provider details accurately and conservatively.
+2. Privacy Policy — full, readable privacy policy suitable for Google Play. Effective date: 29 October 2026; last updated: 25 September 2026. Cover account information, goals/plans/milestones/sessions/reviews/journal content, preferences/settings, usage/technical data, AI-assisted features, voluntarily provided fitness/exercise information, Google Calendar connection, Strava connection where enabled, local notifications, Google Play/subscription information, service providers, security, retention/deletion, account deletion, user choices/rights, international processing, children/young users, third-party services, changes, and contact. Do not claim data practices that are not necessary; phrase provider details accurately and conservatively.
 3. Terms / EULA — product terms appropriate for an app, clearly labelled as product terms and not legal advice.
 4. Copyright / DMCA — VOW copyright and infringement reporting procedure.
 5. Support / Contact — support and privacy contact details.
