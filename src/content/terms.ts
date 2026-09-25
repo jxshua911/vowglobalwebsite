@@ -1,7 +1,7 @@
 import { site } from "./site";
 import { p, ul, type LegalSection } from "./legal-types";
 
-export const termsIntro = `These Terms of Use and End User Licence Agreement ("Terms") govern your use of the VOW application and related services provided by ${site.operator} ("VOW", "we", "us"). By creating an account or using VOW, you agree to these Terms.`;
+export const termsIntro = `These Terms of Use and End User Licence Agreement ("Terms") govern your use of the VOW application and related services. VOW is owned by ${site.operator} ("VOW", "we", "us"). By creating an account or using VOW, you agree to these Terms.`;
 
 export const termsSections: LegalSection[] = [
   {
