@@ -1,7 +1,7 @@
 import { site } from "./site";
 import { p, ul, type LegalSection } from "./legal-types";
 
-export const copyrightIntro = `The VOW application, website, branding, text, graphics and software are the property of ${site.operator}. This page explains how VOW's materials may be used and how to report suspected copyright infringement.`;
+export const copyrightIntro = `The VOW application, website, branding, text, graphics and software are owned by ${site.operator}. This page explains how VOW's materials may be used and how to report suspected copyright infringement.`;
 
 export const copyrightSections: LegalSection[] = [
   {
