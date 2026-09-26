@@ -28,10 +28,10 @@
 
 
 .vow-hero-title{letter-spacing:-.018em;line-height:.88;position:relative;z-index:2;overflow:visible}
-.vow-paint-splash{position:absolute;z-index:1;right:4%;top:7%;width:min(32rem,38vw);opacity:.9;pointer-events:none;transform:rotate(-7deg)}
+.vow-paint-splash{position:absolute;z-index:1;right:-5%;top:8%;width:min(38rem,45vw);opacity:.22;pointer-events:none;transform:rotate(-7deg)}
 .vow-paint-splash svg{display:block;width:100%;height:auto;fill:rgb(var(--vow-ink));filter:drop-shadow(0 12px 18px rgb(17 17 17/.08))}
 .vow-paint-splash circle{fill:rgb(var(--vow-ink))}
-@media(max-width:767px){.vow-paint-splash{right:-8%;top:4%;width:15rem;opacity:.78}}
+@media(max-width:767px){.vow-paint-splash{right:-12%;top:4%;width:18rem;opacity:.16}}
 
 .vow-cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;margin-inline:auto;display:flex;width:min(100%,52rem);align-items:center;justify-content:space-between;gap:1.5rem;border:1px solid rgb(var(--vow-border));background:rgb(var(--vow-bg));padding:1rem 1.1rem;box-shadow:0 18px 50px rgb(17 17 17/.14)}
 .vow-cookie-copy{min-width:0}
@@ -44,7 +44,7 @@
 .vow-cookie-manager h2{line-height:1.05}
 .vow-cookie-manager button{touch-action:manipulation}
 @media (max-width:767px){
-  .vow-paint-splash{right:-7%;top:9%;width:13rem;opacity:.14}
+  .vow-paint-splash{right:-12%;top:4%;width:18rem;opacity:.16}
   .vow-hero-title{letter-spacing:-.012em;line-height:.91}
   .vow-cookie-banner{left:.65rem;right:.65rem;bottom:.65rem;width:auto;display:block;padding:1rem}
   .vow-cookie-copy>p:last-child{font-size:.74rem;line-height:1.5}
