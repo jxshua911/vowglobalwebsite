@@ -26,6 +26,9 @@
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}}
 
 
+/* VOW production: never display platform/editor branding. */
+#lovable-badge{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+
 .vow-hero-title{letter-spacing:-.018em;line-height:.88;position:relative;z-index:3;overflow:visible}
 
 
