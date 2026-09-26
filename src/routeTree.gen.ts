@@ -131,7 +131,6 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/admin/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -145,7 +144,6 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/admin/chat'
   id:
     | '__root__'
     | '/'
@@ -159,7 +157,6 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/admin/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
