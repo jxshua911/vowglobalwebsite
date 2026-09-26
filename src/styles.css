@@ -20,7 +20,6 @@
 .vow-card{background:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-border))}
 .vow-grid{background-image:linear-gradient(to right,rgb(var(--vow-border)/.55) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--vow-border)/.55) 1px,transparent 1px);background-size:72px 72px}
 .legal-prose{font-size:1rem;line-height:1.8;color:rgb(var(--vow-ink))}
-.vow-hero-art{background:radial-gradient(circle at 78% 28%,rgb(var(--vow-muted)/.12),transparent 24%),radial-gradient(circle at 70% 70%,rgb(var(--vow-muted)/.08),transparent 34%),linear-gradient(135deg,transparent 0 48%,rgb(var(--vow-border)) 48.2% 48.8%,transparent 49%),linear-gradient(155deg,transparent 0 64%,rgb(var(--vow-border)) 64.2% 64.7%,transparent 65%)}
 .legal-prose h2{margin-top:2.5rem;margin-bottom:1rem;padding-top:1.5rem;border-top:1px solid rgb(var(--vow-border));font-family:"Inter",sans-serif;font-size:1.05rem;font-weight:600;letter-spacing:0;scroll-margin-top:6rem}.legal-prose section:first-child h2{margin-top:0;padding-top:0;border-top:0}.legal-prose p{margin-bottom:1rem;color:rgb(var(--vow-muted))}.legal-prose ul{margin:0 0 1rem;padding:0;list-style:none;color:rgb(var(--vow-muted))}.legal-prose li{position:relative;margin-bottom:.55rem;padding-left:1.2rem}.legal-prose li::before{content:"";position:absolute;left:0;top:.8em;width:.35rem;height:1px;background:rgb(var(--vow-ink))}.legal-prose a{color:rgb(var(--vow-ink));text-decoration:underline;text-underline-offset:3px}
 .vow-contact-grid{background-image:linear-gradient(to right,rgba(17,17,17,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(17,17,17,.12) 1px,transparent 1px);background-size:72px 72px}
 .vow-field{margin-top:.55rem;width:100%;border:0;border-bottom:1px solid rgb(var(--vow-border));background:transparent;padding:.8rem 0;font-size:1rem;outline:none;color:rgb(var(--vow-ink));transition:border-color .2s ease}.vow-field::placeholder{color:rgb(var(--vow-muted)/.65)}.vow-field:focus{border-color:rgb(var(--vow-ink))}
@@ -29,25 +28,6 @@
 
 .vow-hero-title{letter-spacing:-.018em;line-height:.88;position:relative;z-index:3;overflow:visible}
 
-.vow-paint-splash{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  overflow:hidden;
-}
-.vow-paint-splash svg{
-  display:block;
-  width:100%;
-  height:100%;
-}
-.vow-paint-splash .splash{
-  fill:#000;
-  opacity:.11;
-}
-@media(max-width:768px){
-  .vow-paint-splash .splash{opacity:.095}
-}
 
 .vow-cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;margin-inline:auto;display:flex;width:min(100%,52rem);align-items:center;justify-content:space-between;gap:1.5rem;border:1px solid rgb(var(--vow-border));background:rgb(var(--vow-bg));padding:1rem 1.1rem;box-shadow:0 18px 50px rgb(17 17 17/.14)}
 .vow-cookie-copy{min-width:0}
@@ -60,7 +40,6 @@
 .vow-cookie-manager h2{line-height:1.05}
 .vow-cookie-manager button{touch-action:manipulation}
 @media (max-width:767px){
-  .vow-paint-splash{right:-12%;top:4%;width:18rem;opacity:.16}
   .vow-hero-title{letter-spacing:-.012em;line-height:.91}
   .vow-cookie-banner{left:.65rem;right:.65rem;bottom:.65rem;width:auto;display:block;padding:1rem}
   .vow-cookie-copy>p:last-child{font-size:.74rem;line-height:1.5}
