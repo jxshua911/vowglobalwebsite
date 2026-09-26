@@ -247,7 +247,7 @@ function Home() {
                 <div className="container-site relative flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <p className="vow-label">Goal planning · Accountability · Progress</p>
+              <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
               <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
                 <span className="block">Make your VOW.</span>
                 <span className="block">Keep your VOW.</span>
@@ -301,7 +301,7 @@ function Home() {
 
           <div className="mt-14 grid gap-px border border-vow-border bg-vow-border sm:grid-cols-2">
             {[
-              ["AI-assisted planning", "Get a structured starting point without handing control of the goal away."],
+              ["Structured planning", "Get a clear starting point without handing control of the goal away."],
               ["Sessions & reminders", "Turn milestones into concrete blocks of work you can actually show up for."],
               ["Calendar connections", "Bring planned work into the tools you already use."],
               ["Reviews & journal", "Keep a record of what happened and use it to shape what comes next."],
