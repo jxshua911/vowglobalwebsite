@@ -255,13 +255,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsAndServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/chat': {
-      id: '/admin/chat'
-      path: '/admin/chat'
-      fullPath: '/admin/chat'
-      preLoaderRoute: typeof AdminChatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -277,7 +270,6 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
   TermsAndServicesRoute: TermsAndServicesRoute,
-  AdminChatRoute: AdminChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
