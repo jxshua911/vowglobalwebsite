@@ -16,8 +16,22 @@ const steps = [
 function Home() {
   return (
     <>
-      <section className="relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
-        <div className="container-site relative z-[1] flex min-h-[82vh] items-end py-14 sm:py-20">
+      <section className="vow-hero relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
+        <svg className="vow-hero-splashes" viewBox="0 0 1440 820" preserveAspectRatio="none" aria-hidden="true">
+          <g fill="rgb(17 17 17)">
+            <path d="M44 238c28-36 66-52 106-45 31 5 46 27 75 28 32 1 61-22 88-7 28 16 12 55-18 68-32 14-71 3-102 18-35 17-47 54-83 54-42 0-89-42-93-77-2-14 8-27 27-39z"/>
+            <path d="M128 166c11-14 29-19 45-10 12 7 15 21 8 31-9 13-31 16-45 7-11-7-16-18-8-28z"/>
+            <path d="M230 119c7-8 18-10 27-5 9 5 11 15 6 23-6 9-19 12-28 7-8-5-11-16-5-25z"/>
+            <circle cx="90" cy="140" r="7"/><circle cx="310" cy="183" r="9"/><circle cx="346" cy="225" r="5"/>
+            <path d="M1035 510c36-29 72-35 108-19 27 12 37 39 65 49 31 11 65-1 86 22 20 23-7 54-40 57-34 3-68-19-101-14-38 6-61 36-94 23-38-15-61-62-48-91 5-11 13-19 24-27z"/>
+            <path d="M1158 598c15-11 34-10 45 2 9 10 6 25-5 33-14 10-34 7-44-5-9-10-7-22 4-30z"/>
+            <path d="M1270 554c9-7 21-6 28 2 6 7 4 17-4 22-9 7-21 5-27-3-6-7-5-15 3-21z"/>
+            <circle cx="1327" cy="638" r="8"/><circle cx="1072" cy="600" r="6"/><circle cx="1002" cy="555" r="4"/>
+            <path d="M510 680c24-22 51-27 78-16 23 9 30 29 51 37 23 9 49 1 64 18 15 17-4 39-29 42-26 3-51-13-75-10-28 4-46 27-70 18-29-11-46-46-37-68 4-8 9-14 18-21z"/>
+            <circle cx="477" cy="707" r="6"/><circle cx="730" cy="742" r="8"/><circle cx="775" cy="695" r="5"/>
+          </g>
+        </svg>
+        <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
