@@ -14,11 +14,11 @@ const faqs = [
   ["How do I turn off reminders?", "Change notification preferences in VOW or in your device settings."],
 ] as const;
 
-export const Route = createFileRoute("/connect")({
+export const Route = createFileRoute("/join-vow")({
   head: () => pageHead({
-    path: "/connect",
-    title: "VOW - Connect",
-    description: "Join VOW for early access or get in touch with VOW for support, feedback, partnerships and privacy requests.",
+    path: "/join-vow",
+    title: "VOW - Join VOW",
+    description: "Join VOW for early access, or get in touch with VOW for support, feedback, partnerships and privacy requests.",
   }),
   component: ConnectPage,
 });
@@ -58,7 +58,7 @@ function ConnectPage() {
   return <>
     <header className="border-b border-vow-border bg-vow-surface/40">
       <div className="container-site py-20 sm:py-24">
-        <p className="vow-label">Connect</p>
+        <p className="vow-label">Join VOW</p>
         <h1 className="mt-4 max-w-5xl text-5xl leading-none sm:text-7xl">Join VOW.<br />Talk to VOW.</h1>
         <p className="mt-7 max-w-2xl text-lg leading-7 text-vow-muted">Early access, questions, feedback, partnerships or support — this is the direct line to VOW.</p>
       </div>
