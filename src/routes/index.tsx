@@ -18,20 +18,25 @@ function Home() {
     <>
       <section className="vow-hero relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
         <svg className="vow-hero-splashes" viewBox="0 0 1440 820" preserveAspectRatio="none" aria-hidden="true">
-          <g fill="rgb(17 17 17)">
-            <path d="M44 238c28-36 66-52 106-45 31 5 46 27 75 28 32 1 61-22 88-7 28 16 12 55-18 68-32 14-71 3-102 18-35 17-47 54-83 54-42 0-89-42-93-77-2-14 8-27 27-39z"/>
-            <path d="M128 166c11-14 29-19 45-10 12 7 15 21 8 31-9 13-31 16-45 7-11-7-16-18-8-28z"/>
-            <path d="M230 119c7-8 18-10 27-5 9 5 11 15 6 23-6 9-19 12-28 7-8-5-11-16-5-25z"/>
-            <circle cx="90" cy="140" r="7"/><circle cx="310" cy="183" r="9"/><circle cx="346" cy="225" r="5"/>
-            <path d="M1035 510c36-29 72-35 108-19 27 12 37 39 65 49 31 11 65-1 86 22 20 23-7 54-40 57-34 3-68-19-101-14-38 6-61 36-94 23-38-15-61-62-48-91 5-11 13-19 24-27z"/>
-            <path d="M1158 598c15-11 34-10 45 2 9 10 6 25-5 33-14 10-34 7-44-5-9-10-7-22 4-30z"/>
-            <path d="M1270 554c9-7 21-6 28 2 6 7 4 17-4 22-9 7-21 5-27-3-6-7-5-15 3-21z"/>
-            <circle cx="1327" cy="638" r="8"/><circle cx="1072" cy="600" r="6"/><circle cx="1002" cy="555" r="4"/>
-            <path d="M510 680c24-22 51-27 78-16 23 9 30 29 51 37 23 9 49 1 64 18 15 17-4 39-29 42-26 3-51-13-75-10-28 4-46 27-70 18-29-11-46-46-37-68 4-8 9-14 18-21z"/>
-            <circle cx="477" cy="707" r="6"/><circle cx="730" cy="742" r="8"/><circle cx="775" cy="695" r="5"/>
+          <g fill="#111">
+            <path d="M35 105l18-22 28 8 14-17 31 18 22-9 18 21-12 27-28 4-17 23-34-10-24 9-18-20z"/>
+            <path d="M360 58l22-16 27 13 24-9 18 25-18 20-30-3-22 12-27-17z"/>
+            <path d="M1320 95l22-14 25 7 17 20-11 25-29 3-18 19-26-17 5-25z"/>
+            <path d="M1180 240l24-20 31 7 22-15 25 22-9 28-26 10-21 22-28-17-20 3-8-23z"/>
+            <path d="M75 505l25-18 27 10 20-14 28 18-4 28-24 12-16 23-30-12-23 4-13-24z"/>
+            <path d="M410 705l23-18 29 9 19-13 29 18-7 27-24 10-17 21-29-11-24 5-11-23z"/>
+            <path d="M1010 675l20-19 29 7 18-14 30 18-5 27-25 10-16 21-31-11-22 4-10-23z"/>
+            <path d="M1370 570l18-18 24 8 15-12 13 20-8 23-23 8-14 18-24-12-16 4-8-22z"/>
+            <path d="M735 110l12-10 16 6 12-7 14 12-6 15-14 6-10 12-16-7-12 3-5-14z"/>
+            <path d="M860 770l15-12 18 6 12-8 17 11-5 17-15 6-10 13-18-7-13 3-6-15z"/>
           </g>
-        </svg>
-        <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
+          <g fill="#111">
+            <circle cx="95" cy="160" r="5"/><circle cx="160" cy="115" r="3"/><circle cx="330" cy="90" r="4"/>
+            <circle cx="1290" cy="155" r="4"/><circle cx="1230" cy="280" r="5"/><circle cx="60" cy="580" r="4"/>
+            <circle cx="470" cy="755" r="5"/><circle cx="1040" cy="730" r="4"/><circle cx="1320" cy="630" r="5"/>
+            <circle cx="790" cy="155" r="3"/>
+          </g>
+        </svg>     <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
