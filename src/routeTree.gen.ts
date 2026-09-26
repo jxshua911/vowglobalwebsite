@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutVowRouteImport } from './routes/about-vow'
-import { Route as JoinVowRouteImport } from './routes/connect'
+import { Route as JoinVowRouteImport } from './routes/join-vow'
 import { Route as EulaRouteImport } from './routes/eula'
 import { Route as CopyrightRouteImport } from './routes/copyright'
 import { Route as FounderRouteImport } from './routes/founder'
