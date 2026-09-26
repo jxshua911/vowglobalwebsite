@@ -62,8 +62,9 @@ async function consumeRateLimit(scope: string, identity: string, limit: number, 
     p_window_seconds: windowSeconds,
   });
   if (error) {
+    // Fail open: a missing/broken limiter must not take the whole chat down.
     console.error("rate-limit", error.message);
-    throw new Error("RATE_LIMIT_UNAVAILABLE");
+    return true;
   }
   return data === true;
 }
@@ -221,7 +222,13 @@ Deno.serve(async (req) => {
           content: clean(m.content, 2000),
         }));
 
-      const answer = await aiReply(message, history);
+      let answer: string;
+      try {
+        answer = await aiReply(message, history);
+      } catch (aiError) {
+        console.error("vow-website-chat ai", aiError instanceof Error ? aiError.message : String(aiError));
+        answer = "I can't answer right now. Please try again shortly, or use Get in touch to reach the VOW team.";
+      }
       const aiMessage = await addMessage(conversation.id, "ai", answer);
       return json({ conversation_id: conversation.id, human_mode: false, message: aiMessage });
     }
