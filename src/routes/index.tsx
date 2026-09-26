@@ -104,15 +104,6 @@ function Home() {
       </section>
 
 
-      <section className="container-site py-20 sm:py-28">
-        <div className="flex flex-col gap-8 border-t border-vow-border pt-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="vow-label">Connect with VOW</p>
-            <h2 className="mt-4 text-[clamp(2.6rem,5vw,4.5rem)] leading-[.9]">Join VOW or get in touch.</h2>
-          </div>
-          <Link to="/join-vow" className="vow-btn-primary">Join VOW</Link>
-        </div>
-      </section>
     </>
   );
 }
