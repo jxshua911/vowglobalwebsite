@@ -8,7 +8,9 @@
 @layer base{
  *{border-color:rgb(var(--vow-border));}html{scroll-behavior:smooth;background:rgb(var(--vow-bg));-webkit-font-smoothing:antialiased}body{margin:0;min-width:320px;overflow-x:hidden;background:rgb(var(--vow-bg));color:rgb(var(--vow-ink));font-family:"Inter",ui-sans-serif,system-ui,sans-serif}button,input,textarea,select{font:inherit}::selection{background:rgb(var(--vow-ink));color:rgb(var(--vow-bg))}:focus-visible{outline:2px solid rgb(var(--vow-ink));outline-offset:3px}h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:-.025em;line-height:1.02}
 }
-@utility container-site{margin-inline:auto;width:100%;max-width:87.5rem;padding-inline:1.25rem;@media (min-width:640px){padding-inline:2rem}@media (min-width:1024px){padding-inline:3rem}}
+.container-site{margin-inline:auto;width:100%;max-width:87.5rem;padding-inline:1.25rem}
+@media (min-width:640px){.container-site{padding-inline:2rem}}
+@media (min-width:1024px){.container-site{padding-inline:3rem}}
 @utility vow-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--vow-muted));line-height:1.35}
 @utility vow-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:rgb(var(--vow-ink));color:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-ink));padding:.8rem 1.25rem;font-size:.82rem;font-weight:600;transition:transform .2s ease,opacity .2s ease}
 
