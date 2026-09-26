@@ -11,11 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutVowRouteImport } from './routes/about-vow'
-import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as JoinVowRouteImport } from './routes/connect'
 import { Route as EulaRouteImport } from './routes/eula'
 import { Route as CopyrightRouteImport } from './routes/copyright'
 import { Route as FounderRouteImport } from './routes/founder'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -34,9 +33,9 @@ const AboutVowRoute = AboutVowRouteImport.update({
   path: '/about-vow',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ConnectRoute = ConnectRouteImport.update({
-  id: '/connect',
-  path: '/connect',
+const JoinVowRoute = JoinVowRouteImport.update({
+  id: '/join-vow',
+  path: '/join-vow',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EulaRoute = EulaRouteImport.update({
@@ -52,11 +51,6 @@ const CopyrightRoute = CopyrightRouteImport.update({
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LegalRoute = LegalRouteImport.update({
@@ -98,11 +92,11 @@ const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-vow': typeof AboutVowRoute
-  '/connect': typeof ConnectRoute
+  '/join-vow': typeof JoinVowRoute
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
+  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -114,11 +108,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-vow': typeof AboutVowRoute
-  '/connect': typeof ConnectRoute
+  '/join-vow': typeof JoinVowRoute
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
+  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -131,11 +125,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-vow': typeof AboutVowRoute
-  '/connect': typeof ConnectRoute
+  '/join-vow': typeof JoinVowRoute
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/how-it-works': typeof HowItWorksRoute
+  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -149,11 +143,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-vow'
-    | '/connect'
+    | '/join-vow'
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/how-it-works'
+    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -165,11 +159,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-vow'
-    | '/connect'
+    | '/join-vow'
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/how-it-works'
+    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -181,11 +175,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-vow'
-    | '/connect'
+    | '/join-vow'
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/how-it-works'
+    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -198,7 +192,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutVowRoute: typeof AboutVowRoute
-  ConnectRoute: typeof ConnectRoute
+  JoinVowRoute: typeof JoinVowRoute
   EulaRoute: typeof EulaRoute
   CopyrightRoute: typeof CopyrightRoute
   FounderRoute: typeof FounderRoute
@@ -228,11 +222,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutVowRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/connect': {
-      id: '/connect'
-      path: '/connect'
-      fullPath: '/connect'
-      preLoaderRoute: typeof ConnectRouteImport
+    '/join-vow': {
+      id: '/join-vow'
+      path: '/join-vow'
+      fullPath: '/join-vow'
+      preLoaderRoute: typeof JoinVowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/eula': {
@@ -256,10 +250,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
+    '/about-vow': {
+      id: '/about-vow'
+      path: '/about-vow'
+      fullPath: '/about-vow'
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -318,11 +312,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutVowRoute: AboutVowRoute,
-  ConnectRoute: ConnectRoute,
+  JoinVowRoute: JoinVowRoute,
   EulaRoute: EulaRoute,
   CopyrightRoute: CopyrightRoute,
   FounderRoute: FounderRoute,
-  HowItWorksRoute: HowItWorksRoute,
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
