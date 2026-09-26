@@ -12,7 +12,7 @@ export const site = {
 
 export const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/how-it-works", label: "How it works" },
-  { to: "/founder", label: "Founder" },
-  { to: "/support", label: "Get in touch" },
+  { to: "/about-vow", label: "About VOW" },
+  { to: "/connect", label: "Connect" },
+  { to: "/legal", label: "Legal" },
 ] as const;
