@@ -10,7 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutVowRouteImport } from './routes/about-vow'
+import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as EulaRouteImport } from './routes/eula'
 import { Route as CopyrightRouteImport } from './routes/copyright'
+import { Route as EulaRouteImport } from './routes/eula'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
@@ -24,6 +28,21 @@ import { Route as TermsAndServicesRouteImport } from './routes/terms-and-service
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutVowRoute = AboutVowRouteImport.update({
+  id: '/about-vow',
+  path: '/about-vow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EulaRoute = EulaRouteImport.update({
+  id: '/eula',
+  path: '/eula',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CopyrightRoute = CopyrightRouteImport.update({
@@ -79,6 +98,9 @@ const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-vow': typeof AboutVowRoute
+  '/connect': typeof ConnectRoute
+  '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -92,6 +114,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-vow': typeof AboutVowRoute
+  '/connect': typeof ConnectRoute
+  '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -121,6 +146,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about-vow'
+    | '/connect'
+    | '/eula'
     | '/copyright'
     | '/founder'
     | '/how-it-works'
@@ -161,6 +189,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutVowRoute: typeof AboutVowRoute
+  ConnectRoute: typeof ConnectRoute
+  EulaRoute: typeof EulaRoute
   CopyrightRoute: typeof CopyrightRoute
   FounderRoute: typeof FounderRoute
   HowItWorksRoute: typeof HowItWorksRoute
@@ -180,6 +211,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-vow': {
+      id: '/about-vow'
+      path: '/about-vow'
+      fullPath: '/about-vow'
+      preLoaderRoute: typeof AboutVowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eula': {
+      id: '/eula'
+      path: '/eula'
+      fullPath: '/eula'
+      preLoaderRoute: typeof EulaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/copyright': {
@@ -257,6 +309,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutVowRoute: AboutVowRoute,
+  ConnectRoute: ConnectRoute,
+  EulaRoute: EulaRoute,
   CopyrightRoute: CopyrightRoute,
   FounderRoute: FounderRoute,
   HowItWorksRoute: HowItWorksRoute,
