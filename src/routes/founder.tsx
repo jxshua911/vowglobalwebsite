@@ -2,7 +2,7 @@ import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/founder")({
-  head: () => pageHead({path:'/founders',title:'VOW - Founder',description:'Meet Joshua Nathan Kasanga, founder of VOW, the goal-planning and accountability app, and the thinking behind the product.'}),
+  head: () => pageHead({path:'/founder',title:'VOW - Founder',description:'Meet Joshua Nathan Kasanga, founder of VOW, the goal-planning and accountability app, and the thinking behind the product.'}),
   component: Founder,
 });
 function Founder() {
