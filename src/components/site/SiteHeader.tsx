@@ -20,7 +20,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <a href="/connect#waitlist" className="vow-btn-primary !px-4 !py-2 text-xs">Get early access</a>
+          <a href="/join-vow#waitlist" className="vow-btn-primary !px-4 !py-2 text-xs">Get early access</a>
         </div>
         <button type="button" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen((value) => !value)} className="grid size-10 place-items-center border border-vow-border lg:hidden">
           <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
@@ -36,7 +36,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <a href="/connect#waitlist" onClick={() => setOpen(false)} className="vow-btn-primary my-3 w-full">Get early access</a>
+            <a href="/join-vow#waitlist" onClick={() => setOpen(false)} className="vow-btn-primary my-3 w-full">Get early access</a>
           </div>
         </nav>
       )}
