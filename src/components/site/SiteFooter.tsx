@@ -14,17 +14,20 @@ export function SiteFooter() {
           <nav>
             <p className="vow-label">Explore</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link to="/how-it-works">How it works</Link></li>
+              <li><Link to="/about-vow">About VOW</Link></li>
               <li><Link to="/founder">Founder</Link></li>
-              <li><Link to="/support">Get in touch</Link></li>
+              <li><Link to="/connect">Connect</Link></li>
             </ul>
           </nav>
           <nav>
             <p className="vow-label">Legal</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link to="/terms-and-services">Terms & Privacy</Link></li>
+              <li><Link to="/legal">Legal documents</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-services">Terms of Service</Link></li>
+              <li><Link to="/eula">EULA</Link></li>
               <li><Link to="/copyright">Copyright / DMCA</Link></li>
-              <li><Link to="/support">Account deletion</Link></li>
+              <li><Link to="/connect#contact">Account deletion</Link></li>
             </ul>
           </nav>
         </div>
