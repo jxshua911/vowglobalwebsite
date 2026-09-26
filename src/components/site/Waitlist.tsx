@@ -31,7 +31,7 @@ export function Waitlist() {
         body: JSON.stringify({
           action: "waitlist",
           email: email.trim().toLowerCase(),
-          source: "website-home",
+          source: "website-connect",
           website: String(formData.get("website") || ""),
         }),
       });
