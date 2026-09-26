@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import appCss from "../styles.css?url";
+import "../styles.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { CookieConsent } from "@/components/site/CookieConsent";
@@ -15,7 +15,7 @@ export const Route=createRootRouteWithContext<{queryClient:QueryClient}>()({
   {charSet:"utf-8"},{name:"viewport",content:"width=device-width, initial-scale=1"},{title:"VOW"},
   {name:"description",content:"VOW turns goals into structured plans, sessions and visible progress."},{name:"robots",content:"index,follow"},{name:"author",content:"VOW"},
   {property:"og:site_name",content:"VOW"},{property:"og:title",content:"VOW"},{property:"og:description",content:"Make your VOW. Keep your VOW."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}
- ],links:[{rel:"stylesheet",href:appCss},{rel:"icon",href:"/favicon.ico",type:"image/x-icon"}]}),
+ ],links:[{rel:"icon",href:"/favicon.ico",type:"image/x-icon"}]}),
  shellComponent:RootShell,component:RootComponent,notFoundComponent:NotFoundComponent,errorComponent:ErrorComponent,
 });
 function RootShell({children}:{children:ReactNode}){return <html lang="en"><head><HeadContent/></head><body>{children}<Scripts/></body></html>;}
