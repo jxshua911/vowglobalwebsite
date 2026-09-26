@@ -20,7 +20,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TermsAndServicesRouteImport } from './routes/terms-and-services'
-import { Route as AdminChatRouteImport } from './routes/admin.chat'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -77,11 +76,6 @@ const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
   path: '/terms-and-services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminChatRoute = AdminChatRouteImport.update({
-  id: '/admin/chat',
-  path: '/admin/chat',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,7 +89,6 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -109,7 +102,6 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -124,7 +116,6 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -183,7 +174,6 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   TermsAndServicesRoute: typeof TermsAndServicesRoute
-  AdminChatRoute: typeof AdminChatRoute
 }
 
 declare module '@tanstack/react-router' {
