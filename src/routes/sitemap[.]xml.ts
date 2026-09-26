@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SITE_URL } from "@/lib/seo";
 
-const paths = ["/", "/how-it-works", "/founder", "/support", "/terms-and-services", "/copyright"];
+const paths = ["/", "/about-vow", "/connect", "/legal", "/founder", "/terms-and-services", "/privacy-policy", "/eula", "/copyright"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
