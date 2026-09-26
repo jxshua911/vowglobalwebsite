@@ -1,3 +1,4 @@
+// Restored from known-good VOW website implementation (commit 438db8e00315d0efc18fa5fb691d8fce49c38605).
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Message = {
