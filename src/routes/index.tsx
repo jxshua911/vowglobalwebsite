@@ -19,7 +19,33 @@ function Home() {
       <section className="relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
         <div className="absolute inset-0 vow-hero-art" aria-hidden />
                 <div className="vow-paint-splash" aria-hidden>
-          <div className="vow-splash-blob"></div>
+          <svg viewBox="0 0 1440 700" preserveAspectRatio="none" role="presentation">
+            <g className="splash">
+              <path d="M-20 92 C35 48 86 65 119 31 C152 -3 193 24 218 58 C245 94 291 72 311 108 C330 142 288 169 248 154 C204 137 179 174 137 154 C98 135 68 171 31 145 C-3 122 -48 123 -20 92Z"/>
+              <circle cx="286" cy="38" r="11"/><circle cx="326" cy="76" r="6"/><circle cx="248" cy="9" r="5"/>
+            </g>
+            <g className="splash">
+              <path d="M454 24 C493 -3 539 22 563 48 C588 75 631 56 654 87 C677 117 650 146 612 132 C579 120 554 151 521 132 C489 113 454 128 437 98 C419 67 428 43 454 24Z"/>
+              <circle cx="434" cy="15" r="6"/><circle cx="677" cy="55" r="8"/><circle cx="706" cy="92" r="4"/>
+            </g>
+            <g className="splash">
+              <path d="M1074 34 C1120 -8 1172 18 1201 48 C1233 80 1270 52 1301 78 C1334 106 1314 143 1272 134 C1231 125 1215 162 1175 143 C1139 126 1101 148 1073 120 C1041 89 1045 60 1074 34Z"/>
+              <circle cx="1033" cy="50" r="8"/><circle cx="1328" cy="47" r="12"/><circle cx="1362" cy="91" r="5"/><circle cx="1288" cy="15" r="6"/>
+            </g>
+            <g className="splash">
+              <path d="M1187 282 C1224 252 1261 271 1283 297 C1307 326 1344 303 1369 329 C1394 355 1377 387 1343 379 C1308 371 1290 402 1258 384 C1229 368 1202 389 1178 365 C1151 338 1158 305 1187 282Z"/>
+              <circle cx="1141" cy="310" r="6"/><circle cx="1402" cy="294" r="9"/><circle cx="1374" cy="407" r="5"/>
+            </g>
+            <g className="splash">
+              <path d="M1070 536 C1098 511 1131 524 1151 548 C1170 570 1202 554 1222 576 C1244 600 1229 628 1200 621 C1171 615 1154 642 1127 626 C1102 611 1078 628 1058 606 C1038 583 1047 556 1070 536Z"/>
+              <circle cx="1018" cy="566" r="6"/><circle cx="1248" cy="553" r="7"/><circle cx="1266" cy="620" r="4"/>
+            </g>
+            <g className="splash">
+              <path d="M720 565 C745 543 775 553 792 573 C809 594 836 581 853 601 C870 620 859 646 834 640 C809 635 793 658 771 645 C748 632 728 645 711 627 C693 608 700 582 720 565Z"/>
+              <circle cx="682" cy="580" r="5"/><circle cx="875" cy="569" r="7"/>
+            </g>
+          </svg>
+        </div>
           <div className="vow-splash-blob"></div>
           <div className="vow-splash-blob"></div>
           <div className="vow-splash-blob"></div>
