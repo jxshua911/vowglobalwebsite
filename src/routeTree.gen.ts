@@ -96,7 +96,6 @@ export interface FileRoutesByFullPath {
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -112,7 +111,6 @@ export interface FileRoutesByTo {
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -129,7 +127,6 @@ export interface FileRoutesById {
   '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
-  '/about-vow': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -147,7 +144,6 @@ export interface FileRouteTypes {
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -163,7 +159,6 @@ export interface FileRouteTypes {
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -179,7 +174,6 @@ export interface FileRouteTypes {
     | '/eula'
     | '/copyright'
     | '/founder'
-    | '/about-vow'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
@@ -196,7 +190,6 @@ export interface RootRouteChildren {
   EulaRoute: typeof EulaRoute
   CopyrightRoute: typeof CopyrightRoute
   FounderRoute: typeof FounderRoute
-  HowItWorksRoute: typeof HowItWorksRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -254,9 +247,6 @@ declare module '@tanstack/react-router' {
       id: '/about-vow'
       path: '/about-vow'
       fullPath: '/about-vow'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/legal': {
       id: '/legal'
       path: '/legal'
