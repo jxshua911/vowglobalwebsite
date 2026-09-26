@@ -17,27 +17,7 @@ function Home() {
   return (
     <>
       <section className="vow-hero relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
-        <svg className="vow-hero-splashes" viewBox="0 0 1440 820" preserveAspectRatio="none" aria-hidden="true">
-          <g fill="#111">
-            <path d="M28 78l19-25 24 9 18-18 31 13 22-8 21 20-9 26-24 7-14 19-30-7-21 10-20-19z"/>
-            <path d="M250 30l14-17 20 6 15-11 23 14-4 21-19 8-13 17-25-8-17 5-9-18z"/>
-            <path d="M530 92l23-18 28 8 17-13 27 19-8 25-25 7-17 18-29-10-20 6-10-24z"/>
-            <path d="M820 38l18-16 24 8 18-11 24 17-7 23-22 8-15 18-27-10-18 6-8-22z"/>
-            <path d="M1115 82l25-21 29 10 19-15 31 22-8 29-28 8-18 21-31-12-23 7-10-27z"/>
-            <path d="M1335 210l19-23 27 9 18-14 28 20-7 27-24 9-16 20-29-10-21 6-9-24z"/>
-            <path d="M1288 485l24-19 28 8 18-14 29 20-7 27-24 9-17 21-29-11-22 6-10-24z"/>
-            <path d="M1165 715l21-20 27 9 17-13 28 19-7 26-24 9-16 19-28-10-20 6-9-24z"/>
-            <path d="M930 775l17-16 23 7 15-11 24 16-6 22-20 8-14 17-24-9-18 5-8-21z"/>
-            <path d="M70 720l20-18 27 8 17-12 27 18-6 25-23 9-16 19-28-10-21 6-9-23z"/>
-            <path d="M1390 735l12-13 18 6 10-8 16 12-4 18-15 6-9 13-18-7-12 4-6-16z"/>
-          </g>
-          <g fill="#111">
-            <circle cx="82" cy="145" r="4"/><circle cx="190" cy="78" r="3"/><circle cx="315" cy="125" r="5"/>
-            <circle cx="590" cy="145" r="3"/><circle cx="875" cy="120" r="4"/><circle cx="1190" cy="145" r="3"/>
-            <circle cx="1370" cy="330" r="5"/><circle cx="1240" cy="585" r="3"/><circle cx="1090" cy="765" r="4"/>
-            <circle cx="150" cy="765" r="4"/><circle cx="1360" cy="690" r="3"/>
-          </g>
-        </svg>     <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
+             <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
