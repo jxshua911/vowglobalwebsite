@@ -64,9 +64,7 @@ function ConnectPage() {
       </div>
     </header>
 
-    <section id="waitlist" className="scroll-mt-24 border-b border-vow-border">
-      <Waitlist />
-    </section>
+    <Waitlist />
 
     <section id="contact" className="relative overflow-hidden bg-vow-bg text-vow-ink scroll-mt-24">
       <div className="absolute inset-0 opacity-20" aria-hidden><div className="vow-contact-grid h-full w-full" /></div>
