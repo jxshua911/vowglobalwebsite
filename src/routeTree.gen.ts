@@ -10,27 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as CopyrightRouteImport } from './routes/copyright'
-import { Route as FoundersRouteImport } from './routes/founders'
+import { Route as FounderRouteImport } from './routes/founder'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as WorkRouteImport } from './routes/work'
+import { Route as TermsAndServicesRouteImport } from './routes/terms-and-services'
+import { Route as AdminChatRouteImport } from './routes/admin.chat'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AssistantRoute = AssistantRouteImport.update({
-  id: '/assistant',
-  path: '/assistant',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CopyrightRoute = CopyrightRouteImport.update({
@@ -38,9 +32,9 @@ const CopyrightRoute = CopyrightRouteImport.update({
   path: '/copyright',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FoundersRoute = FoundersRouteImport.update({
-  id: '/founders',
-  path: '/founders',
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -63,11 +57,6 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -83,120 +72,118 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkRoute = WorkRouteImport.update({
-  id: '/work',
-  path: '/work',
+const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
+  id: '/terms-and-services',
+  path: '/terms-and-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminChatRoute = AdminChatRouteImport.update({
+  id: '/admin/chat',
+  path: '/admin/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/assistant': typeof AssistantRoute
   '/copyright': typeof CopyrightRoute
-  '/founders': typeof FoundersRoute
+  '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
-  '/work': typeof WorkRoute
+  '/terms-and-services': typeof TermsAndServicesRoute
+  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/assistant': typeof AssistantRoute
   '/copyright': typeof CopyrightRoute
-  '/founders': typeof FoundersRoute
+  '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
-  '/work': typeof WorkRoute
+  '/terms-and-services': typeof TermsAndServicesRoute
+  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/assistant': typeof AssistantRoute
   '/copyright': typeof CopyrightRoute
-  '/founders': typeof FoundersRoute
+  '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
-  '/work': typeof WorkRoute
+  '/terms-and-services': typeof TermsAndServicesRoute
+  '/admin/chat': typeof AdminChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/assistant'
     | '/copyright'
-    | '/founders'
+    | '/founder'
     | '/how-it-works'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
-    | '/services'
     | '/sitemap.xml'
     | '/support'
     | '/terms'
-    | '/work'
+    | '/terms-and-services'
+    | '/admin/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/assistant'
     | '/copyright'
-    | '/founders'
+    | '/founder'
     | '/how-it-works'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
-    | '/services'
     | '/sitemap.xml'
     | '/support'
     | '/terms'
-    | '/work'
+    | '/terms-and-services'
+    | '/admin/chat'
   id:
     | '__root__'
     | '/'
-    | '/assistant'
     | '/copyright'
-    | '/founders'
+    | '/founder'
     | '/how-it-works'
     | '/legal'
     | '/privacy'
     | '/privacy-policy'
-    | '/services'
     | '/sitemap.xml'
     | '/support'
     | '/terms'
-    | '/work'
+    | '/terms-and-services'
+    | '/admin/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AssistantRoute: typeof AssistantRoute
   CopyrightRoute: typeof CopyrightRoute
-  FoundersRoute: typeof FoundersRoute
+  FounderRoute: typeof FounderRoute
   HowItWorksRoute: typeof HowItWorksRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
-  WorkRoute: typeof WorkRoute
+  TermsAndServicesRoute: typeof TermsAndServicesRoute
+  AdminChatRoute: typeof AdminChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -208,13 +195,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/assistant': {
-      id: '/assistant'
-      path: '/assistant'
-      fullPath: '/assistant'
-      preLoaderRoute: typeof AssistantRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/copyright': {
       id: '/copyright'
       path: '/copyright'
@@ -222,11 +202,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CopyrightRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/founders': {
-      id: '/founders'
-      path: '/founders'
-      fullPath: '/founders'
-      preLoaderRoute: typeof FoundersRouteImport
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -257,13 +237,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -285,11 +258,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work': {
-      id: '/work'
-      path: '/work'
-      fullPath: '/work'
-      preLoaderRoute: typeof WorkRouteImport
+    '/terms-and-services': {
+      id: '/terms-and-services'
+      path: '/terms-and-services'
+      fullPath: '/terms-and-services'
+      preLoaderRoute: typeof TermsAndServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/chat': {
+      id: '/admin/chat'
+      path: '/admin/chat'
+      fullPath: '/admin/chat'
+      preLoaderRoute: typeof AdminChatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -297,18 +277,17 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AssistantRoute: AssistantRoute,
   CopyrightRoute: CopyrightRoute,
-  FoundersRoute: FoundersRoute,
+  FounderRoute: FounderRoute,
   HowItWorksRoute: HowItWorksRoute,
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
-  WorkRoute: WorkRoute,
+  TermsAndServicesRoute: TermsAndServicesRoute,
+  AdminChatRoute: AdminChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
