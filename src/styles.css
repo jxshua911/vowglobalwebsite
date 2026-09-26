@@ -29,7 +29,6 @@
 /* VOW production: never display platform/editor branding. */
 #lovable-badge{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
 
-.vow-hero-splashes{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible;transform:translateZ(0)}.vow-hero-splashes path,.vow-hero-splashes circle{vector-effect:non-scaling-stroke}
 .vow-hero-title{letter-spacing:-.018em;line-height:.88;position:relative;z-index:3;overflow:visible}
 
 
