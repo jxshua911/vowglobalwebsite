@@ -14,7 +14,6 @@ import { Route as AboutVowRouteImport } from './routes/about-vow'
 import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as EulaRouteImport } from './routes/eula'
 import { Route as CopyrightRouteImport } from './routes/copyright'
-import { Route as EulaRouteImport } from './routes/eula'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
@@ -131,6 +130,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-vow': typeof AboutVowRoute
+  '/connect': typeof ConnectRoute
+  '/eula': typeof EulaRoute
   '/copyright': typeof CopyrightRoute
   '/founder': typeof FounderRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -162,6 +164,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about-vow'
+    | '/connect'
+    | '/eula'
     | '/copyright'
     | '/founder'
     | '/how-it-works'
@@ -175,6 +180,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about-vow'
+    | '/connect'
+    | '/eula'
     | '/copyright'
     | '/founder'
     | '/how-it-works'
