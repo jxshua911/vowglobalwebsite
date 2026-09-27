@@ -17,6 +17,7 @@ export function SiteFooter() {
               <li><Link to="/about-vow">About VOW</Link></li>
               <li><Link to="/founder">Founder</Link></li>
               <li><Link to="/join-vow">Join VOW</Link></li>
+              <li><Link to="/support">Support</Link></li>
             </ul>
           </nav>
           <nav>
@@ -27,7 +28,7 @@ export function SiteFooter() {
               <li><Link to="/terms-and-services">Terms of Service</Link></li>
               <li><Link to="/eula">EULA</Link></li>
               <li><Link to="/copyright">Copyright / DMCA</Link></li>
-              <li><Link to="/connect#contact">Account deletion</Link></li>
+              <li><Link to="/support#contact">Account deletion / Support</Link></li>
             </ul>
           </nav>
         </div>
