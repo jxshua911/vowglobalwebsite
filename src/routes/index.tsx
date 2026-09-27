@@ -1,6 +1,7 @@
 import { pageHead } from "@/lib/seo";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { site } from "@/content/site";
+import { Waitlist } from "@/components/site/Waitlist";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({path:'/',title:'VOW - Home',description:'VOW is a goal-planning and accountability app by Joshua Nathan Kasanga. Turn goals into structured plans, scheduled sessions and honest progress reviews.'}),
@@ -32,13 +33,15 @@ function Home() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a href="/join-vow#waitlist" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
-                <Link to="/about-vow" className="vow-arrow-light">About VOW <span aria-hidden>→</span></Link>
+
               </div>
               <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Launching 29 October 2026</p>
             </div>
           </div>
         </div>
       </section>
+
+      <Waitlist />
 
       <section className="container-site py-20 sm:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
@@ -97,7 +100,7 @@ function Home() {
             </div>
             <div className="lg:col-span-4">
               <p className="leading-[1.8] text-vow-ink/70">VOW is about the part after the goal is written down: the work, the review and the decision to keep going.</p>
-              <div className="mt-8"><Link to="/about-vow" className="vow-arrow-light">Explore VOW <span aria-hidden>→</span></Link></div>
+              <div className="mt-8"><a href="#waitlist" className="vow-arrow-light">Get early access <span aria-hidden>→</span></a></div>
             </div>
           </div>
         </div>
