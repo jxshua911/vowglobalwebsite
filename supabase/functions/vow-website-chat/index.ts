@@ -54,19 +54,25 @@ async function sha256Hex(value: string) {
 }
 
 async function consumeRateLimit(scope: string, identity: string, limit: number, windowSeconds = 60) {
-  const pepper = Deno.env.get("CHAT_RATE_LIMIT_SECRET") || secret();
-  const digest = await sha256Hex(pepper + ":" + scope + ":" + identity);
-  const { data, error } = await adminDb().schema("website").rpc("consume_chat_rate_limit", {
-    p_key: scope + ":" + digest,
-    p_limit: limit,
-    p_window_seconds: windowSeconds,
-  });
-  if (error) {
-    // Fail open: a missing/broken limiter must not take the whole chat down.
-    console.error("rate-limit", error.message);
+  try {
+    const pepper = Deno.env.get("CHAT_RATE_LIMIT_SECRET") || secret();
+    const digest = await sha256Hex(pepper + ":" + scope + ":" + identity);
+    const { data, error } = await adminDb().schema("website").rpc("consume_chat_rate_limit", {
+      p_key: scope + ":" + digest,
+      p_limit: limit,
+      p_window_seconds: windowSeconds,
+    });
+    if (error) {
+      // Fail open: a missing/broken limiter must not take the public waitlist down.
+      console.error("rate-limit-error", error.message);
+      return true;
+    }
+    return data === true;
+  } catch (err) {
+    // Fail open: rate limiting is protective, not a prerequisite for waitlist access.
+    console.error("rate-limit-exception", err instanceof Error ? err.message : String(err));
     return true;
   }
-  return data === true;
 }
 
 async function enforceVisitorRateLimit(req: Request, sessionId?: string, limit = 12) {
@@ -261,7 +267,7 @@ Deno.serve(async (req) => {
         return json({ error: "Too many requests. Please try again in a moment." }, 429);
       }
       const { data, error } = await adminDb()
-        .schema("website").from("waitlist")
+        .from("vow_waitlist")
         .insert({
           email,
           source: clean(body?.source, 80) || "website-home",
