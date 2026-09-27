@@ -13,4 +13,6 @@ export const site = {
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/legal", label: "Legal" },
+  { to: "/support", label: "Support" },
+  { to: "/founder", label: "Founder" },
 ] as const;
