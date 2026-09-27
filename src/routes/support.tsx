@@ -90,10 +90,9 @@ function SupportPage() {
       <section className="border-t border-vow-border bg-vow-surface/30">
         <div className="container-site py-16 sm:py-24">
           <p className="vow-label">Useful links</p>
-          <div className="mt-6 grid gap-px border border-vow-border bg-vow-border sm:grid-cols-3">
-            <a href="/join-vow#waitlist" className="bg-vow-bg p-7 hover:bg-vow-surface/40"><h3 className="text-2xl">Join VOW</h3><p className="mt-2 text-sm text-vow-muted">Get early access.</p></a>
+          <div className="mt-6 grid gap-px border border-vow-border bg-vow-border sm:grid-cols-2">
+            <a href="/early-access" className="bg-vow-bg p-7 hover:bg-vow-surface/40"><h3 className="text-2xl">Get early access</h3><p className="mt-2 text-sm text-vow-muted">Join the launch list.</p></a>
             <a href="/legal" className="bg-vow-bg p-7 hover:bg-vow-surface/40"><h3 className="text-2xl">Legal</h3><p className="mt-2 text-sm text-vow-muted">Terms, privacy and EULA.</p></a>
-            <a href="/about-vow" className="bg-vow-bg p-7 hover:bg-vow-surface/40"><h3 className="text-2xl">About VOW</h3><p className="mt-2 text-sm text-vow-muted">What VOW is and how it works.</p></a>
           </div>
         </div>
       </section>
