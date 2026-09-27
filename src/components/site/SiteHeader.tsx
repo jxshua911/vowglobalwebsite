@@ -20,6 +20,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <Link to="/support" className="text-sm font-medium text-vow-ink hover:opacity-60">Support</Link>
           <a href="/join-vow#waitlist" className="vow-btn-primary !px-4 !py-2 text-xs">Get early access</a>
         </div>
         <button type="button" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen((value) => !value)} className="grid size-10 place-items-center border border-vow-border lg:hidden">
@@ -36,6 +37,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <Link to="/support" onClick={() => setOpen(false)} className="border-b border-vow-border/70 py-3.5 text-base font-medium">Support</Link>
             <a href="/join-vow#waitlist" onClick={() => setOpen(false)} className="vow-btn-primary my-3 w-full">Get early access</a>
           </div>
         </nav>
