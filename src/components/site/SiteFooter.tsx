@@ -16,6 +16,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm">
               <li><Link to="/founder">Founder</Link></li>
               <li><Link to="/support">Support</Link></li>
+              <li><Link to="/early-access">Get early access</Link></li>
             </ul>
           </nav>
           <nav>
