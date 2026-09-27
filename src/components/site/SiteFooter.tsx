@@ -14,9 +14,7 @@ export function SiteFooter() {
           <nav>
             <p className="vow-label">Explore</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link to="/about-vow">About VOW</Link></li>
               <li><Link to="/founder">Founder</Link></li>
-              <li><Link to="/join-vow">Join VOW</Link></li>
               <li><Link to="/support">Support</Link></li>
             </ul>
           </nav>
