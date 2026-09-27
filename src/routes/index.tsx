@@ -16,7 +16,7 @@ const steps = [
 function Home() {
   return (
     <>
-      <section className="vow-hero relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">
+      <section className="vow-hero relative min-h-[82vh] overflow-hidden bg-vow-bg text-vow-ink">\n        <img src="/vow-paint-splashes.svg" alt="" aria-hidden="true" className="vow-paint-splashes" />
              <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
