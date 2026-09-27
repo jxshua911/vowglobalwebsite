@@ -66,36 +66,109 @@
 .vow-image-index{position:absolute;right:1rem;top:1rem;z-index:2;background:rgb(var(--vow-bg)/.9);border:1px solid rgb(var(--vow-border));padding:.35rem .5rem;font-family:ui-monospace,monospace;font-size:.65rem;font-weight:700;letter-spacing:.08em}
 
 
-/* VOW hero paint splashes — CSS only, based on the supplied reference. */
+/* VOW hero paint splash artwork — solid ink silhouettes, deliberately irregular. */
 .vow-paint-splash{
   position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;user-select:none;
 }
 .vow-splash-blob{
-  position:absolute;width:clamp(220px,25vw,420px);height:clamp(150px,18vw,300px);opacity:.92;
-  background:
-    radial-gradient(ellipse 9% 15% at 12% 35%,#111 0 96%,transparent 100%),
-    radial-gradient(ellipse 18% 27% at 31% 47%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 8% 13% at 49% 29%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 13% 20% at 67% 52%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 6% 10% at 84% 32%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 3% 5% at 21% 18%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 4% 6% at 57% 72%,#111 0 95%,transparent 100%),
-    radial-gradient(ellipse 2.5% 4% at 75% 18%,#111 0 95%,transparent 100%);
-  filter:contrast(1.05);
+  position:absolute;
+  width:clamp(250px,30vw,520px);
+  height:clamp(190px,23vw,380px);
+  background:#111;
+  opacity:1;
+  filter:none;
+  border-radius:0;
+  transform-origin:center;
 }
-.vow-splash-blob::before,.vow-splash-blob::after{content:"";position:absolute;display:block;background:#111}
-.vow-splash-blob::before{width:42%;height:11%;left:26%;top:36%;border-radius:80% 20% 70% 30% / 45% 55% 35% 65%;transform:rotate(-18deg)}
-.vow-splash-blob::after{width:9%;height:30%;left:58%;top:9%;border-radius:90% 10% 80% 20% / 25% 75% 25% 75%;transform:rotate(28deg)}
-.vow-splash-blob:nth-child(1){top:-3%;left:-5%;transform:rotate(-9deg) scale(1.05)}
-.vow-splash-blob:nth-child(2){top:-5%;left:34%;transform:rotate(7deg) scale(.88)}
-.vow-splash-blob:nth-child(3){top:-2%;right:-3%;transform:rotate(-14deg) scale(1.1)}
-.vow-splash-blob:nth-child(4){top:28%;right:2%;transform:rotate(13deg) scale(.82)}
-.vow-splash-blob:nth-child(5){top:43%;right:-8%;transform:rotate(-18deg) scale(.95)}
-.vow-splash-blob:nth-child(6){bottom:-8%;left:2%;transform:rotate(16deg) scale(.92)}
-.vow-splash-blob:nth-child(7){bottom:-3%;left:38%;transform:rotate(-8deg) scale(.76)}
-.vow-splash-blob:nth-child(8){bottom:8%;right:3%;transform:rotate(12deg) scale(.88)}
+.vow-splash-blob::before,
+.vow-splash-blob::after{
+  content:"";
+  position:absolute;
+  display:block;
+  background:#111;
+}
+.vow-splash-blob::before{
+  width:16%;
+  height:9%;
+  left:70%;
+  top:72%;
+  border-radius:52% 48% 62% 38%;
+  transform:rotate(-24deg);
+}
+.vow-splash-blob::after{
+  width:4.5%;
+  height:12%;
+  left:88%;
+  top:12%;
+  border-radius:70% 30% 65% 35%;
+  transform:rotate(31deg);
+}
+
+/* Each cluster has a different silhouette so the composition reads as thrown ink,
+   not repeated circles or soft blobs. */
+.vow-splash-blob:nth-child(1){
+  top:-12%;left:-8%;transform:rotate(-13deg) scale(1.08);
+  clip-path:polygon(0 34%,8% 27%,16% 31%,20% 17%,28% 22%,35% 9%,43% 17%,51% 5%,59% 19%,67% 12%,74% 27%,84% 19%,92% 33%,100% 30%,96% 44%,88% 48%,94% 58%,83% 61%,78% 74%,68% 65%,59% 81%,49% 70%,39% 88%,31% 72%,21% 80%,17% 65%,7% 67%,11% 52%,0 49%);
+}
+.vow-splash-blob:nth-child(1)::before{
+  width:11%;height:19%;left:82%;top:55%;border-radius:65% 35% 72% 28%;transform:rotate(18deg);
+}
+.vow-splash-blob:nth-child(1)::after{
+  width:3%;height:16%;left:72%;top:4%;border-radius:70% 30% 55% 45%;transform:rotate(-18deg);
+}
+
+.vow-splash-blob:nth-child(2){
+  top:-10%;left:29%;transform:rotate(5deg) scale(.92);
+  clip-path:polygon(3% 45%,11% 38%,18% 42%,25% 25%,34% 31%,42% 14%,50% 24%,57% 7%,64% 25%,73% 16%,79% 31%,91% 27%,98% 41%,93% 52%,100% 61%,88% 65%,83% 79%,72% 68%,63% 88%,53% 74%,44% 93%,35% 75%,25% 83%,19% 68%,8% 73%,12% 58%,0 55%);
+}
+.vow-splash-blob:nth-child(2)::before{width:8%;height:23%;left:13%;top:68%;border-radius:80% 20% 60% 40%;transform:rotate(23deg)}
+.vow-splash-blob:nth-child(2)::after{width:3.5%;height:10%;left:77%;top:1%;transform:rotate(-27deg)}
+
+.vow-splash-blob:nth-child(3){
+  top:-8%;right:-9%;transform:rotate(-8deg) scale(1.1);
+  clip-path:polygon(0 40%,9% 33%,15% 20%,24% 28%,31% 11%,39% 22%,48% 5%,56% 18%,64% 9%,72% 25%,81% 17%,89% 31%,100% 28%,95% 43%,100% 52%,89% 57%,94% 69%,81% 67%,75% 84%,66% 70%,56% 91%,48% 76%,38% 96%,31% 78%,21% 86%,18% 69%,7% 72%,12% 57%,0 54%);
+}
+.vow-splash-blob:nth-child(3)::before{width:13%;height:7%;left:9%;top:63%;border-radius:70%;transform:rotate(-18deg)}
+.vow-splash-blob:nth-child(3)::after{width:2.5%;height:15%;left:84%;top:3%;transform:rotate(23deg)}
+
+.vow-splash-blob:nth-child(4){
+  top:22%;right:-4%;transform:rotate(14deg) scale(.78);
+  clip-path:polygon(2% 43%,12% 34%,18% 20%,27% 29%,36% 12%,45% 24%,54% 8%,63% 26%,72% 15%,81% 31%,94% 27%,100% 43%,93% 53%,100% 63%,88% 68%,82% 81%,70% 70%,60% 91%,50% 77%,40% 94%,32% 76%,21% 84%,17% 68%,7% 71%,11% 56%,0 53%);
+}
+.vow-splash-blob:nth-child(4)::before{width:6%;height:18%;left:7%;top:7%;transform:rotate(-31deg)}
+.vow-splash-blob:nth-child(4)::after{width:3%;height:9%;left:84%;top:73%;transform:rotate(19deg)}
+
+.vow-splash-blob:nth-child(5){
+  top:43%;right:-10%;transform:rotate(-17deg) scale(.96);
+  clip-path:polygon(0 38%,10% 31%,18% 17%,28% 27%,36% 8%,45% 20%,54% 5%,63% 22%,72% 12%,81% 29%,91% 21%,100% 36%,95% 48%,100% 58%,88% 62%,82% 78%,71% 66%,61% 88%,52% 73%,42% 93%,33% 76%,23% 84%,18% 67%,8% 71%,12% 54%,0 51%);
+}
+.vow-splash-blob:nth-child(5)::before{width:14%;height:5%;left:3%;top:74%;transform:rotate(12deg)}
+.vow-splash-blob:nth-child(5)::after{width:3%;height:17%;left:78%;top:0;transform:rotate(-24deg)}
+
+.vow-splash-blob:nth-child(6){
+  bottom:-13%;left:-4%;transform:rotate(15deg) scale(.98);
+  clip-path:polygon(0 34%,10% 27%,18% 14%,28% 24%,36% 7%,45% 19%,54% 3%,63% 21%,72% 11%,81% 28%,91% 20%,100% 35%,95% 47%,100% 57%,88% 62%,82% 77%,71% 66%,61% 88%,51% 74%,41% 94%,32% 76%,22% 84%,17% 68%,7% 71%,11% 53%,0 49%);
+}
+.vow-splash-blob:nth-child(6)::before{width:8%;height:20%;left:79%;top:5%;transform:rotate(24deg)}
+.vow-splash-blob:nth-child(6)::after{width:3%;height:12%;left:9%;top:73%;transform:rotate(-19deg)}
+
+.vow-splash-blob:nth-child(7){
+  bottom:-8%;left:37%;transform:rotate(-8deg) scale(.72);
+  clip-path:polygon(1% 42%,11% 34%,19% 19%,28% 29%,37% 10%,46% 23%,55% 6%,64% 25%,73% 14%,82% 30%,94% 26%,100% 42%,94% 53%,100% 62%,88% 67%,82% 81%,70% 70%,60% 91%,50% 77%,40% 95%,31% 76%,21% 85%,17% 69%,7% 72%,11% 56%,0 53%);
+}
+.vow-splash-blob:nth-child(7)::before{width:5%;height:16%;left:8%;top:8%;transform:rotate(32deg)}
+.vow-splash-blob:nth-child(7)::after{width:4%;height:8%;left:89%;top:67%;transform:rotate(-17deg)}
+
+.vow-splash-blob:nth-child(8){
+  bottom:5%;right:-2%;transform:rotate(11deg) scale(.86);
+  clip-path:polygon(0 39%,9% 31%,17% 16%,27% 26%,35% 9%,44% 21%,53% 5%,62% 23%,71% 13%,80% 30%,91% 22%,100% 37%,95% 49%,100% 59%,88% 64%,82% 80%,71% 68%,61% 90%,51% 75%,41% 95%,32% 77%,22% 85%,17% 69%,7% 72%,11% 55%,0 52%);
+}
+.vow-splash-blob:nth-child(8)::before{width:12%;height:5%;left:4%;top:69%;transform:rotate(-15deg)}
+.vow-splash-blob:nth-child(8)::after{width:3%;height:14%;left:83%;top:4%;transform:rotate(27deg)}
+
 @media (max-width:767px){
-  .vow-paint-splash{opacity:.86}
-  .vow-splash-blob{width:clamp(150px,48vw,260px);height:clamp(110px,34vw,190px)}
-  .vow-splash-blob:nth-child(2),.vow-splash-blob:nth-child(7){display:none}
+  .vow-paint-splash{opacity:1}
+  .vow-splash-blob{width:clamp(170px,52vw,300px);height:clamp(130px,39vw,220px)}
+  .vow-splash-blob:nth-child(2),
+  .vow-splash-blob:nth-child(7){display:none}
 }
