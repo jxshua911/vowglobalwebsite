@@ -32,7 +32,7 @@ function Home() {
                 {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <a href="/join-vow#waitlist" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
+                <a href="/#waitlist" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
 
               </div>
               <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Launching 29 October 2026</p>
