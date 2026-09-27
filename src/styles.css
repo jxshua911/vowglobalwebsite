@@ -13,7 +13,6 @@
 @media (min-width:1024px){.container-site{padding-inline:3rem}}
 .vow-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--vow-muted));line-height:1.35}
 .vow-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:rgb(var(--vow-ink));color:rgb(var(--vow-bg));border:1px solid rgb(var(--vow-ink));padding:.8rem 1.25rem;font-size:.82rem;font-weight:600;transition:transform .2s ease,opacity .2s ease}
-
 .vow-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:transparent;color:rgb(var(--vow-ink));border:1px solid rgb(var(--vow-border));padding:.8rem 1.25rem;font-size:.82rem;font-weight:500}
 .vow-arrow-light{display:inline-flex;align-items:center;gap:.65rem;color:rgb(var(--vow-ink));font-size:.84rem;font-weight:600}
 .vow-btn-primary:hover{transform:translateY(-2px);opacity:.72}.vow-btn-primary:active,.vow-btn-ghost:active{transform:translateY(1px)}
@@ -22,16 +21,10 @@
 .legal-prose{font-size:1rem;line-height:1.8;color:rgb(var(--vow-ink))}
 .legal-prose h2{margin-top:2.5rem;margin-bottom:1rem;padding-top:1.5rem;border-top:1px solid rgb(var(--vow-border));font-family:"Inter",sans-serif;font-size:1.05rem;font-weight:600;letter-spacing:0;scroll-margin-top:6rem}.legal-prose section:first-child h2{margin-top:0;padding-top:0;border-top:0}.legal-prose p{margin-bottom:1rem;color:rgb(var(--vow-muted))}.legal-prose ul{margin:0 0 1rem;padding:0;list-style:none;color:rgb(var(--vow-muted))}.legal-prose li{position:relative;margin-bottom:.55rem;padding-left:1.2rem}.legal-prose li::before{content:"";position:absolute;left:0;top:.8em;width:.35rem;height:1px;background:rgb(var(--vow-ink))}.legal-prose a{color:rgb(var(--vow-ink));text-decoration:underline;text-underline-offset:3px}
 .vow-contact-grid{background-image:linear-gradient(to right,rgba(17,17,17,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(17,17,17,.12) 1px,transparent 1px);background-size:72px 72px}
-.vow-field{margin-top:.55rem;width:100%;border:0;border-bottom:1px solid rgb(var(--vow-border));background:transparent;padding:.8rem 0;font-size:1rem;outline:none;color:rgb(var(--vow-ink));transition:border-color .2s ease}.vow-field::placeholder{color:rgb(var(--vow-muted)/.65)}.vow-field:focus{border-color:rgb(var(--vow-ink))}
+.vow-field{margin-top:.55rem;width:100%;border:0;border-bottom:1px solid rgb(var(--vow-border));background:transparent;padding:.8rem 0;font-size:1rem;outline:none;color:rgb(var(--vow-ink));transition:border-color .2s ease}.vow-field::placeholder{color:rgb(var(--vow-muted)/.65)}.vow-field:focus{border-color:rgb(var(--vow-ink)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}}
-
-
-/* VOW production: never display platform/editor branding. */
 #lovable-badge{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
-
 .vow-hero-title{letter-spacing:-.018em;line-height:.88;position:relative;z-index:3;overflow:visible}
-
-
 .vow-cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;margin-inline:auto;display:flex;width:min(100%,52rem);align-items:center;justify-content:space-between;gap:1.5rem;border:1px solid rgb(var(--vow-border));background:rgb(var(--vow-bg));padding:1rem 1.1rem;box-shadow:0 18px 50px rgb(17 17 17/.14)}
 .vow-cookie-copy{min-width:0}
 .vow-cookie-copy h2{margin-top:.3rem;font-family:"Inter",sans-serif;font-size:.95rem;font-weight:650;line-height:1.35;letter-spacing:-.01em}
@@ -50,11 +43,7 @@
   .vow-cookie-actions button{min-width:0;padding:.72rem .45rem;font-size:.76rem}
   .vow-cookie-manager{padding:1rem}
 }
-@media (max-width:380px){
-  .vow-cookie-actions button{font-size:.7rem}
-}
-
-
+@media (max-width:380px){.vow-cookie-actions button{font-size:.7rem}}
 .vow-language-bar{border-bottom:1px solid rgb(var(--vow-border));background:rgb(var(--vow-surface)/.45)}
 .vow-language-button,.vow-language-active{border:0;background:transparent;padding:.15rem .25rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;cursor:pointer}
 .vow-language-button{color:rgb(var(--vow-muted))}
@@ -65,19 +54,9 @@
 .vow-image-failed .vow-image-fallback{display:grid}
 .vow-image-index{position:absolute;right:1rem;top:1rem;z-index:2;background:rgb(var(--vow-bg)/.9);border:1px solid rgb(var(--vow-border));padding:.35rem .5rem;font-family:ui-monospace,monospace;font-size:.65rem;font-weight:700;letter-spacing:.08em}
 
-
-
-/* VOW hero background — quiet, architectural and focused on the promise. */
+/* VOW hero — editorial linework, monochrome, restrained but distinctive. */
 .vow-paint-splash{display:none!important}
-
-.vow-hero{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 42%,rgba(17,17,17,.045) 0,rgba(17,17,17,0) 32%),
-    linear-gradient(180deg,rgb(var(--vow-bg)) 0%,rgb(247 247 244) 100%);
-}
+.vow-hero{position:relative;isolation:isolate;overflow:hidden;background:rgb(var(--vow-bg))}
 .vow-hero::before{
   content:"";
   position:absolute;
@@ -85,24 +64,52 @@
   z-index:0;
   pointer-events:none;
   background:
-    linear-gradient(90deg,transparent 0,transparent calc(50% - .5px),rgba(17,17,17,.055) 50%,transparent calc(50% + .5px),transparent 100%),
-    linear-gradient(180deg,transparent 0,transparent 72%,rgba(17,17,17,.045) 72%,transparent 72.15%);
+    linear-gradient(90deg,transparent 0,transparent 9.5%,rgba(17,17,17,.075) 9.5%,rgba(17,17,17,.075) calc(9.5% + 1px),transparent calc(9.5% + 1px),transparent 25%,rgba(17,17,17,.055) 25%,rgba(17,17,17,.055) calc(25% + 1px),transparent calc(25% + 1px),transparent 50%,rgba(17,17,17,.06) 50%,rgba(17,17,17,.06) calc(50% + 1px),transparent calc(50% + 1px),transparent 75%,rgba(17,17,17,.055) 75%,rgba(17,17,17,.055) calc(75% + 1px),transparent calc(75% + 1px),transparent 90.5%,rgba(17,17,17,.075) 90.5%,rgba(17,17,17,.075) calc(90.5% + 1px),transparent calc(90.5% + 1px)),
+    linear-gradient(180deg,transparent 0,transparent 18%,rgba(17,17,17,.05) 18%,rgba(17,17,17,.05) calc(18% + 1px),transparent calc(18% + 1px),transparent 50%,rgba(17,17,17,.045) 50%,rgba(17,17,17,.045) calc(50% + 1px),transparent calc(50% + 1px),transparent 82%,rgba(17,17,17,.05) 82%,rgba(17,17,17,.05) calc(82% + 1px),transparent calc(82% + 1px));
 }
 .vow-hero::after{
-  content:"VOW";
+  content:"";
   position:absolute;
   z-index:0;
-  right:-.035em;
-  bottom:-.22em;
-  font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:clamp(13rem,30vw,30rem);
-  font-weight:600;
-  line-height:.7;
-  letter-spacing:-.075em;
-  color:rgb(var(--vow-ink)/.035);
+  width:min(48vw,46rem);
+  aspect-ratio:1;
+  right:-11rem;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(17,17,17,.11);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 3.5rem rgba(17,17,17,.025),
+    0 0 0 7rem rgba(17,17,17,.018),
+    0 0 0 10.5rem rgba(17,17,17,.014);
+  pointer-events:none;
+}
+.vow-hero .container-site::before{
+  content:"";
+  position:absolute;
+  right:9%;
+  top:10%;
+  width:1px;
+  height:80%;
+  background:rgba(17,17,17,.08);
+  transform:rotate(13deg);
+  transform-origin:center;
+  pointer-events:none;
+}
+.vow-hero .container-site::after{
+  content:"VOW / 01";
+  position:absolute;
+  right:3rem;
+  top:2rem;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.62rem;
+  letter-spacing:.16em;
+  color:rgba(17,17,17,.42);
   pointer-events:none;
 }
 .vow-hero > *{position:relative;z-index:2}
-
-/* Remove any accidental literal "/n" marker rendered by the page. */
-.vow-hero + *{position:relative}
+@media (max-width:767px){
+  .vow-hero::after{width:92vw;right:-48vw}
+  .vow-hero .container-site::before{right:18%;height:76%}
+  .vow-hero .container-site::after{right:1.25rem;top:1.25rem;font-size:.56rem}
+}
