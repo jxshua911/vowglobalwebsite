@@ -6,7 +6,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
       <img
         src="/vow-wordmark.svg"
         alt="VOW"
-        className={`block h-8 w-auto sm:h-9 ${inverted ? "brightness-0 invert" : ""}`}
+        className={`block h-8 w-auto sm:h-9 ${inverted ? "brightness-0 invert" : ""} vow-logo-mark`}
       />
     </Link>
   );
