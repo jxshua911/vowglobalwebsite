@@ -152,8 +152,3 @@
   }
 }
 
-.vow-app-preview{border:1px solid rgb(var(--vow-border));background:rgb(var(--vow-surface)/.35);padding:1rem}
-.vow-app-preview-bar{display:flex;align-items:center;justify-content:space-between;border:1px solid rgb(var(--vow-border));border-bottom:0;background:rgb(var(--vow-bg));padding:.65rem .8rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.62rem;font-weight:700;letter-spacing:.1em;color:rgb(var(--vow-muted))}
-.vow-app-preview-frame{overflow:hidden;border:1px solid rgb(var(--vow-border));background:#111}
-.vow-app-preview-frame img{display:block;width:100%;height:auto}
-@media (min-width:1024px){.vow-app-preview{padding:1.25rem}.vow-app-preview-frame{max-height:42rem;overflow:auto}.vow-app-preview-frame img{margin-inline:auto;max-width:42rem}}
