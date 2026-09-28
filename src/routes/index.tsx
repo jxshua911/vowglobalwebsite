@@ -69,36 +69,6 @@ function Home() {
 
       <section className="border-y border-vow-border bg-vow-surface/35">
         <div className="container-site py-20 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-5">
-              <p className="vow-label">Inside VOW</p>
-              <h2 className="mt-5 max-w-xl text-[clamp(2.6rem,5vw,4.7rem)] leading-[.92]">See the work, not just the promise.</h2>
-              <p className="mt-6 max-w-[48ch] leading-[1.8] text-vow-muted">Get a feel for the product before you join. VOW is built around turning intentions into concrete work, then reviewing the evidence of what actually happened.</p>
-              <div className="mt-8">
-                <a href="/early-access" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
-              </div>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="vow-app-preview">
-                <div className="vow-app-preview-bar">
-                  <span>VOW / APP PREVIEW</span>
-                  <span>01</span>
-                </div>
-                <div className="vow-app-preview-frame">
-                  <img
-                    src="/vow-app-preview.png"
-                    alt="VOW app interface showing the product experience"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-vow-border bg-vow-surface/35">
-        <div className="container-site py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
             <p className="vow-label">What VOW puts together</p>
             <h2 className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] leading-[.92]">From the idea in your head to the work in your week.</h2>
