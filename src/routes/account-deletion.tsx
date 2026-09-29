@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { pageHead } from "@/lib/seo";
 
@@ -23,22 +23,36 @@ function AccountDeletionPage() {
 
   useEffect(() => {
     let active = true;
-    supabase.auth.getSession().then(({ data }) => {
-      if (!active) return;
-      setSession(data.session);
-      if (data.session?.user?.email) setEmail(data.session.user.email);
-    });
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, next) => {
-      setSession(next);
-      if (next?.user?.email) setEmail(next.user.email);
-    });
+    let subscription: { unsubscribe: () => void } | null = null;
+
+    try {
+      supabase.auth.getSession()
+        .then(({ data }) => {
+          if (!active) return;
+          setSession(data.session);
+          if (data.session?.user?.email) setEmail(data.session.user.email);
+        })
+        .catch((sessionError) => {
+          if (active) setError(sessionError instanceof Error ? sessionError.message : "Unable to load your account session.");
+        });
+
+      const { data: listener } = supabase.auth.onAuthStateChange((_event, next) => {
+        if (!active) return;
+        setSession(next);
+        if (next?.user?.email) setEmail(next.user.email);
+      });
+      subscription = listener.subscription;
+    } catch (sessionError) {
+      if (active) setError(sessionError instanceof Error ? sessionError.message : "Unable to load your account session.");
+    }
+
     return () => {
       active = false;
-      listener.subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 
-  async function signIn(event: React.FormEvent<HTMLFormElement>) {
+  async function signIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAuthLoading(true);
     setError("");
