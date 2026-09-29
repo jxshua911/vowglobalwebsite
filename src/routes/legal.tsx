@@ -16,6 +16,8 @@ const documents = [
   { title: "Terms of Service", description: "The rules and conditions governing use of VOW, subscriptions, content, AI-assisted features and connected services.", to: "/terms-and-services" },
   { title: "End User Licence Agreement", description: "The licence governing installation and personal use of the VOW application.", to: "/eula" },
   { title: "Copyright / DMCA", description: "Ownership, permitted use and the process for reporting suspected copyright infringement.", to: "/copyright" },
+  { title: "Account deletion", description: "Request account deletion online or from the VOW app, with a 14-day grace period.", to: "/account-deletion" },
+  { title: "Support", description: "Get help with VOW, report a bug, send feedback or contact the team.", to: "/support" },
 ] as const;
 
 function LegalIndex() {
