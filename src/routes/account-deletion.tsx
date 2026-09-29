@@ -116,7 +116,7 @@ function AccountDeletionPage() {
                   <div className="mt-6 border border-vow-border bg-vow-surface p-6">
                     <p className="font-medium">Deletion requested.</p>
                     <p className="mt-3 text-sm leading-6 text-vow-muted">
-                      Your account is scheduled for permanent deletion{deleteAt ? \` on \${new Date(deleteAt).toLocaleDateString()}\` : ""}. You can cancel before then.
+                      Your account is scheduled for permanent deletion{deleteAt ? " on " + new Date(deleteAt).toLocaleDateString() : ""}. You can cancel before then.
                     </p>
                     <button onClick={cancelDeletion} className="vow-btn-ghost mt-6">Cancel deletion</button>
                   </div>

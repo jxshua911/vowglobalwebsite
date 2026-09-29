@@ -10,10 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutVowRouteImport } from './routes/about-vow'
-import { Route as JoinVowRouteImport } from './routes/join-vow'
-import { Route as EulaRouteImport } from './routes/eula'
+import { Route as AccountDeletionRouteImport } from './routes/account-deletion'
 import { Route as CopyrightRouteImport } from './routes/copyright'
+import { Route as EarlyAccessRouteImport } from './routes/early-access'
+import { Route as EulaRouteImport } from './routes/eula'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -22,32 +22,30 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TermsAndServicesRouteImport } from './routes/terms-and-services'
-import { Route as AccountDeletionRouteImport } from './routes/account-deletion'
-import { Route as EarlyAccessRouteImport } from './routes/early-access'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutVowRoute = AboutVowRouteImport.update({
-  id: '/about-vow',
-  path: '/about-vow',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JoinVowRoute = JoinVowRouteImport.update({
-  id: '/join-vow',
-  path: '/join-vow',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EulaRoute = EulaRouteImport.update({
-  id: '/eula',
-  path: '/eula',
+const AccountDeletionRoute = AccountDeletionRouteImport.update({
+  id: '/account-deletion',
+  path: '/account-deletion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CopyrightRoute = CopyrightRouteImport.update({
   id: '/copyright',
   path: '/copyright',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EarlyAccessRoute = EarlyAccessRouteImport.update({
+  id: '/early-access',
+  path: '/early-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EulaRoute = EulaRouteImport.update({
+  id: '/eula',
+  path: '/eula',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FounderRoute = FounderRouteImport.update({
@@ -90,23 +88,13 @@ const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
   path: '/terms-and-services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AccountDeletionRoute = AccountDeletionRouteImport.update({
-  id: '/account-deletion',
-  path: '/account-deletion',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EarlyAccessRoute = EarlyAccessRouteImport.update({
-  id: '/early-access',
-  path: '/early-access',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about-vow': typeof AboutVowRoute
-  '/join-vow': typeof JoinVowRoute
-  '/eula': typeof EulaRoute
+  '/account-deletion': typeof AccountDeletionRoute
   '/copyright': typeof CopyrightRoute
+  '/early-access': typeof EarlyAccessRoute
+  '/eula': typeof EulaRoute
   '/founder': typeof FounderRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -115,15 +103,13 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/account-deletion': typeof AccountDeletionRoute
-  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about-vow': typeof AboutVowRoute
-  '/join-vow': typeof JoinVowRoute
-  '/eula': typeof EulaRoute
+  '/account-deletion': typeof AccountDeletionRoute
   '/copyright': typeof CopyrightRoute
+  '/early-access': typeof EarlyAccessRoute
+  '/eula': typeof EulaRoute
   '/founder': typeof FounderRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -132,16 +118,14 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/account-deletion': typeof AccountDeletionRoute
-  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about-vow': typeof AboutVowRoute
-  '/join-vow': typeof JoinVowRoute
-  '/eula': typeof EulaRoute
+  '/account-deletion': typeof AccountDeletionRoute
   '/copyright': typeof CopyrightRoute
+  '/early-access': typeof EarlyAccessRoute
+  '/eula': typeof EulaRoute
   '/founder': typeof FounderRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -150,17 +134,15 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
-  '/account-deletion': typeof AccountDeletionRoute
-  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about-vow'
-    | '/join-vow'
-    | '/eula'
+    | '/account-deletion'
     | '/copyright'
+    | '/early-access'
+    | '/eula'
     | '/founder'
     | '/legal'
     | '/privacy'
@@ -169,15 +151,13 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/account-deletion'
-    | '/early-access'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about-vow'
-    | '/join-vow'
-    | '/eula'
+    | '/account-deletion'
     | '/copyright'
+    | '/early-access'
+    | '/eula'
     | '/founder'
     | '/legal'
     | '/privacy'
@@ -186,15 +166,13 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/account-deletion'
-    | '/early-access'
   id:
     | '__root__'
     | '/'
-    | '/about-vow'
-    | '/join-vow'
-    | '/eula'
+    | '/account-deletion'
     | '/copyright'
+    | '/early-access'
+    | '/eula'
     | '/founder'
     | '/legal'
     | '/privacy'
@@ -203,16 +181,14 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
-    | '/account-deletion'
-    | '/early-access'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutVowRoute: typeof AboutVowRoute
-  JoinVowRoute: typeof JoinVowRoute
-  EulaRoute: typeof EulaRoute
+  AccountDeletionRoute: typeof AccountDeletionRoute
   CopyrightRoute: typeof CopyrightRoute
+  EarlyAccessRoute: typeof EarlyAccessRoute
+  EulaRoute: typeof EulaRoute
   FounderRoute: typeof FounderRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -221,46 +197,118 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   TermsAndServicesRoute: typeof TermsAndServicesRoute
-  AccountDeletionRoute: typeof AccountDeletionRoute
-  EarlyAccessRoute: typeof EarlyAccessRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': { id: '/'; path: '/'; fullPath: '/'; preLoaderRoute: typeof IndexRouteImport; parentRoute: typeof rootRouteImport }
-    '/about-vow': { id: '/about-vow'; path: '/about-vow'; fullPath: '/about-vow'; preLoaderRoute: typeof AboutVowRouteImport; parentRoute: typeof rootRouteImport }
-    '/join-vow': { id: '/join-vow'; path: '/join-vow'; fullPath: '/join-vow'; preLoaderRoute: typeof JoinVowRouteImport; parentRoute: typeof rootRouteImport }
-    '/eula': { id: '/eula'; path: '/eula'; fullPath: '/eula'; preLoaderRoute: typeof EulaRouteImport; parentRoute: typeof rootRouteImport }
-    '/copyright': { id: '/copyright'; path: '/copyright'; fullPath: '/copyright'; preLoaderRoute: typeof CopyrightRouteImport; parentRoute: typeof rootRouteImport }
-    '/founder': { id: '/founder'; path: '/founder'; fullPath: '/founder'; preLoaderRoute: typeof FounderRouteImport; parentRoute: typeof rootRouteImport }
-    '/legal': { id: '/legal'; path: '/legal'; fullPath: '/legal'; preLoaderRoute: typeof LegalRouteImport; parentRoute: typeof rootRouteImport }
-    '/privacy': { id: '/privacy'; path: '/privacy'; fullPath: '/privacy'; preLoaderRoute: typeof PrivacyRouteImport; parentRoute: typeof rootRouteImport }
-    '/privacy-policy': { id: '/privacy-policy'; path: '/privacy-policy'; fullPath: '/privacy-policy'; preLoaderRoute: typeof PrivacyPolicyRouteImport; parentRoute: typeof rootRouteImport }
-    '/sitemap.xml': { id: '/sitemap.xml'; path: '/sitemap.xml'; fullPath: '/sitemap.xml'; preLoaderRoute: typeof SitemapDotxmlRouteImport; parentRoute: typeof rootRouteImport }
-    '/support': { id: '/support'; path: '/support'; fullPath: '/support'; preLoaderRoute: typeof SupportRouteImport; parentRoute: typeof rootRouteImport }
-    '/terms': { id: '/terms'; path: '/terms'; fullPath: '/terms'; preLoaderRoute: typeof TermsRouteImport; parentRoute: typeof rootRouteImport }
-    '/terms-and-services': { id: '/terms-and-services'; path: '/terms-and-services'; fullPath: '/terms-and-services'; preLoaderRoute: typeof TermsAndServicesRouteImport; parentRoute: typeof rootRouteImport }
-    '/account-deletion': { id: '/account-deletion'; path: '/account-deletion'; fullPath: '/account-deletion'; preLoaderRoute: typeof AccountDeletionRouteImport; parentRoute: typeof rootRouteImport }
-    '/early-access': { id: '/early-access'; path: '/early-access'; fullPath: '/early-access'; preLoaderRoute: typeof EarlyAccessRouteImport; parentRoute: typeof rootRouteImport }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account-deletion': {
+      id: '/account-deletion'
+      path: '/account-deletion'
+      fullPath: '/account-deletion'
+      preLoaderRoute: typeof AccountDeletionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copyright': {
+      id: '/copyright'
+      path: '/copyright'
+      fullPath: '/copyright'
+      preLoaderRoute: typeof CopyrightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/early-access': {
+      id: '/early-access'
+      path: '/early-access'
+      fullPath: '/early-access'
+      preLoaderRoute: typeof EarlyAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eula': {
+      id: '/eula'
+      path: '/eula'
+      fullPath: '/eula'
+      preLoaderRoute: typeof EulaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal': {
+      id: '/legal'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-services': {
+      id: '/terms-and-services'
+      path: '/terms-and-services'
+      fullPath: '/terms-and-services'
+      preLoaderRoute: typeof TermsAndServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute,
-  AboutVowRoute,
-  JoinVowRoute,
-  EulaRoute,
-  CopyrightRoute,
-  FounderRoute,
-  LegalRoute,
-  PrivacyRoute,
-  PrivacyPolicyRoute,
-  SitemapDotxmlRoute,
-  SupportRoute,
-  TermsRoute,
-  TermsAndServicesRoute,
-  AccountDeletionRoute,
-  EarlyAccessRoute,
+  IndexRoute: IndexRoute,
+  AccountDeletionRoute: AccountDeletionRoute,
+  CopyrightRoute: CopyrightRoute,
+  EarlyAccessRoute: EarlyAccessRoute,
+  EulaRoute: EulaRoute,
+  FounderRoute: FounderRoute,
+  LegalRoute: LegalRoute,
+  PrivacyRoute: PrivacyRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SupportRoute: SupportRoute,
+  TermsRoute: TermsRoute,
+  TermsAndServicesRoute: TermsAndServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
