@@ -246,21 +246,21 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutVowRoute: AboutVowRoute,
-  JoinVowRoute: JoinVowRoute,
-  EulaRoute: EulaRoute,
-  CopyrightRoute: CopyrightRoute,
-  FounderRoute: FounderRoute,
-  LegalRoute: LegalRoute,
-  PrivacyRoute: PrivacyRoute,
-  PrivacyPolicyRoute: PrivacyPolicyRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SupportRoute: SupportRoute,
-  TermsRoute: TermsRoute,
-  TermsAndServicesRoute: TermsAndServicesRoute,
-  AccountDeletionRoute: AccountDeletionRoute,
-  EarlyAccessRoute: EarlyAccessRoute,
+  IndexRoute,
+  AboutVowRoute,
+  JoinVowRoute,
+  EulaRoute,
+  CopyrightRoute,
+  FounderRoute,
+  LegalRoute,
+  PrivacyRoute,
+  PrivacyPolicyRoute,
+  SitemapDotxmlRoute,
+  SupportRoute,
+  TermsRoute,
+  TermsAndServicesRoute,
+  AccountDeletionRoute,
+  EarlyAccessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
