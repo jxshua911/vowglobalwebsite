@@ -27,7 +27,8 @@ export function SiteFooter() {
               <li><Link to="/terms-and-services">Terms of Service</Link></li>
               <li><Link to="/eula">EULA</Link></li>
               <li><Link to="/copyright">Copyright / DMCA</Link></li>
-              <li><Link to="/support#contact">Account deletion / Support</Link></li>
+              <li><Link to="/account-deletion">Account deletion</Link></li>
+              <li><Link to="/support">Support</Link></li>
             </ul>
           </nav>
         </div>
