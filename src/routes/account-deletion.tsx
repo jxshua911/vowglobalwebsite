@@ -12,6 +12,19 @@ export const Route = createFileRoute("/account-deletion")({
   component: AccountDeletionPage,
 });
 
+function getPublicErrorMessage(error: unknown, fallback: string): string {
+  if (error instanceof Error) {
+    const message = error.message.toLowerCase();
+    if (message.includes("invalid login credentials") || message.includes("invalid email or password")) {
+      return "The email or password is incorrect. Please check your details and try again.";
+    }
+    if (message.includes("rate limit") || message.includes("too many requests")) {
+      return "Too many attempts right now. Please wait a moment and try again.";
+    }
+  }
+  return fallback;
+}
+
 function AccountDeletionPage() {
   const [session, setSession] = useState<Awaited<ReturnType<typeof supabase.auth.getSession>>["data"]["session"]>(null);
   const [email, setEmail] = useState("");
@@ -33,7 +46,8 @@ function AccountDeletionPage() {
           if (data.session?.user?.email) setEmail(data.session.user.email);
         })
         .catch((sessionError) => {
-          if (active) setError(sessionError instanceof Error ? sessionError.message : "Unable to load your account session.");
+          console.error("[VOW website] Account session error:", sessionError);
+          if (active) setError("We couldn't load your account right now. Please refresh and try again.");
         });
 
       const { data: listener } = supabase.auth.onAuthStateChange((_event, next) => {
@@ -43,7 +57,8 @@ function AccountDeletionPage() {
       });
       subscription = listener.subscription;
     } catch (sessionError) {
-      if (active) setError(sessionError instanceof Error ? sessionError.message : "Unable to load your account session.");
+      console.error("[VOW website] Account session initialisation error:", sessionError);
+      if (active) setError("We couldn't load your account right now. Please refresh and try again.");
     }
 
     return () => {
@@ -56,35 +71,59 @@ function AccountDeletionPage() {
     event.preventDefault();
     setAuthLoading(true);
     setError("");
-    const { data, error: signInError } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
-    if (signInError) setError(signInError.message);
-    else setSession(data.session);
-    setAuthLoading(false);
+    try {
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+      if (signInError) {
+        console.error("[VOW website] Account sign-in error:", signInError);
+        setError(getPublicErrorMessage(signInError, "We couldn't sign you in right now. Please try again."));
+      } else {
+        setSession(data.session);
+      }
+    } catch (signInError) {
+      console.error("[VOW website] Account sign-in exception:", signInError);
+      setError(getPublicErrorMessage(signInError, "We couldn't sign you in right now. Please try again."));
+    } finally {
+      setAuthLoading(false);
+    }
   }
 
   async function requestDeletion() {
     setStatus("requesting");
     setError("");
-    const { data, error: requestError } = await supabase.rpc("vow_request_account_deletion");
-    if (requestError) {
+    try {
+      const { data, error: requestError } = await supabase.rpc("vow_request_account_deletion");
+      if (requestError) {
+        console.error("[VOW website] Account deletion request error:", requestError);
+        setStatus("error");
+        setError("We couldn't submit the deletion request right now. Please try again.");
+        return;
+      }
+      const nextDeleteAt = Array.isArray(data) ? data[0]?.delete_at : null;
+      setDeleteAt(nextDeleteAt || null);
+      setStatus("requested");
+    } catch (requestError) {
+      console.error("[VOW website] Account deletion request exception:", requestError);
       setStatus("error");
-      setError(requestError.message);
-      return;
+      setError("We couldn't submit the deletion request right now. Please try again.");
     }
-    const nextDeleteAt = Array.isArray(data) ? data[0]?.delete_at : null;
-    setDeleteAt(nextDeleteAt || null);
-    setStatus("requested");
   }
 
   async function cancelDeletion() {
     setError("");
-    const { data, error: cancelError } = await supabase.rpc("vow_cancel_account_deletion");
-    if (cancelError) {
+    try {
+      const { data, error: cancelError } = await supabase.rpc("vow_cancel_account_deletion");
+      if (cancelError) {
+        console.error("[VOW website] Account deletion cancellation error:", cancelError);
+        setStatus("error");
+        setError("We couldn't cancel the deletion request right now. Please try again.");
+        return;
+      }
+      if (data) setStatus("cancelled");
+    } catch (cancelError) {
+      console.error("[VOW website] Account deletion cancellation exception:", cancelError);
       setStatus("error");
-      setError(cancelError.message);
-      return;
+      setError("We couldn't cancel the deletion request right now. Please try again.");
     }
-    if (data) setStatus("cancelled");
   }
 
   return (
