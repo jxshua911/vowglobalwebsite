@@ -207,7 +207,7 @@ export interface FileRouteTypes {
     | '/early-access'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {
+export type RootRouteChildren = {
   IndexRoute: typeof IndexRoute
   AboutVowRoute: typeof AboutVowRoute
   JoinVowRoute: typeof JoinVowRoute
@@ -245,7 +245,7 @@ declare module '@tanstack/react-router' {
   }
 }
 
-const rootRouteChildren: RootRouteChildren = {
+const rootRouteChildren = {
   IndexRoute,
   AboutVowRoute,
   JoinVowRoute,
@@ -261,7 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsAndServicesRoute,
   AccountDeletionRoute,
   EarlyAccessRoute,
-}
+} satisfies RootRouteChildren
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
