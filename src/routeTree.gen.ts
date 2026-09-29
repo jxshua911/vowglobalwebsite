@@ -133,6 +133,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
   '/account-deletion': typeof AccountDeletionRoute
+  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -150,6 +151,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
   '/account-deletion': typeof AccountDeletionRoute
+  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -168,6 +170,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/terms-and-services'
     | '/account-deletion'
+    | '/early-access'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -184,6 +187,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/terms-and-services'
     | '/account-deletion'
+    | '/early-access'
   id:
     | '__root__'
     | '/'
@@ -200,6 +204,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/terms-and-services'
     | '/account-deletion'
+    | '/early-access'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -217,6 +222,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TermsAndServicesRoute: typeof TermsAndServicesRoute
   AccountDeletionRoute: typeof AccountDeletionRoute
+  EarlyAccessRoute: typeof EarlyAccessRoute
 }
 
 declare module '@tanstack/react-router' {
