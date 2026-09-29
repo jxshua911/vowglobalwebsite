@@ -23,6 +23,7 @@ import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TermsAndServicesRouteImport } from './routes/terms-and-services'
 import { Route as AccountDeletionRouteImport } from './routes/account-deletion'
+import { Route as EarlyAccessRouteImport } from './routes/early-access'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -94,6 +95,11 @@ const AccountDeletionRoute = AccountDeletionRouteImport.update({
   path: '/account-deletion',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EarlyAccessRoute = EarlyAccessRouteImport.update({
+  id: '/early-access',
+  path: '/early-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -110,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
   '/account-deletion': typeof AccountDeletionRoute
+  '/early-access': typeof EarlyAccessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -228,6 +235,7 @@ declare module '@tanstack/react-router' {
     '/terms': { id: '/terms'; path: '/terms'; fullPath: '/terms'; preLoaderRoute: typeof TermsRouteImport; parentRoute: typeof rootRouteImport }
     '/terms-and-services': { id: '/terms-and-services'; path: '/terms-and-services'; fullPath: '/terms-and-services'; preLoaderRoute: typeof TermsAndServicesRouteImport; parentRoute: typeof rootRouteImport }
     '/account-deletion': { id: '/account-deletion'; path: '/account-deletion'; fullPath: '/account-deletion'; preLoaderRoute: typeof AccountDeletionRouteImport; parentRoute: typeof rootRouteImport }
+    '/early-access': { id: '/early-access'; path: '/early-access'; fullPath: '/early-access'; preLoaderRoute: typeof EarlyAccessRouteImport; parentRoute: typeof rootRouteImport }
   }
 }
 
@@ -246,6 +254,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TermsAndServicesRoute: TermsAndServicesRoute,
   AccountDeletionRoute: AccountDeletionRoute,
+  EarlyAccessRoute: EarlyAccessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
