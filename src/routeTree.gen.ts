@@ -22,6 +22,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TermsAndServicesRouteImport } from './routes/terms-and-services'
+import { Route as AccountDeletionRouteImport } from './routes/account-deletion'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -88,6 +89,11 @@ const TermsAndServicesRoute = TermsAndServicesRouteImport.update({
   path: '/terms-and-services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountDeletionRoute = AccountDeletionRouteImport.update({
+  id: '/account-deletion',
+  path: '/account-deletion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
+  '/account-deletion': typeof AccountDeletionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -118,6 +125,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
+  '/account-deletion': typeof AccountDeletionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +142,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/terms-and-services': typeof TermsAndServicesRoute
+  '/account-deletion': typeof AccountDeletionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +160,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
+    | '/account-deletion'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
+    | '/account-deletion'
   id:
     | '__root__'
     | '/'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/terms-and-services'
+    | '/account-deletion'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -197,6 +209,7 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   TermsAndServicesRoute: typeof TermsAndServicesRoute
+  AccountDeletionRoute: typeof AccountDeletionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -218,23 +231,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
-const rootRouteChildren = {
-  IndexRoute,
-  AboutVowRoute,
-  JoinVowRoute,
-  EulaRoute,
-  CopyrightRoute,
-  FounderRoute,
-  LegalRoute,
-  PrivacyRoute,
-  PrivacyPolicyRoute,
-  SitemapDotxmlRoute,
-  SupportRoute,
-  TermsRoute,
-  TermsAndServicesRoute,
-  AccountDeletionRoute,
-} satisfies RootRouteChildren
-
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AboutVowRoute: AboutVowRoute,
+  JoinVowRoute: JoinVowRoute,
+  EulaRoute: EulaRoute,
+  CopyrightRoute: CopyrightRoute,
+  FounderRoute: FounderRoute,
+  LegalRoute: LegalRoute,
+  PrivacyRoute: PrivacyRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SupportRoute: SupportRoute,
+  TermsRoute: TermsRoute,
+  TermsAndServicesRoute: TermsAndServicesRoute,
+  AccountDeletionRoute: AccountDeletionRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
