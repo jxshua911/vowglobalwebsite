@@ -37,6 +37,22 @@ export function Waitlist() {
       });
 
       if (response.ok) {
+        const netlifyResponse = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            "form-name": "vow-waitlist",
+            email: email.trim().toLowerCase(),
+          }).toString(),
+        });
+
+        if (!netlifyResponse.ok) {
+          setStatus("error");
+          return;
+        }
+
         setEmail("");
         setStatus("success");
         return;
@@ -65,7 +81,15 @@ export function Waitlist() {
             Be the first to know when VOW launches. Get early access, special offers and direct support.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <form
+            name="vow-waitlist"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="website"
+            onSubmit={handleSubmit}
+            className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center"
+          >
+            <input type="hidden" name="form-name" value="vow-waitlist" />
             <label className="sr-only" htmlFor="vow-waitlist-email">Email address</label>
             <input
               id="vow-waitlist-email"
