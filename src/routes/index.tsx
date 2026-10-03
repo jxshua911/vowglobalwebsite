@@ -37,7 +37,7 @@ function Home() {
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a href="/early-access" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
               </div>
-              <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Launching 29 October 2026</p>
+              <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Coming Soon</p>
             </div>
           </div>
         </div>
