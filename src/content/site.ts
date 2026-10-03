@@ -2,11 +2,11 @@ export const site = {
   name: "VOW",
   tagline: "Turn goals into plans, sessions and follow-through.",
   operator: "Joshua Nathan Kasanga",
-  launchDate: "29 October 2026",
+  launchStatus: "Coming Soon",
   privacyEmail: "vowglobalapp@gmail.com",
   supportEmail: "vowglobalapp@gmail.com",
   copyrightName: "VOW",
-  policy: { effectiveDate: "29 October 2026", lastUpdated: "25 September 2026" },
+  policy: { effectiveDate: "25 September 2026", lastUpdated: "25 September 2026" },
   legalNotice: "This document is product documentation and should receive qualified legal review before public launch. It is not legal advice.",
 } as const;
 
