@@ -73,7 +73,7 @@ export function Waitlist() {
     <section id="waitlist" className="border-y border-vow-border bg-vow-surface/35 scroll-mt-24">
       <div className="container-site py-20 sm:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="vow-label">Launching {site.launchDate}</p>
+          <p className="vow-label">Coming Soon</p>
           <h2 className="mt-5 text-[clamp(2.6rem,5vw,4.5rem)] leading-[.92]">
             Join the VOW waitlist.
           </h2>
