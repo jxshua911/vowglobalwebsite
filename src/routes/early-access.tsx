@@ -6,7 +6,7 @@ export const Route = createFileRoute("/early-access")({
   head: () => pageHead({
     path: "/early-access",
     title: "VOW - Early Access",
-    description: "Get early access to VOW. Join the launch list for 29 October 2026 and be among the first to use VOW.",
+    description: "Get early access to VOW. Join the launch list and be among the first to use VOW.",
   }),
   component: EarlyAccessPage,
 });
@@ -19,7 +19,7 @@ function EarlyAccessPage() {
           <p className="vow-label">VOW / Early Access</p>
           <h1 className="mt-4 max-w-5xl text-5xl leading-none sm:text-7xl">Get early access.</h1>
           <p className="mt-7 max-w-2xl text-lg leading-7 text-vow-muted">
-            VOW launches 29 October 2026. Join the launch list to hear when it goes live and be among the first to get access.
+            VOW is coming soon. Join the launch list to hear when it goes live and be among the first to get access.
           </p>
         </div>
       </header>
