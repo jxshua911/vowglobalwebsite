@@ -1,6 +1,7 @@
 import { pageHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/content/site";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({
@@ -16,6 +17,27 @@ const steps = [
   ["02", "Put it into motion", "Build sessions around real time, real constraints and the work that actually needs doing."],
   ["03", "Keep your VOW", "Review what happened, learn from the evidence and adjust without losing the goal."],
 ];
+
+function ProductVisual() {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className={`vow-work-image relative overflow-hidden border border-vow-border bg-vow-surface ${failed ? "vow-image-failed" : ""}`}>
+      {!failed && (
+        <img
+          src="/images/vow-app-screenshot.webp"
+          alt="VOW mobile app"
+          className="relative z-[1] block h-full w-full object-cover object-top"
+          onError={() => setFailed(true)}
+        />
+      )}
+      <div className="vow-image-fallback" aria-hidden="true">
+        <span>VOW</span>
+      </div>
+      <span className="vow-image-index">VOW / APP</span>
+    </div>
+  );
+}
 
 function Home() {
   return (
@@ -39,6 +61,19 @@ function Home() {
               </div>
               <p className="mt-5 text-xs uppercase tracking-[0.16em] text-vow-muted">Coming Soon</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-site py-16 sm:py-24">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-4">
+            <p className="vow-label">The product</p>
+            <h2 className="mt-5 text-[clamp(2.7rem,5vw,4.8rem)] leading-[.9]">See the system in motion.</h2>
+          </div>
+          <div className="lg:col-span-8 lg:pl-10">
+            <ProductVisual />
+            <p className="mt-4 text-xs uppercase tracking-[0.14em] text-vow-muted">Real VOW product preview · image will be added before launch</p>
           </div>
         </div>
       </section>
