@@ -5,8 +5,8 @@ import { Waitlist } from "@/components/site/Waitlist";
 export const Route = createFileRoute("/early-access")({
   head: () => pageHead({
     path: "/early-access",
-    title: "Early Access - VOW | Be First to Experience AI Goal Planning\"",
-    description: "\"Join the VOW early access program. Be among the first to experience AI-powered goal planning and get exclusive launch benefits.\"",
+    title: "Early Access - VOW | Be First to Experience AI Goal Planning",
+    description: "Join the VOW early access program. Be among the first to experience AI-powered goal planning and get exclusive launch benefits.",
   }),
   component: EarlyAccessPage,
 });
