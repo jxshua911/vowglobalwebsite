@@ -7,8 +7,8 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/terms-and-services")({
   head: () => pageHead({
     path: "/terms-and-services",
-    title: "Terms of Service - VOW | Usage Agreement\"",
-    description: "\"Read VOW's terms of service and usage agreement. Understand your rights and responsibilities when using our AI goal planning platform.\"",
+    title: "Terms of Service - VOW | Usage Agreement",
+    description: "Read VOW's terms of service and usage agreement. Understand your rights and responsibilities when using our AI goal planning platform.",
   }),
   component: TermsOfServicePage,
 });
