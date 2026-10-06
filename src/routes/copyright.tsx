@@ -7,8 +7,8 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/copyright")({
   head: () => pageHead({
     path: "/copyright",
-    title: "VOW - Copyright / DMCA",
-    description: "VOW Copyright and DMCA policy.",
+    title: "Copyright & DMCA - VOW | Intellectual Property\"",
+    description: "\"VOW copyright information and DMCA policy. Learn about our intellectual property rights and how to report copyright concerns.\"",
   }),
   component: CopyrightPage,
 });
