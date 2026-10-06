@@ -9,8 +9,8 @@ const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/vow-website-chat`;
 export const Route = createFileRoute("/support")({
   head: () => pageHead({
     path: "/support",
-    title: "Support - VOW | Get Help & Contact Us\"",
-    description: "\"Need help with VOW? Contact our support team for assistance with your AI goal planning app. We're here to help you succeed.\"",
+    title: "Support - VOW | Get Help & Contact Us",
+    description: "Need help with VOW? Contact our support team for assistance with your AI goal planning app. We're here to help you succeed.",
   }),
   component: SupportPage,
 });
