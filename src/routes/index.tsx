@@ -6,8 +6,8 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => pageHead({
     path: "/",
-    title: "VOW",
-    description: "Make your VOW. Keep your VOW. Goal planning, accountability and progress in one place.",
+    title: "VOW - AI-Powered Goal Planning App | Turn Goals Into Action\"",
+    description: "\"VOW is an AI assistant that turns your goals into personalized, actionable plans. Get structured guidance, track progress, and achieve more with intelligent goal planning.\"",
   }),
   component: Home,
 });
