@@ -7,8 +7,8 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/eula")({
   head: () => pageHead({
     path: "/eula",
-    title: "VOW - EULA",
-    description: "VOW End User Licence Agreement.",
+    title: "End User License Agreement - VOW | EULA\"",
+    description: "\"Read VOW's End User License Agreement (EULA). Understand the licensing terms for using our AI goal planning application.\"",
   }),
   component: EulaPage,
 });
