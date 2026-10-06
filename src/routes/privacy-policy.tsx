@@ -7,8 +7,8 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => pageHead({
     path: "/privacy-policy",
-    title: "VOW - Privacy Policy",
-    description: "VOW Privacy Policy.",
+    title: "Privacy Policy - VOW | How We Protect Your Data\"",
+    description: "\"Learn how VOW protects your personal data. Read our complete privacy policy covering data collection, usage, storage, and your rights.\"",
   }),
   component: PrivacyPolicyPage,
 });
