@@ -65,7 +65,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="container-site py-16 sm:py-24">
+      <section className="vow-section-grey py-16 sm:py-24">\n        <div className="container-site">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-4">
             <p className="vow-label">The product</p>
@@ -92,7 +92,7 @@ function Home() {
 
         <ul className="mt-14 grid gap-5 md:grid-cols-3">
           {steps.map(([n, title, body]) => (
-            <li key={n} className="group border border-vow-border bg-vow-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-vow-ink md:p-9">
+            <li key={n} className="group border border-vow-border bg-vow-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-vow-ink md:p-9">
               <span className="vow-label text-vow-ink">{n}</span>
               <h3 className="mt-14 text-[clamp(1.8rem,3vw,2.6rem)] leading-none">{title}</h3>
               <p className="mt-6 leading-[1.75] text-vow-muted">{body}</p>
