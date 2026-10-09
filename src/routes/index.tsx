@@ -65,21 +65,8 @@ function Home() {
         </div>
       </section>
 
-      <section className="vow-section-grey py-16 sm:py-24">\n        <div className="container-site">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-4">
-            <p className="vow-label">The product</p>
-            <h2 className="mt-5 text-[clamp(2.7rem,5vw,4.8rem)] leading-[.9]">See the system in motion.</h2>
-          </div>
-          <div className="lg:col-span-8 lg:pl-10">
-            <ProductVisual />
-            <p className="mt-4 text-xs uppercase tracking-[0.14em] text-vow-muted">Real VOW product preview · image will be added before launch</p>
-          </div>
-        </div>
-        </div>
-      </section>
-
-      <section className="container-site py-20 sm:py-28">
+      <section className="vow-section-grey py-20 sm:py-28">
+        <div className="container-site">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
             <p className="vow-label">The VOW system</p>
@@ -101,6 +88,7 @@ function Home() {
             </li>
           ))}
         </ul>
+        </div>
       </section>
 
       <section className="border-y border-vow-border bg-vow-surface/35">
