@@ -76,6 +76,7 @@ function Home() {
             <p className="mt-4 text-xs uppercase tracking-[0.14em] text-vow-muted">Real VOW product preview · image will be added before launch</p>
           </div>
         </div>
+        </div>
       </section>
 
       <section className="container-site py-20 sm:py-28">
