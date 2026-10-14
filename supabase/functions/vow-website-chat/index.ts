@@ -14,7 +14,7 @@ VOW slogan: "Make your VOW. Keep your VOW."
 VOW turns goals into structured plans, sessions and visible progress.
 Core product ideas: goal planning, AI-assisted planning, accountability, sessions and reminders, calendar connections, reviews and journal, evidence-based progress.
 VOW is designed around the loop: define the outcome, build the route, schedule the sessions, do the work, review the result, and adapt.
-VOW is launching 29 October 2026.
+VOW is pre-launch. The public launch date has not been announced. Do not state or imply a specific launch date; tell visitors to join the waitlist for updates.
 The website is operated by Joshua Nathan Kasanga.
 Early access is available through the website waitlist.
 Do not invent pricing, subscription availability, release dates beyond the facts above, integrations, guarantees, legal claims, or product capabilities. If a fact is not known, say so and direct the visitor to Get in touch.
@@ -271,7 +271,6 @@ Deno.serve(async (req) => {
         .insert({
           email,
           source: clean(body?.source, 80) || "website-home",
-          launch_date: "2026-10-29",
         })
         .select("id, created_at")
         .single();
