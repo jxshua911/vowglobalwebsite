@@ -14,7 +14,7 @@ function FounderPhoto() {
     <div className={`vow-work-image relative aspect-[4/5] overflow-hidden border border-vow-border bg-vow-surface ${failed ? "vow-image-failed" : ""}`}>
       {!failed && (
         <img
-          src="/founder-portrait.jpeg"
+          src="/founder-portrait.jpg"
           alt="Joshua Nathan Kasanga, founder of VOW"
           className="relative z-[1] block h-full w-full object-cover object-center"
           onError={() => setFailed(true)}
