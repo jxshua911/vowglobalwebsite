@@ -125,8 +125,8 @@ function SupportPage() {
 
             {status === "success" && (
               <div role="status" className="mb-7 border border-vow-border bg-vow-surface p-5">
-                <p className="font-semibold">Your support request has been sent.</p>
-                <p className="mt-1 text-sm leading-6 text-vow-muted">Thanks for reaching out. We’ll get back to you.</p>
+                <p className="font-semibold">Thanks, your support request has been received.</p>
+                <p className="mt-1 text-sm leading-6 text-vow-muted">We appreciate you reaching out.</p>
               </div>
             )}
             {status === "error" && (
