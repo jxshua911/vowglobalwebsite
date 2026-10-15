@@ -4,7 +4,7 @@
  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;--font-display:"Cormorant Garamond",Georgia,serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
  --color-vow-bg:rgb(var(--vow-bg)/<alpha-value>);--color-vow-ink:rgb(var(--vow-ink)/<alpha-value>);--color-vow-muted:rgb(var(--vow-muted)/<alpha-value>);--color-vow-border:rgb(var(--vow-border)/<alpha-value>);--color-vow-surface:rgb(var(--vow-surface)/<alpha-value>);
 }
-:root{--vow-bg:250 250 248;--vow-ink:17 17 17;--vow-muted:105 105 105;--vow-border:225 225 222;--vow-surface:239 239 236}
+:root{--vow-bg:250 250 248;--vow-ink:17 17 17;--vow-muted:105 105 105;--vow-border:216 216 212;--vow-surface:234 234 231}
 @layer base{
  *{border-color:rgb(var(--vow-border));}html{scroll-behavior:smooth;background:rgb(var(--vow-bg));-webkit-font-smoothing:antialiased}body{margin:0;min-width:320px;overflow-x:hidden;background:rgb(var(--vow-bg));color:rgb(var(--vow-ink));font-family:"Inter",ui-sans-serif,system-ui,sans-serif}button,input,textarea,select{font:inherit}::selection{background:rgb(var(--vow-ink));color:rgb(var(--vow-bg))}:focus-visible{outline:2px solid rgb(var(--vow-ink));outline-offset:3px}h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:-.025em;line-height:1.02}
 }
@@ -24,7 +24,7 @@
 .vow-field{margin-top:.55rem;width:100%;border:0;border-bottom:1px solid rgb(var(--vow-border));background:transparent;padding:.8rem 0;font-size:1rem;outline:none;color:rgb(var(--vow-ink));transition:border-color .2s ease}.vow-field::placeholder{color:rgb(var(--vow-muted)/.65)}.vow-field:focus{border-color:rgb(var(--vow-ink));}
 
 /* VOW neutral palette: grey is a visible surface, not just a border token. */
-:root{--vow-grey-50:248 248 246;--vow-grey-100:239 239 236;--vow-grey-200:220 220 216;--vow-grey-400:160 160 155;--vow-grey-600:105 105 100;--vow-grey-800:54 54 52}
+:root{--vow-grey-50:246 246 243;--vow-grey-100:234 234 231;--vow-grey-200:216 216 212;--vow-grey-400:160 160 155;--vow-grey-600:105 105 100;--vow-grey-800:54 54 52}
 .vow-section-grey{background:rgb(var(--vow-grey-100))}
 .vow-section-grey-deep{background:rgb(var(--vow-grey-800));color:rgb(var(--vow-bg))}
 .vow-section-grey-deep .vow-label,.vow-section-grey-deep .vow-muted{color:rgb(var(--vow-grey-200))}
