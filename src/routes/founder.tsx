@@ -33,7 +33,7 @@ function Founder() {
     <section className="border-b border-vow-border bg-vow-bg"><div className="container-site py-20 sm:py-28">
       <p className="vow-label">The founder</p><div className="mt-6 grid gap-12 lg:grid-cols-12 lg:items-end"><div className="lg:col-span-8"><h1 className="max-w-5xl text-[clamp(4rem,9vw,8rem)] leading-[.82] tracking-[-.045em]">Built by<br />Joshua.</h1></div><div className="lg:col-span-4"><p className="max-w-[34ch] text-lg leading-[1.75] text-vow-muted">VOW is a product built from a simple belief: having a goal is easy. Keeping your word to yourself is the harder part.</p></div></div>
     </div></section>
-    <section className="container-site py-16 sm:py-24"><div className="grid gap-12 lg:grid-cols-12 lg:items-start"><div className="lg:col-span-6"><FounderPhoto /></div>
+    <section className="vow-section-grey py-16 sm:py-24">\n      <div className="container-site"><div className="grid gap-12 lg:grid-cols-12 lg:items-start"><div className="lg:col-span-6"><FounderPhoto /></div>
       <div className="lg:col-span-5 lg:col-start-8 lg:pt-2"><p className="vow-label">Joshua Nathan Kasanga</p><h2 className="mt-4 text-4xl leading-none sm:text-5xl">Founder of VOW.</h2><div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-vow-muted">
         <p>I'm Joshua Kasanga — a digital product designer and web developer with a deeply rooted passion for engineering and technology.</p>
         <p>I started VOW because I wanted to build something around a problem I kept coming back to: people don't usually struggle because they have goals; they struggle because they fail to turn those goals into consistent action.</p>
