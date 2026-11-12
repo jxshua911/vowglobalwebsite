@@ -91,7 +91,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-y border-vow-border bg-vow-surface/35">
+      <section className="border-y border-vow-border vow-section-grey">
         <div className="container-site py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
             <p className="vow-label">What VOW puts together</p>
