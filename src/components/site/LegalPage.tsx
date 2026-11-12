@@ -14,8 +14,8 @@ function renderText(text: string) {
 
 export function LegalPage({ eyebrow, title, intro, dates, sections }: Props) {
   return (
-    <article className="pb-8">
-      <header className="relative overflow-hidden border-b border-vow-border bg-vow-surface/45">
+    <article className="pb-8 vow-section-grey">
+      <header className="relative overflow-hidden border-b border-vow-border vow-surface-grey">
         <div className="container-site py-16 sm:py-20 lg:py-24">
           <div className="max-w-4xl">
             <p className="vow-label">{eyebrow}</p>
@@ -62,7 +62,7 @@ export function LegalPage({ eyebrow, title, intro, dates, sections }: Props) {
         </nav>
 
         <main className="min-w-0 max-w-4xl">
-          <div className="mb-7 flex items-start gap-3 border border-vow-border bg-vow-surface/40 p-4 sm:p-5">
+          <div className="mb-7 flex items-start gap-3 border border-vow-border bg-vow-bg p-4 sm:p-5">
             <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center border border-vow-border bg-vow-bg text-lg">i</span>
             <p className="text-sm leading-6 text-vow-muted">
               This document is organised into short, numbered sections. Use the contents above to go directly to a topic; the full wording remains available below.
@@ -99,7 +99,7 @@ export function LegalPage({ eyebrow, title, intro, dates, sections }: Props) {
             ))}
           </div>
 
-          <aside className="mt-8 flex items-start gap-3 border border-vow-border bg-vow-surface/60 p-5 sm:p-6">
+          <aside className="mt-8 flex items-start gap-3 border border-vow-border bg-vow-bg p-5 sm:p-6">
             <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center border border-vow-border bg-vow-bg">✳</span>
             <div>
               <p className="text-sm font-semibold">Need clarification?</p>
