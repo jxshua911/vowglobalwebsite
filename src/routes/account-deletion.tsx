@@ -232,6 +232,7 @@ function AccountDeletionPage() {
           <Link to="/support" className="vow-btn-ghost">Contact Support</Link>
           <Link to="/privacy-policy" className="vow-btn-ghost">Read Privacy Policy</Link>
         </div>
+        </div>
       </main>
     </>
   );
