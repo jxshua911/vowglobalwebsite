@@ -9,8 +9,8 @@ BRAND / PRODUCT:
 - Product name: VOW
 - Positioning: structured goal planning, accountability, and progress tracking.
 - Founder: Joshua Nathan Kasanga
-- Contact/privacy email: vowglobalapp@gmail.com
-- Support email: 99joshuanathan@gmail.com
+- Contact/privacy email: support@vowglobal.online
+- Support email: support@vowglobal.online
 
 PAGES:
 1. Home — concise, premium, modern VOW introduction with clear links to Privacy, Terms/EULA, Copyright/DMCA and Support.
@@ -96,8 +96,8 @@ Third-party services such as Google, Strava, Google Play and AI/infrastructure p
 This policy may be updated as VOW changes. The last-updated date will be revised when material changes are made.
 
 17. Contact
-Privacy: vowglobalapp@gmail.com
-Support: 99joshuanathan@gmail.com
+Privacy: support@vowglobal.online
+Support: support@vowglobal.online
 VOW / Joshua Nathan Kasanga
 29 Upendo Street
 United Republic of Tanzania
