@@ -29,10 +29,10 @@ function LegalIndex() {
         <p className="mt-7 max-w-2xl text-lg leading-7 text-vow-muted">Official VOW documentation for privacy, use of the service, application licensing and copyright.</p>
       </div>
     </header>
-    <main className="container-site py-14 sm:py-20">
+    <main className="vow-section-grey py-14 sm:py-20">\n      <div className="container-site">
       <div className="grid border-y border-vow-border md:grid-cols-2">
         {documents.map((document, index) => (
-          <Link key={document.to} to={document.to} className="group border-b border-vow-border p-7 transition-colors hover:bg-vow-surface/50 md:p-10 md:[&:nth-child(odd)]:border-r">
+          <Link key={document.to} to={document.to} className="group border-b border-vow-border bg-vow-bg p-7 transition-colors hover:bg-vow-surface/70 md:p-10 md:[&:nth-child(odd)]:border-r">
             <span className="font-mono text-xs text-vow-muted">0{index + 1}</span>
             <h2 className="mt-12 text-3xl leading-none sm:text-4xl">{document.title}</h2>
             <p className="mt-5 max-w-md leading-7 text-vow-muted">{document.description}</p>
@@ -44,6 +44,6 @@ function LegalIndex() {
         <p className="vow-label">Document status</p>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-vow-muted">Effective {site.policy.effectiveDate}. Last updated {site.policy.lastUpdated}. These documents are published on the VOW website so users can access the current version before and during use of the service.</p>
       </div>
-    </main>
+      </div>\n    </main>
   </>;
 }
