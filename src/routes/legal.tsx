@@ -29,7 +29,8 @@ function LegalIndex() {
         <p className="mt-7 max-w-2xl text-lg leading-7 text-vow-muted">Official VOW documentation for privacy, use of the service, application licensing and copyright.</p>
       </div>
     </header>
-    <main className="vow-section-grey py-14 sm:py-20">\n      <div className="container-site">
+    <main className="vow-section-grey py-14 sm:py-20">
+      <div className="container-site">
       <div className="grid border-y border-vow-border md:grid-cols-2">
         {documents.map((document, index) => (
           <Link key={document.to} to={document.to} className="group border-b border-vow-border bg-vow-bg p-7 transition-colors hover:bg-vow-surface/70 md:p-10 md:[&:nth-child(odd)]:border-r">
@@ -44,6 +45,7 @@ function LegalIndex() {
         <p className="vow-label">Document status</p>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-vow-muted">Effective {site.policy.effectiveDate}. Last updated {site.policy.lastUpdated}. These documents are published on the VOW website so users can access the current version before and during use of the service.</p>
       </div>
-      </div>\n    </main>
+      </div>
+    </main>
   </>;
 }
