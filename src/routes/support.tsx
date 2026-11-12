@@ -1,6 +1,7 @@
 import { pageHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { site } from "@/content/site";
 
 const SUPABASE_URL = "https://vqsrdausvmfjayffxiuh.supabase.co";
 const SUPABASE_KEY = "sb_publishable_M6qmsILtc2ORJ_3tSe5OQg_Fv6RaTib";
@@ -84,7 +85,7 @@ function SupportPage() {
               ))}
             </div>
             <p className="border-t border-vow-border pt-4 text-sm leading-6 text-vow-muted">
-              Prefer email? <a href="mailto:vowglobalapp@gmail.com" className="font-medium text-vow-ink underline underline-offset-4">vowglobalapp@gmail.com</a>
+              Prefer email? <a href={`mailto:${site.supportEmail}`} className="font-medium text-vow-ink underline underline-offset-4">{site.supportEmail}</a>
             </p>
           </div>
         </div>
@@ -132,7 +133,7 @@ function SupportPage() {
             {status === "error" && (
               <div role="alert" className="mb-7 border border-vow-border bg-vow-surface p-5">
                 <p className="font-semibold">We couldn’t send that just now.</p>
-                <p className="mt-1 text-sm leading-6 text-vow-muted">Please try again or email <a className="underline underline-offset-4" href="mailto:vowglobalapp@gmail.com">vowglobalapp@gmail.com</a>.</p>
+                <p className="mt-1 text-sm leading-6 text-vow-muted">Please try again or email <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</p>
               </div>
             )}
 
