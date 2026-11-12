@@ -24,6 +24,7 @@ const supportTopics = [
 
 function SupportPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [emailSent, setEmailSent] = useState(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,7 +48,9 @@ function SupportPage() {
         }),
       });
       if (!response.ok) throw new Error("Support submission failed");
+      const result = await response.json();
       form.reset();
+      setEmailSent(result.email_sent === true);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -127,7 +130,7 @@ function SupportPage() {
             {status === "success" && (
               <div role="status" className="mb-7 border border-vow-border bg-vow-surface p-5">
                 <p className="font-semibold">Thanks, your support request has been received.</p>
-                <p className="mt-1 text-sm leading-6 text-vow-muted">We appreciate you reaching out.</p>
+                <p className="mt-1 text-sm leading-6 text-vow-muted">{emailSent ? "Your request has been saved and an email notification has been sent to our support inbox." : <>Your request has been saved, but an email notification could not be confirmed. You can also contact us directly at <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</>}</p>
               </div>
             )}
             {status === "error" && (
