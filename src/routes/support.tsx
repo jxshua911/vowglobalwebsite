@@ -10,8 +10,8 @@ const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/vow-website-chat`;
 export const Route = createFileRoute("/support")({
   head: () => pageHead({
     path: "/support",
-    title: "Support - VOW | Get Help & Contact Us",
-    description: "Need help with VOW? Contact our support team for assistance with your AI goal planning app. We're here to help you succeed.",
+    title: "Support | VOW",
+    description: "Get help with your VOW account, technical issues, Premium, privacy or account deletion.",
   }),
   component: SupportPage,
 });
@@ -62,7 +62,7 @@ function SupportPage() {
       <header className="border-b border-vow-border vow-surface-grey">
         <div className="container-site grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:gap-16 lg:py-24">
           <div>
-            <p className="vow-label">VOW / Support desk</p>
+            <p className="vow-label">VOW / Support</p>
             <h1 className="mt-4 max-w-3xl text-5xl leading-[.98] sm:text-7xl">Good support starts with being heard.</h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-vow-muted sm:text-lg">
               Something confusing? Found a bug? Need help with your account? Tell us what is happening and we’ll help you find the next step.
