@@ -29,6 +29,44 @@ function clean(value: unknown, max = 4000) {
 }
 
 
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[char] || char);
+}
+
+async function sendSupportNotification(input: { id: string; name: string; email: string; subject: string; message: string }) {
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) return false;
+
+  const recipient = Deno.env.get("SUPPORT_RECIPIENT_EMAIL") || "support@vowglobal.online";
+  const sender = Deno.env.get("VOW_SUPPORT_FROM_EMAIL") || "VOW Support <support@vowglobal.online>";
+  const safeName = escapeHtml(input.name || "Not provided");
+  const safeEmail = escapeHtml(input.email);
+  const safeSubject = escapeHtml(input.subject || "General support");
+  const safeMessage = escapeHtml(input.message).replace(/\n/g, "<br>");
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: sender,
+      to: [recipient],
+      reply_to: input.email,
+      subject: `[VOW Support] ${input.subject || "New support request"}`,
+      html: `<h2>New VOW support request</h2><p><strong>Reference:</strong> ${escapeHtml(input.id)}</p><p><strong>Name:</strong> ${safeName}</p><p><strong>Reply to:</strong> ${safeEmail}</p><p><strong>Topic:</strong> ${safeSubject}</p><hr><p>${safeMessage}</p>`,
+      text: `New VOW support request\nReference: ${input.id}\nName: ${input.name || "Not provided"}\nReply to: ${input.email}\nTopic: ${input.subject || "General support"}\n\n${input.message}`,
+    }),
+  });
+
+  if (!response.ok) {
+    const detail = await response.text();
+    console.error("support-email-send-failed", response.status, detail.slice(0, 500));
+    return false;
+  }
+  return true;
+}
+
 function clientAddress(req: Request) {
   const forwarded = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
   return forwarded || req.headers.get("cf-connecting-ip") || req.headers.get("x-real-ip") || "";
@@ -125,14 +163,31 @@ Deno.serve(async (req) => {
       const honeypot = clean(body?.website, 120);
       if (honeypot) return json({ ok: true });
       if (!email || !message) return json({ error: "Email and message are required." }, 400);
-      if (!/^\S+@\S+\.\S+$/.test(email)) return json({ error: "Please enter a valid email address." }, 400);
+      if (!/^\\S+@\\S+\\.\\S+$/.test(email)) return json({ error: "Please enter a valid email address." }, 400);
+      if (!(await enforceVisitorRateLimit(req, undefined, 5))) {
+        return json({ error: "Too many requests. Please try again in a moment." }, 429);
+      }
+
       const { data, error } = await adminDb()
         .schema("website").from("contact_submissions")
         .insert({ name: name || null, email, subject: subject || null, message })
         .select("id, created_at")
         .single();
       if (error) throw error;
-      return json({ ok: true, submission: data });
+
+      let emailSent = false;
+      try {
+        emailSent = await sendSupportNotification({
+          id: data.id,
+          name,
+          email,
+          subject: subject || "General support",
+          message,
+        });
+      } catch (sendError) {
+        console.error("support-email-exception", sendError instanceof Error ? sendError.message : String(sendError));
+      }
+      return json({ ok: true, submission: data, email_sent: emailSent });
     }
 
     const adminEmail = await requireAdmin(req);
