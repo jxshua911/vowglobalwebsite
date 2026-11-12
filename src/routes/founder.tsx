@@ -41,7 +41,7 @@ function Founder() {
         <p>I'm working towards becoming a mechatronics engineer, so VOW sits at an intersection I genuinely enjoy — design, software, systems, and the discipline of turning an idea into something real.</p>
         <p>It's the kind of work I want to keep doing: taking a problem I care about, understanding it deeply, and building something that can genuinely help people.</p>
       </div><div className="mt-10 border-t border-vow-border pt-7"><p className="text-2xl leading-tight">Make your VOW.<br />Keep your VOW.</p></div></div>
-    </div></section>
+    </div></div></section>
     <section className="border-y border-vow-border vow-section-grey"><div className="container-site py-16 sm:py-20"><div className="grid gap-8 md:grid-cols-3">
       <div><p className="vow-label">01</p><h3 className="mt-5 text-2xl">Design</h3><p className="mt-3 leading-7 text-vow-muted">Products should feel considered, not complicated.</p></div>
       <div><p className="vow-label">02</p><h3 className="mt-5 text-2xl">Build</h3><p className="mt-3 leading-7 text-vow-muted">Ideas become meaningful when they work in the real world.</p></div>
