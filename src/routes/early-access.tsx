@@ -14,7 +14,7 @@ export const Route = createFileRoute("/early-access")({
 function EarlyAccessPage() {
   return (
     <>
-      <header className="border-b border-vow-border bg-vow-surface/40">
+      <header className="border-b border-vow-border vow-surface-grey">
         <div className="container-site py-20 sm:py-24">
           <p className="vow-label">VOW / Early Access</p>
           <h1 className="mt-4 max-w-5xl text-5xl leading-none sm:text-7xl">Get early access.</h1>
