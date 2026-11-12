@@ -22,7 +22,7 @@ const documents = [
 
 function LegalIndex() {
   return <>
-    <header className="border-b border-vow-border bg-vow-surface/40">
+    <header className="border-b border-vow-border vow-surface-grey">
       <div className="container-site py-20 sm:py-24">
         <p className="vow-label">VOW / Legal</p>
         <h1 className="mt-4 max-w-4xl text-5xl leading-none sm:text-7xl">Legal documents.</h1>
@@ -40,7 +40,7 @@ function LegalIndex() {
           </Link>
         ))}
       </div>
-      <div className="mt-12 border border-vow-border bg-vow-surface/35 p-6 sm:p-8">
+      <div className="mt-12 border border-vow-border vow-section-grey p-6 sm:p-8">
         <p className="vow-label">Document status</p>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-vow-muted">Effective {site.policy.effectiveDate}. Last updated {site.policy.lastUpdated}. These documents are published on the VOW website so users can access the current version before and during use of the service.</p>
       </div>
