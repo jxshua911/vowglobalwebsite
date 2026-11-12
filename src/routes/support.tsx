@@ -56,7 +56,7 @@ function SupportPage() {
 
   return (
     <>
-      <header className="border-b border-vow-border bg-vow-surface/45">
+      <header className="border-b border-vow-border vow-surface-grey">
         <div className="container-site grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:gap-16 lg:py-24">
           <div>
             <p className="vow-label">VOW / Support desk</p>
@@ -100,15 +100,15 @@ function SupportPage() {
               A few clear details help us understand the issue and investigate it properly.
             </p>
             <div className="mt-8 space-y-3">
-              <div className="flex gap-3 border border-vow-border bg-vow-surface/40 p-4">
+              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
                 <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">1</span>
                 <p className="text-sm leading-6 text-vow-muted">Choose the topic that best matches your question.</p>
               </div>
-              <div className="flex gap-3 border border-vow-border bg-vow-surface/40 p-4">
+              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
                 <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">2</span>
                 <p className="text-sm leading-6 text-vow-muted">Describe what happened and which page or feature was involved.</p>
               </div>
-              <div className="flex gap-3 border border-vow-border bg-vow-surface/40 p-4">
+              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
                 <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">3</span>
                 <p className="text-sm leading-6 text-vow-muted">Leave a reachable email so we can follow up if needed.</p>
               </div>
@@ -156,7 +156,7 @@ function SupportPage() {
         </div>
       </main>
 
-      <section className="border-t border-vow-border bg-vow-surface/35">
+      <section className="border-t border-vow-border vow-section-grey">
         <div className="container-site py-12 sm:py-16">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
