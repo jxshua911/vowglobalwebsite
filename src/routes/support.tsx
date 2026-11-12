@@ -17,9 +17,9 @@ export const Route = createFileRoute("/support")({
 });
 
 const supportTopics = [
-  { number: "01", title: "Something not working?", description: "Report a bug or technical issue." },
-  { number: "02", title: "Account or Premium?", description: "Get help with access or a subscription." },
-  { number: "03", title: "Privacy matters", description: "Ask about your data or account deletion." },
+  { number: "01", title: "Technical issues", description: "Report a bug or something that is not working as expected." },
+  { number: "02", title: "Account & Premium", description: "Get help with signing in, access or your subscription." },
+  { number: "03", title: "Privacy & data", description: "Ask about your information or request account deletion." },
 ];
 
 function SupportPage() {
@@ -60,12 +60,12 @@ function SupportPage() {
   return (
     <>
       <header className="border-b border-vow-border vow-surface-grey">
-        <div className="container-site grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:gap-16 lg:py-24">
+        <div className="container-site grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.1fr_.9fr] lg:items-end lg:gap-16 lg:py-24">
           <div>
             <p className="vow-label">VOW / Support</p>
-            <h1 className="mt-4 max-w-3xl text-5xl leading-[.98] sm:text-7xl">Good support starts with being heard.</h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-vow-muted sm:text-lg">
-              Something confusing? Found a bug? Need help with your account? Tell us what is happening and we’ll help you find the next step.
+            <h1 className="mt-4 max-w-3xl text-6xl leading-[.92] sm:text-8xl">Support.</h1>
+            <p className="mt-7 max-w-xl text-base leading-8 text-vow-muted sm:text-lg">
+              Need a hand? Tell us what happened and we’ll help you work out the next step.
             </p>
             <a href="#contact" className="mt-8 inline-flex items-center gap-3 border border-vow-ink bg-vow-ink px-5 py-3 text-sm font-medium text-vow-bg transition-colors hover:bg-vow-muted">
               Contact support <span aria-hidden="true">↘</span>
@@ -73,8 +73,8 @@ function SupportPage() {
           </div>
           <div className="border border-vow-border bg-vow-bg p-5 sm:p-7">
             <div className="flex items-center justify-between border-b border-vow-border pb-4">
-              <p className="vow-label">How can we help?</p>
-              <span className="font-mono text-xs text-vow-muted">VOW / HELP</span>
+              <p className="vow-label">What do you need help with?</p>
+              <span className="font-mono text-xs text-vow-muted">01 — 03</span>
             </div>
             <div className="divide-y divide-vow-border">
               {supportTopics.map((topic) => (
@@ -94,64 +94,59 @@ function SupportPage() {
         </div>
       </header>
 
-      <main id="contact" className="container-site scroll-mt-24 py-14 sm:py-20 lg:py-24">
-        <div className="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-12">
+      <main id="contact" className="vow-section-grey scroll-mt-24 py-14 sm:py-20 lg:py-24">
+        <div className="container-site grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-12">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <p className="vow-label">Send a message</p>
-            <h2 className="mt-4 text-4xl leading-[1.02] sm:text-5xl">Let’s work through it.</h2>
+            <p className="vow-label">Contact</p>
+            <h2 className="mt-4 text-4xl leading-[1.02] sm:text-5xl">Tell us what’s going on.</h2>
             <p className="mt-5 max-w-md leading-7 text-vow-muted">
-              A few clear details help us understand the issue and investigate it properly.
+              Include the page or feature involved, what you expected, and what happened instead. Clear details help us investigate.
             </p>
             <div className="mt-8 space-y-3">
-              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
-                <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">1</span>
-                <p className="text-sm leading-6 text-vow-muted">Choose the topic that best matches your question.</p>
-              </div>
-              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
-                <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">2</span>
-                <p className="text-sm leading-6 text-vow-muted">Describe what happened and which page or feature was involved.</p>
-              </div>
-              <div className="flex gap-3 border border-vow-border vow-surface-grey p-4">
-                <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">3</span>
-                <p className="text-sm leading-6 text-vow-muted">Leave a reachable email so we can follow up if needed.</p>
-              </div>
+              {[
+                "Choose the topic that best matches your question.",
+                "Describe what happened and where it happened.",
+                "Leave an email address where we can reach you.",
+              ].map((item, index) => (
+                <div key={item} className="flex gap-3 border border-vow-border bg-vow-surface-grey p-4">
+                  <span className="grid size-8 shrink-0 place-items-center border border-vow-border bg-vow-bg font-mono text-xs">{index + 1}</span>
+                  <p className="text-sm leading-6 text-vow-muted">{item}</p>
+                </div>
+              ))}
             </div>
           </aside>
 
           <section className="border border-vow-border bg-vow-bg p-5 sm:p-8 lg:p-10">
-            <div className="mb-8 flex items-start justify-between gap-4 border-b border-vow-border pb-5">
-              <div>
-                <p className="vow-label">Support request</p>
-                <h3 className="mt-2 text-2xl sm:text-3xl">What can we help with?</h3>
-              </div>
-              <span aria-hidden="true" className="grid size-11 shrink-0 place-items-center border border-vow-border bg-vow-surface text-xl">↗</span>
+            <div className="mb-8 border-b border-vow-border pb-5">
+              <p className="vow-label">Support request</p>
+              <h3 className="mt-2 text-2xl sm:text-3xl">How can we help?</h3>
             </div>
 
             {status === "success" && (
               <div role="status" className="mb-7 border border-vow-border bg-vow-surface p-5">
-                <p className="font-semibold">Thanks, your support request has been received.</p>
-                <p className="mt-1 text-sm leading-6 text-vow-muted">{emailSent ? "Your request has been saved and an email notification has been sent to our support inbox." : <>Your request has been saved, but an email notification could not be confirmed. You can also contact us directly at <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</>}</p>
+                <p className="font-semibold">Your message has been received.</p>
+                <p className="mt-1 text-sm leading-6 text-vow-muted">{emailSent ? "We’ve saved your request and notified the support inbox." : <>Your request has been saved, but an email notification could not be confirmed. You can also email <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</>}</p>
               </div>
             )}
             {status === "error" && (
               <div role="alert" className="mb-7 border border-vow-border bg-vow-surface p-5">
-                <p className="font-semibold">We couldn’t send that just now.</p>
+                <p className="font-semibold">Your message couldn’t be sent.</p>
                 <p className="mt-1 text-sm leading-6 text-vow-muted">Please try again or email <a className="underline underline-offset-4" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</p>
               </div>
             )}
 
             <form onSubmit={submit} className="space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
-                <label className="block"><span className="vow-label">Your name</span><input required name="name" className="vow-field" placeholder="How should we address you?" /></label>
-                <label className="block"><span className="vow-label">Email address</span><input required type="email" name="email" className="vow-field" placeholder="you@example.com" /></label>
+                <label className="block"><span className="vow-label">Name</span><input required name="name" autoComplete="name" className="vow-field" placeholder="Your name" /></label>
+                <label className="block"><span className="vow-label">Email address</span><input required type="email" name="email" autoComplete="email" className="vow-field" placeholder="you@example.com" /></label>
               </div>
-              <label className="block"><span className="vow-label">What is this about?</span><select required name="reason" className="vow-field"><option>Bug or technical issue</option><option>Account / login</option><option>Subscription / Premium</option><option>Privacy request</option><option>Account deletion</option><option>Feedback</option><option>Other</option></select></label>
-              <label className="block"><span className="vow-label">Tell us a little more</span><textarea required minLength={10} name="message" rows={7} className="vow-field resize-y leading-7" placeholder="What happened? Which page or feature were you using? What did you expect to happen?" /></label>
+              <label className="block"><span className="vow-label">Topic</span><select required name="reason" defaultValue="" className="vow-field"><option value="" disabled>Select a topic</option><option>Bug or technical issue</option><option>Account / login</option><option>Subscription / Premium</option><option>Privacy request</option><option>Account deletion</option><option>Feedback</option><option>Other</option></select></label>
+              <label className="block"><span className="vow-label">Message</span><textarea required minLength={10} name="message" rows={7} className="vow-field resize-y leading-7" placeholder="Tell us what happened and which part of VOW you were using." /></label>
               <input aria-hidden="true" tabIndex={-1} autoComplete="off" name="website" className="absolute -left-[9999px] h-px w-px opacity-0" />
               <div className="flex flex-col gap-4 border-t border-vow-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="max-w-sm text-xs leading-5 text-vow-muted">Please don’t include passwords or other sensitive login details in your message.</p>
+                <p className="max-w-sm text-xs leading-5 text-vow-muted">Do not include passwords or sensitive login details.</p>
                 <button type="submit" disabled={status === "loading"} className="vow-btn-primary inline-flex items-center justify-center gap-3 disabled:cursor-wait disabled:opacity-50">
-                  {status === "loading" ? "Sending..." : "Send support request"} <span aria-hidden="true">→</span>
+                  {status === "loading" ? "Sending..." : "Send message"} <span aria-hidden="true">→</span>
                 </button>
               </div>
             </form>
@@ -159,22 +154,22 @@ function SupportPage() {
         </div>
       </main>
 
-      <section className="border-t border-vow-border vow-section-grey">
+      <section className="border-t border-vow-border vow-surface-grey">
         <div className="container-site py-12 sm:py-16">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="vow-label">Keep exploring</p>
-              <h2 className="mt-3 text-3xl sm:text-4xl">Useful VOW links.</h2>
+              <p className="vow-label">More from VOW</p>
+              <h2 className="mt-3 text-3xl sm:text-4xl">Useful links.</h2>
             </div>
-            <p className="max-w-lg text-sm leading-7 text-vow-muted">Find product information, legal documents, and details about using VOW.</p>
+            <p className="max-w-lg text-sm leading-7 text-vow-muted">Find product information and the documents that explain how VOW works.</p>
           </div>
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <a href="/early-access" className="group flex items-center justify-between border border-vow-border bg-vow-bg p-6 transition-colors hover:bg-vow-surface/70">
-              <div><h3 className="text-xl">Get early access</h3><p className="mt-2 text-sm text-vow-muted">Join the launch list.</p></div>
+              <div><h3 className="text-xl">Early access</h3><p className="mt-2 text-sm text-vow-muted">Join the VOW launch list.</p></div>
               <span aria-hidden="true" className="text-2xl transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a href="/legal" className="group flex items-center justify-between border border-vow-border bg-vow-bg p-6 transition-colors hover:bg-vow-surface/70">
-              <div><h3 className="text-xl">Legal documents</h3><p className="mt-2 text-sm text-vow-muted">Terms, privacy, EULA and more.</p></div>
+              <div><h3 className="text-xl">Legal</h3><p className="mt-2 text-sm text-vow-muted">Privacy, terms and other documents.</p></div>
               <span aria-hidden="true" className="text-2xl transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
