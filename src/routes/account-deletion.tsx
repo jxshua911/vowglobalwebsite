@@ -91,14 +91,17 @@ function AccountDeletionPage() {
     setStatus("requesting");
     setError("");
     try {
-      const { data, error: requestError } = await supabase.rpc("vow_request_account_deletion");
+      const { data, error: requestError } = await supabase.functions.invoke("vow-account-delete", {
+        headers: { Authorization: `Bearer ${session?.access_token || ""}` },
+        body: { confirm: true },
+      });
       if (requestError) {
         console.error("[VOW website] Account deletion request error:", requestError);
         setStatus("error");
         setError("We couldn't submit the deletion request right now. Please try again.");
         return;
       }
-      const nextDeleteAt = Array.isArray(data) ? data[0]?.delete_at : null;
+      const nextDeleteAt = data?.restorable_until ?? null;
       setDeleteAt(nextDeleteAt || null);
       setStatus("requested");
     } catch (requestError) {
@@ -111,14 +114,19 @@ function AccountDeletionPage() {
   async function cancelDeletion() {
     setError("");
     try {
-      const { data, error: cancelError } = await supabase.rpc("vow_cancel_account_deletion");
+      const { data, error: cancelError } = await supabase.rpc("vow_restore_or_purge_account");
       if (cancelError) {
         console.error("[VOW website] Account deletion cancellation error:", cancelError);
         setStatus("error");
         setError("We couldn't cancel the deletion request right now. Please try again.");
         return;
       }
-      if (data) setStatus("cancelled");
+      if (data?.status === "restored" || data?.status === "active") {
+        setStatus("cancelled");
+      } else {
+        setStatus("error");
+        setError("The deletion grace period may have ended. Please sign in again to check your account status.");
+      }
     } catch (cancelError) {
       console.error("[VOW website] Account deletion cancellation exception:", cancelError);
       setStatus("error");
