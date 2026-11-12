@@ -146,7 +146,8 @@ function AccountDeletionPage() {
         </div>
       </header>
 
-      <main className="vow-section-grey py-14 sm:py-20">\n        <div className="container-site">
+      <main className="vow-section-grey py-14 sm:py-20">
+        <div className="container-site">
         <div className="grid gap-px border border-vow-border bg-vow-border lg:grid-cols-2">
           <section className="bg-vow-bg p-7 sm:p-10 lg:p-12">
             <p className="vow-label">Online deletion</p>
