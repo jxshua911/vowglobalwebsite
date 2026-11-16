@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   head: () => pageHead({
     path: "/",
     title: "VOW",
-    description: "Turn goals into plans, sessions and follow-through. Plan what matters, follow through and review your progress in one place.",
+    description: "YOUR GOALS DESERVE MORE THAN GOOD INTENTIONS. TURN THEM INTO A PLAN. VOW is an AI-powered goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.",
   }),
   component: Home,
 });
@@ -48,13 +48,13 @@ function Home() {
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
               <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
-                <span className="block">Make your VOW.</span>
-                <span className="block">Keep your VOW.</span>
+                <span className="block">YOUR GOALS DESERVE MORE THAN GOOD INTENTIONS.</span>
+                <span className="block">TURN THEM INTO A PLAN.</span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
               <p className="max-w-[38ch] text-base leading-[1.8] text-vow-muted sm:text-lg">
-                {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
+                VOW is an AI-powered goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a href="/early-access" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
