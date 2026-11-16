@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   head: () => pageHead({
     path: "/",
     title: "VOW",
-    description: "YOUR GOALS DESERVE MORE THAN GOOD INTENTIONS. TURN THEM INTO A PLAN. VOW is an AI-powered goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.",
+    description: "YOUR GOALS DESERVE MORE THAN GOOD INTENTIONS. TURN THEM INTO A PLAN. VOW is a goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.",
   }),
   component: Home,
 });
@@ -54,7 +54,7 @@ function Home() {
             </div>
             <div className="lg:col-span-4 lg:pb-2">
               <p className="max-w-[38ch] text-base leading-[1.8] text-vow-muted sm:text-lg">
-                VOW is an AI-powered goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.
+                VOW is a goal-planning app that turns what you want to achieve into a personalised, step-by-step plan — so you know what to do, how to do it, and what comes next.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a href="/early-access" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
