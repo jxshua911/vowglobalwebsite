@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
 });
 
 const steps = [
-  ["01", "Make it concrete", "Turn what you want into a defined outcome, milestones and a practical sequence."],
-  ["02", "Put it into motion", "Build sessions around real time, real constraints and the work that actually needs doing."],
-  ["03", "Keep your VOW", "Review what happened, learn from the evidence and adjust without losing the goal."],
+  ["01", "Set your goal", "Define what you want to achieve. Give the goal a clear outcome and a direction you can work towards."],
+  ["02", "Build your plan", "VOW turns your goal into a personalised sequence of steps and milestones, so the next move is clear."],
+  ["03", "Do the work", "Turn those steps into sessions, track what gets done and use your reviews to decide what comes next."],
 ];
 
 function ProductVisual() {
@@ -48,8 +48,8 @@ function Home() {
             <div className="lg:col-span-8">
               <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
               <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
-                <span className="block">YOUR GOALS DESERVE MORE THAN GOOD INTENTIONS.</span>
-                <span className="block">TURN THEM INTO A PLAN.</span>
+                <span className="block">Make your VOW.</span>
+                <span className="block">Keep your VOW.</span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
@@ -73,8 +73,8 @@ function Home() {
             <h2 className="mt-5 max-w-xl text-[clamp(2.6rem,5vw,4.7rem)] leading-[.92]">A goal is only the beginning.</h2>
           </div>
           <div className="lg:col-span-7 lg:pl-10">
-            <p className="max-w-[58ch] text-xl leading-[1.65]">VOW brings personalised planning, scheduled sessions, progress tracking and reviews together in one app.</p>
-            <p className="mt-6 max-w-[60ch] leading-[1.8] text-vow-muted">No generic motivational feed. No plan that disappears after day one. The point is to make the next piece of work clear, give it a place to happen and learn from what you actually do.</p>
+            <p className="max-w-[58ch] text-xl leading-[1.65]">A goal gives you something to aim for. A plan gives you something to work with. VOW helps you build that plan — then gives you the tools to follow it.</p>
+            <p className="mt-6 max-w-[60ch] leading-[1.8] text-vow-muted">Start with what you want to achieve. Break it into manageable steps, organise those steps into sessions, and keep track of your progress as you go. When plans meet real life, review what happened and adjust your next steps.</p>
           </div>
         </div>
 
@@ -95,16 +95,16 @@ function Home() {
         <div className="container-site py-20 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
             <p className="vow-label">What VOW puts together</p>
-            <h2 className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] leading-[.92]">From the idea in your head to the work in your week.</h2>
-            <p className="mx-auto mt-6 max-w-[58ch] leading-[1.8] text-vow-muted">The system is designed around the full loop: define the outcome, build the route, schedule the sessions, do the work and review the result.</p>
+            <h2 className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] leading-[.92]">One goal. A clear plan. Work you can track.</h2>
+            <p className="mx-auto mt-6 max-w-[58ch] leading-[1.8] text-vow-muted">VOW connects the parts that are usually scattered across notes, calendars and to-do lists — from the first plan to the progress review.</p>
           </div>
 
           <div className="mt-14 grid gap-px border border-vow-border bg-vow-border sm:grid-cols-2">
             {[
-              ["Structured planning", "Get a clear starting point without handing control of the goal away."],
-              ["Sessions & reminders", "Turn milestones into concrete blocks of work you can actually show up for."],
-              ["Calendar connections", "Bring planned work into the tools you already use."],
-              ["Reviews & journal", "Keep a record of what happened and use it to shape what comes next."],
+              ["Personalised plans", "Turn a goal into a structured plan with practical steps and milestones you can work through."],
+              ["Goals & progress", "Keep your goals together and see the progress you are making over time."],
+              ["Sessions & calendar", "Break planned work into scheduled sessions and connect it with your calendar."],
+              ["Reviews & journal", "Record what you completed, reflect on how it went and use that insight to shape the next step."],
             ].map(([title, body]) => (
               <div key={title} className="bg-vow-bg p-7 md:p-9">
                 <h3 className="text-2xl">{title}</h3>
@@ -123,7 +123,7 @@ function Home() {
               <h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,6.5rem)] leading-[.86]">Less inspiration.<br />More evidence.</h2>
             </div>
             <div className="lg:col-span-4">
-              <p className="leading-[1.8] text-vow-ink/70">VOW is about the part after the goal is written down: the work, the review and the decision to keep going.</p>
+              <p className="leading-[1.8] text-vow-ink/70">VOW brings your goals, plans, sessions and progress into one place — helping you move from deciding what matters to doing the work, seeing what changed and choosing your next step.</p>
               <div className="mt-8"><a href="/early-access" className="vow-arrow-light">Get early access <span aria-hidden>→</span></a></div>
             </div>
           </div>
