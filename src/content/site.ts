@@ -1,6 +1,6 @@
 export const site = {
   name: "VOW",
-  tagline: "Turn goals into plans, sessions and follow-through.",
+  tagline: "A goal-planning app that turns ambitions into personalised plans, scheduled sessions and visible progress.",
   operator: "Joshua Nathan Kasanga",
   launchStatus: "Coming Soon",
   privacyEmail: "support@vowglobal.online",
