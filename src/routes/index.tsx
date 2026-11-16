@@ -6,8 +6,8 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => pageHead({
     path: "/",
-    title: "VOW | Goal-planning app",
-    description: "VOW is a goal-planning app that turns your goals into personalised, step-by-step plans. Organise and schedule sessions, track progress and review your work in one place.",
+    title: "VOW",
+    description: "Turn goals into plans, sessions and follow-through. Plan what matters, follow through and review your progress in one place.",
   }),
   component: Home,
 });
@@ -46,7 +46,7 @@ function Home() {
         <div className="container-site relative z-[3] flex min-h-[82vh] items-end py-14 sm:py-20">
           <div className="grid w-full gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <p className="vow-label !text-vow-ink">Your goal-planning app</p>
+              <p className="vow-label !text-vow-ink">Goal planning · Accountability · Progress</p>
               <h1 className="vow-hero-title mt-6 max-w-5xl text-[clamp(3.6rem,9vw,8.5rem)]">
                 <span className="block">Make your VOW.</span>
                 <span className="block">Keep your VOW.</span>
@@ -54,7 +54,7 @@ function Home() {
             </div>
             <div className="lg:col-span-4 lg:pb-2">
               <p className="max-w-[38ch] text-base leading-[1.8] text-vow-muted sm:text-lg">
-                VOW is a goal-planning app that turns your goals into personalised, step-by-step plans. Build your plan, organise your sessions and track your progress in one place.
+                {site.tagline} Built to move you from intention to scheduled work, then back to the evidence of what actually happened.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a href="/early-access" className="vow-btn-primary">Get early access <span aria-hidden>→</span></a>
