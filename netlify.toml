@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  VITE_SITE_URL = "https://vowglobal.online"
 
 [[forms]]
   name = "vow-waitlist"
